@@ -252,4 +252,4 @@ crossing both thresholds once per flash cycle.
 
 ## Authorship
 
-Built as part of the MSc in Neurotechnology / Bioengineering at Imperial College London.
+Built as part of the MSc Human and Biological Robotics at Imperial College London.
