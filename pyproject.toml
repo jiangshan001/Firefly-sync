@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "firefly-sync"
+version = "0.1.0"
+description = "Firefly-Inspired Visual Synchronization for Coordinated Multi-Drone Behaviour"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "MSc Student — BIOE70025", email = "student@imperial.ac.uk"},
+]
+
+dependencies = [
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "matplotlib>=3.7.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.3.0",
+    "flake8>=6.0.0",
+    "black>=23.0.0",
+]
+pi = [
+    # Raspberry Pi 5 hardware dependencies.
+    # On Pi OS, prefer apt packages:
+    #   sudo apt install -y python3-flask python3-opencv python3-picamera2 python3-gpiozero
+    "gpiozero>=2.0",
+    "picamera2>=0.3.0",
+    "opencv-python>=4.8.0",
+    "flask>=3.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

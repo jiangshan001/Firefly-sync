@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{p{0.26\textwidth}rrrrcc}
+\toprule
+Condition & V0 recall & V1 recall & V0 $|e_f|$ & V1 $|e_f|$ & Auto ROI & Pass \\
+\midrule
+Baseline & 0.989 & 0.989 & 0.0005 & 0.0010 & yes & yes \\
+Shifted position & 0.989 & 0.983 & 0.0005 & 0.0010 & yes & yes \\
+Large-small size & 0.978 & 0.983 & 0.0005 & 0.0010 & yes & yes \\
+Small-small size & 0.989 & 0.989 & 0.0005 & 0.0010 & yes & yes \\
+1.5/2.5 Hz & 0.978 & 0.987 & 0.0008 & 0.0013 & yes & yes \\
+2 Hz phase offset & 0.989 & 0.983 & 0.0010 & 0.0010 & yes & yes \\
+2 Hz near-simultaneous & 0.989 & 0.989 & 0.0010 & 0.0010 & yes & yes \\
+Medium contrast & 0.933 & 0.983 & 0.0005 & 0.0010 & yes & yes \\
+Low contrast & 0.000 & 0.983 & -- & 0.0013 & yes & no \\
+\bottomrule
+\end{tabular}
+\caption{Repeat-based required-condition results. Medium and low contrast use the corrected contrast rerun.}
+\label{tab:results}
+\end{table}

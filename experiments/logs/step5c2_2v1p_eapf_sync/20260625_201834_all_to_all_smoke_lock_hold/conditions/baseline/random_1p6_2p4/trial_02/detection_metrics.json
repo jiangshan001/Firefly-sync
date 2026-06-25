@@ -1,0 +1,25 @@
+{
+  "p0_detected_events": {
+    "V0": 116,
+    "V1": 122
+  },
+  "actual_flash_counts": {
+    "V0": 132,
+    "V1": 135,
+    "P0": 133
+  },
+  "detection_recall": {
+    "V0": 0.878788,
+    "V1": 0.903704
+  },
+  "missed_event_estimate": {
+    "V0": 16,
+    "V1": 13
+  },
+  "extra_event_estimate": {
+    "V0": 0,
+    "V1": 0
+  },
+  "camera_frame_count": 1377,
+  "camera_fps_estimate": 22.952
+}

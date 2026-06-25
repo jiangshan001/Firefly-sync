@@ -1,0 +1,20 @@
+flowchart TD
+    A["Select Model<br/>Kuramoto / PCO-I&F / EAPF"] --> B["Select Condition<br/>leader = 2.0 Hz<br/>follower = {1.5, 1.8, 2.3} Hz"]
+    B --> C["Parameter Tuning<br/>(mock batch sweep)"]
+    C --> D{"Best parameters found?"}
+    D -->|yes| E["Lock parameters"]
+    D -->|no| C
+    E --> F["Run Pi Visual Batch<br/>30 s × 5 repeats<br/>per condition, per model"]
+    F --> G["Save all trial logs<br/>metadata / oscillator / detection<br/>flash_events / metrics_summary"]
+    G --> H["Aggregate metrics<br/>per condition"]
+    H --> I["Generate figs 1–7<br/>per model batch"]
+    I --> J["Model Comparison Plot<br/>overlay all 3 models<br/>on same axes"]
+    J --> K["Results table:<br/>success rate %<br/>mean time-to-sync<br/>steady-state MAE<br/>detection reliability<br/>loop performance"]
+    K --> L["Interpret results:<br/>- Does PCO-I&F outperform Kuramoto?<br/>- Does EAPF provide faster lock?<br/>- Which model is most robust to<br/>  frequency mismatch?<br/>- Computational cost differences?"]
+    L --> M["Write thesis discussion + conclusion"]
+
+    style A fill:#e8eaf6
+    style M fill:#e8eaf6
+    style F fill:#ffcc80
+    style J fill:#c8e6c9
+    style L fill:#f3e5f5

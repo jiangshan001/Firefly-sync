@@ -1,0 +1,80 @@
+{
+  "mode": "multi_roi_detection_test",
+  "topology": "all_to_all",
+  "detection_preset": "none",
+  "detected_counts": {
+    "V0": 30,
+    "V1": 59
+  },
+  "actual_virtual_flash_counts": {
+    "V0": 30,
+    "V1": 60
+  },
+  "roi_signal_summary": {
+    "V0": {
+      "roi_id": 0,
+      "roi": [
+        124,
+        322,
+        126,
+        128
+      ],
+      "detected_rising_edge_count": 30,
+      "actual_virtual_flash_count": 30,
+      "detection_fcr": 1.0,
+      "raw_signal": {
+        "count": 886,
+        "min": 8.0,
+        "max": 75.0,
+        "mean": 42.590248,
+        "std": 31.147443
+      },
+      "normalized_signal": {
+        "count": 886,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.501011,
+        "std": 0.486233
+      },
+      "raw_signal_range": 67.0,
+      "estimated_detected_frequency_hz": 1.000504,
+      "last_detector_frequency_hz": 1.001,
+      "warnings": []
+    },
+    "V1": {
+      "roi_id": 1,
+      "roi": [
+        494,
+        305,
+        143,
+        139
+      ],
+      "detected_rising_edge_count": 59,
+      "actual_virtual_flash_count": 60,
+      "detection_fcr": 0.983333,
+      "raw_signal": {
+        "count": 886,
+        "min": 3.0,
+        "max": 102.0,
+        "mean": 53.990384,
+        "std": 46.385726
+      },
+      "normalized_signal": {
+        "count": 886,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.50733,
+        "std": 0.477574
+      },
+      "raw_signal_range": 99.0,
+      "estimated_detected_frequency_hz": 2.001031,
+      "last_detector_frequency_hz": 2.001,
+      "warnings": []
+    }
+  },
+  "roi_debug_frames": [
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/size_small_small/repeat_02/roi_debug_frame_start.jpg",
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/size_small_small/repeat_02/roi_debug_frame_mid.jpg"
+  ],
+  "closed_loop_adaptation_enabled": false
+}

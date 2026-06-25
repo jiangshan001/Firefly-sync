@@ -1,0 +1,83 @@
+{
+  "mode": "multi_roi_detection_test",
+  "topology": "all_to_all",
+  "detection_preset": "none",
+  "detected_counts": {
+    "V0": 0,
+    "V1": 59
+  },
+  "actual_virtual_flash_counts": {
+    "V0": 30,
+    "V1": 60
+  },
+  "roi_signal_summary": {
+    "V0": {
+      "roi_id": 0,
+      "roi": [
+        103,
+        328,
+        127,
+        129
+      ],
+      "detected_rising_edge_count": 0,
+      "actual_virtual_flash_count": 30,
+      "detection_fcr": 0.0,
+      "raw_signal": {
+        "count": 886,
+        "min": 6.0,
+        "max": 16.0,
+        "mean": 10.73763,
+        "std": 3.551114
+      },
+      "normalized_signal": {
+        "count": 886,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "raw_signal_range": 10.0,
+      "estimated_detected_frequency_hz": null,
+      "last_detector_frequency_hz": 0.0,
+      "warnings": [
+        "no_rising_edges_detected",
+        "normalised_signal_never_reached_on_threshold"
+      ]
+    },
+    "V1": {
+      "roi_id": 1,
+      "roi": [
+        474,
+        316,
+        144,
+        140
+      ],
+      "detected_rising_edge_count": 59,
+      "actual_virtual_flash_count": 60,
+      "detection_fcr": 0.983333,
+      "raw_signal": {
+        "count": 886,
+        "min": 1.0,
+        "max": 24.0,
+        "mean": 12.466603,
+        "std": 10.142799
+      },
+      "normalized_signal": {
+        "count": 886,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.484373,
+        "std": 0.476511
+      },
+      "raw_signal_range": 23.0,
+      "estimated_detected_frequency_hz": 2.001005,
+      "last_detector_frequency_hz": 2.001,
+      "warnings": []
+    }
+  },
+  "roi_debug_frames": [
+    "experiments/logs/step5c1_multi_roi_detection/20260624_175949_small_low_contrast_stress/conditions/small_low_contrast_stress/repeat_02/roi_debug_frame_start.jpg",
+    "experiments/logs/step5c1_multi_roi_detection/20260624_175949_small_low_contrast_stress/conditions/small_low_contrast_stress/repeat_02/roi_debug_frame_mid.jpg"
+  ],
+  "closed_loop_adaptation_enabled": false
+}

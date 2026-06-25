@@ -1,0 +1,12 @@
+{
+  "group_sync_success": false,
+  "time_to_group_sync_s": null,
+  "final_frequency_spread_hz": 0.5,
+  "mean_pairwise_timing_error_s": 0.080377,
+  "flash_timing_dispersion_s": 0.042857,
+  "mean_order_parameter_R": 0.724792,
+  "final_order_parameter_R": 0.346563,
+  "model": "eapf",
+  "topology": "all_to_all",
+  "n_agents": 3
+}

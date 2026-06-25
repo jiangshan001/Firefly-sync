@@ -1,0 +1,6 @@
+Reference,Kuramoto background,PCO-I&F,EAPF / PLL,Multi-neighbour consensus extension,Hardware/implementation considerations,Notes
+Peskin 1975,indirect,direct,not used,not used,not used,Origin of integrate-and-fire model; cited via Mirollo–Strogatz
+Mirollo & Strogatz 1990,indirect,direct,not used,indirect,not used,Core PCO synchronisation model; provides coupling rule
+Tyrrell et al. 2006,direct,direct,indirect,not used,direct,Fireflies as engineering role model; discusses practical constraints
+Olfati-Saber et al. 2007,not used,not used,direct,direct,indirect,Consensus framework; future multi-neighbour extension
+Gardner 2005,not used,not used,direct,direct,not used,PLL engineering reference; phase/frequency correction

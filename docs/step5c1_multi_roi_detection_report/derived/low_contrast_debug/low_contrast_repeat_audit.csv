@@ -1,0 +1,7 @@
+repeat,agent_id,roi,actual_flash_count,detected_rising_edge_count,raw_min,raw_max,raw_range,raw_std,norm_min,norm_max,norm_range,norm_std,adaptive_amplitude_min,adaptive_amplitude_max,adaptive_amplitude_last,norm_on_threshold,norm_off_threshold,rising_rows,skipped_by_min_amplitude,warnings
+repeat_01,V0,,,,6.0,13.0,7.0,2.7138694334908964,0.0,0.0,0.0,0.0,0.0,6.0,6.0,0.65,0.35,0,True,
+repeat_01,V1,,,,2.0,19.0,17.0,6.831463136653616,0.0,1.0,1.0,0.4593161090288341,0.0,16.0,15.0,0.65,0.35,59,False,
+repeat_02,V0,,,,6.0,13.0,7.0,2.729645475102912,0.0,0.0,0.0,0.0,0.0,6.0,6.0,0.65,0.35,0,True,
+repeat_02,V1,,,,3.0,19.0,16.0,6.5999623264322755,0.0,1.0,1.0,0.47399235076702767,0.0,15.0,15.0,0.65,0.35,59,False,
+repeat_03,V0,,,,6.0,14.0,8.0,2.664033043844532,0.0,0.0,0.0,0.0,0.0,7.0,6.0,0.65,0.35,0,True,
+repeat_03,V1,,,,2.0,20.0,18.0,6.831807650123341,0.0,1.0,1.0,0.45783482591343594,0.0,16.0,16.0,0.65,0.35,59,False,

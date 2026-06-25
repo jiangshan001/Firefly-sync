@@ -1,0 +1,255 @@
+=== Step 4B.4 EAPF Pi visual batch: follower=1.5Hz repeat=1/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=1.5Hz
+  [SYNC] Achieved at t=10.02s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 10.018413688998407
+  MAE:        0.058365 s
+  Final freq: 2.0030 Hz
+  Leader FCR: 0.933 (56/60)
+  Follower FCR: 0.950 (57/60)
+  Loop rate:  11.2 Hz
+  Wall time:  30.5 s
+
+=== Step 4B.4 EAPF Pi visual batch: follower=1.5Hz repeat=2/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=1.5Hz
+  [SYNC] Achieved at t=8.92s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 8.924457924000308
+  MAE:        0.080337 s
+  Final freq: 2.0119 Hz
+  Leader FCR: 0.950 (57/60)
+  Follower FCR: 0.933 (56/60)
+  Loop rate:  12.1 Hz
+  Wall time:  30.4 s
+
+=== Step 4B.4 EAPF Pi visual batch: follower=1.5Hz repeat=3/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=1.5Hz
+  [SYNC] Achieved at t=7.82s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 7.822243073998834
+  MAE:        0.000000 s
+  Final freq: 1.9991 Hz
+  Leader FCR: 0.950 (57/60)
+  Follower FCR: 0.917 (55/60)
+  Loop rate:  11.7 Hz
+  Wall time:  30.5 s
+
+=== Step 4B.4 EAPF Pi visual batch: follower=1.5Hz repeat=4/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=1.5Hz
+  [SYNC] Achieved at t=7.17s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 7.165047267000773
+  MAE:        0.090552 s
+  Final freq: 2.0307 Hz
+  Leader FCR: 0.950 (57/60)
+  Follower FCR: 0.967 (58/60)
+  Loop rate:  11.9 Hz
+  Wall time:  30.5 s
+
+=== Step 4B.4 EAPF Pi visual batch: follower=1.5Hz repeat=5/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=1.5Hz
+  [SYNC] Achieved at t=9.43s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 9.425586846999067
+  MAE:        0.012563 s
+  Final freq: 1.9865 Hz
+  Leader FCR: 0.950 (57/60)
+  Follower FCR: 0.950 (57/60)
+  Loop rate:  11.7 Hz
+  Wall time:  30.5 s
+
+=== Step 4B.4 EAPF Pi visual batch: follower=1.8Hz repeat=1/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=1.8Hz
+  [SYNC] Achieved at t=3.85s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 3.8527937830003793
+  MAE:        0.046417 s
+  Final freq: 1.9981 Hz
+  Leader FCR: 0.950 (57/60)
+  Follower FCR: 0.983 (59/60)
+  Loop rate:  10.8 Hz
+  Wall time:  30.4 s
+
+=== Step 4B.4 EAPF Pi visual batch: follower=1.8Hz repeat=2/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=1.8Hz
+  [SYNC] Achieved at t=10.10s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 10.00082578799993
+  MAE:        0.048674 s
+  Final freq: 1.9979 Hz
+  Leader FCR: 0.950 (57/60)
+  Follower FCR: 0.967 (58/60)
+  Loop rate:  10.7 Hz
+  Wall time:  30.4 s
+
+=== Step 4B.4 EAPF Pi visual batch: follower=1.8Hz repeat=3/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=1.8Hz
+  [SYNC] Achieved at t=5.58s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 5.5829601750010625
+  MAE:        0.061546 s
+  Final freq: 1.9959 Hz
+  Leader FCR: 0.933 (56/60)
+  Follower FCR: 0.983 (59/60)
+  Loop rate:  10.7 Hz
+  Wall time:  30.5 s
+
+=== Step 4B.4 EAPF Pi visual batch: follower=1.8Hz repeat=4/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=1.8Hz
+  [SYNC] Achieved at t=4.97s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 4.965529094999511
+  MAE:        0.046328 s
+  Final freq: 1.9995 Hz
+  Leader FCR: 0.950 (57/60)
+  Follower FCR: 0.950 (57/60)
+  Loop rate:  10.7 Hz
+  Wall time:  30.5 s
+
+=== Step 4B.4 EAPF Pi visual batch: follower=1.8Hz repeat=5/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=1.8Hz
+  [SYNC] Achieved at t=8.20s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 8.200180449999607
+  MAE:        0.048900 s
+  Final freq: 1.9956 Hz
+  Leader FCR: 0.950 (57/60)
+  Follower FCR: 0.967 (58/60)
+  Loop rate:  10.7 Hz
+  Wall time:  30.5 s
+
+=== Step 4B.4 EAPF Pi visual batch: follower=2.3Hz repeat=1/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=2.3Hz
+  [SYNC] Achieved at t=9.54s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 9.448417629999312
+  MAE:        0.078777 s
+  Final freq: 2.0033 Hz
+  Leader FCR: 0.950 (57/60)
+  Follower FCR: 1.033 (62/60)
+  Loop rate:  10.7 Hz
+  Wall time:  30.5 s
+
+=== Step 4B.4 EAPF Pi visual batch: follower=2.3Hz repeat=2/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=2.3Hz
+  [SYNC] Achieved at t=6.86s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 6.773291692999919
+  MAE:        0.044173 s
+  Final freq: 1.9615 Hz
+  Leader FCR: 0.950 (57/60)
+  Follower FCR: 1.000 (60/60)
+  Loop rate:  10.8 Hz
+  Wall time:  30.4 s
+
+=== Step 4B.4 EAPF Pi visual batch: follower=2.3Hz repeat=3/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=2.3Hz
+  [SYNC] Achieved at t=8.76s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 8.760831545998371
+  MAE:        0.048474 s
+  Final freq: 2.0376 Hz
+  Leader FCR: 0.950 (57/60)
+  Follower FCR: 1.000 (60/60)
+  Loop rate:  11.6 Hz
+  Wall time:  30.5 s
+
+=== Step 4B.4 EAPF Pi visual batch: follower=2.3Hz repeat=4/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=2.3Hz
+  [SYNC] Achieved at t=25.58s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 25.520913404001476
+  MAE:        0.090181 s
+  Final freq: 1.9950 Hz
+  Leader FCR: 0.950 (57/60)
+  Follower FCR: 1.050 (63/60)
+  Loop rate:  12.5 Hz
+  Wall time:  30.5 s
+
+=== Step 4B.4 EAPF Pi visual batch: follower=2.3Hz repeat=5/5 ===
+[API] Setting leader to 2.0 Hz
+[HW] Camera started. GPIO17 LED ready.
+
+[SMOKE] Starting 30.0s trial. Leader=2.0Hz, Follower=2.3Hz
+  [SYNC] Achieved at t=7.29s
+
+  === SMOKE RESULT ===
+  Sync:       True
+  Time to sync: 7.228752327999246
+  MAE:        0.106938 s
+  Final freq: 2.0427 Hz
+  Leader FCR: 0.950 (57/60)
+  Follower FCR: 1.000 (60/60)
+  Loop rate:  12.3 Hz
+  Wall time:  30.5 s
+

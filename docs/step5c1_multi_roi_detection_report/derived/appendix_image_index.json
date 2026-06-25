@@ -1,0 +1,11 @@
+{
+  "baseline": "figures/appendix/baseline_diagnostic_grid.png",
+  "position_shifted": "figures/appendix/position_shifted_diagnostic_grid.png",
+  "size_small_small": "figures/appendix/size_small_small_diagnostic_grid.png",
+  "contrast_medium": "figures/appendix/contrast_medium_diagnostic_grid.png",
+  "contrast_low": "figures/appendix/contrast_low_diagnostic_grid.png",
+  "frequency_2hz_near_simultaneous": "figures/appendix/frequency_2hz_near_simultaneous_diagnostic_grid.png",
+  "position_too_close_stress": "figures/appendix/position_too_close_stress_diagnostic_grid.png",
+  "tiny_small_small_stress": "figures/appendix/tiny_small_small_stress_diagnostic_grid.png",
+  "small_low_contrast_stress": "figures/appendix/small_low_contrast_stress_diagnostic_grid.png"
+}

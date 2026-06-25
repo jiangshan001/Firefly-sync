@@ -1,0 +1,12 @@
+{
+  "group_sync_success": false,
+  "time_to_group_sync_s": null,
+  "final_frequency_spread_hz": 0.598636,
+  "mean_pairwise_timing_error_s": 0.149792,
+  "flash_timing_dispersion_s": 0.13375,
+  "mean_order_parameter_R": 0.517543,
+  "final_order_parameter_R": 0.671748,
+  "model": "kuramoto",
+  "topology": "directed_chain",
+  "n_agents": 3
+}

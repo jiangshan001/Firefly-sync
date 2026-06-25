@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firefly Leader — Visual Flash Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ============================================================
+    Canvas region: the visual leader target is drawn here.
+    The canvas fills the available space; the target is centred
+    unless the user adjusts X/Y offset sliders.
+    ============================================================ -->
+    <div id="canvas-container">
+        <canvas id="leader-canvas"></canvas>
+        <!-- Overlay readout bar -->
+        <div id="overlay">
+            <span id="overlay-state" class="overlay-chip overlay-off">OFF</span>
+            <span id="overlay-freq" class="overlay-chip">1.00 Hz</span>
+            <span id="overlay-duty" class="overlay-chip">Duty 0.50</span>
+            <span id="overlay-elapsed" class="overlay-chip">00:00.0</span>
+            <span id="overlay-cycle" class="overlay-chip">Cycle 0</span>
+            <span id="overlay-api" class="overlay-chip overlay-api" style="display:none;">API</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    Camera monitor panel — connects to the Pi camera stream server.
+    Shows MJPEG video feed and live detection status.
+    ============================================================ -->
+    <div id="camera-panel">
+        <h2>Pi Camera Monitor</h2>
+
+        <!-- ----- Connection ----- -->
+        <div class="control-group">
+            <label for="pi-url">Pi Stream URL</label>
+            <input type="text" id="pi-url" value="http://dronepi.local:5000"
+                   placeholder="http://dronepi.local:5000">
+            <div style="display:flex; gap:6px;">
+                <button id="btn-connect" class="btn btn-start">Connect</button>
+                <button id="btn-disconnect" class="btn btn-stop">Disconnect</button>
+            </div>
+            <div style="display:flex; gap:6px; margin-top:4px;">
+                <button id="btn-auto-roi" class="btn btn-auto-roi">◎ Auto Locate Flash Region</button>
+                <button id="btn-clear-roi" class="btn btn-clear-roi">✕ Clear ROI</button>
+            </div>
+            <span id="cam-connection-status" class="hint">Disconnected</span>
+        </div>
+
+        <!-- ----- MJPEG video feed ----- -->
+        <div class="control-group" id="video-container">
+            <img id="mjpeg-stream" src="" alt="Pi camera stream"
+                 style="width:100%; display:none; background:#000; border-radius:4px;">
+            <div id="stream-placeholder"
+                 style="width:100%; aspect-ratio:4/3; background:#111;
+                        display:flex; align-items:center; justify-content:center;
+                        color:#555; font-size:0.85rem; border-radius:4px;">
+                Not connected
+            </div>
+        </div>
+
+        <!-- ----- Detection status readouts ----- -->
+        <div class="control-group" id="status-readouts">
+            <div class="status-row">
+                <span class="status-label">Brightness</span>
+                <span id="cam-brightness" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">State</span>
+                <span id="cam-state" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Rising Edges</span>
+                <span id="cam-edges" class="status-value">0</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Est. Frequency</span>
+                <span id="cam-freq" class="status-value">-- Hz</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Last Edge</span>
+                <span id="cam-last-edge" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Pi FPS</span>
+                <span id="cam-fps" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Det. Mode</span>
+                <span id="cam-det-mode" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Bright (used)</span>
+                <span id="cam-bright-used" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Full Mean</span>
+                <span id="cam-full-mean" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Top %ile</span>
+                <span id="cam-top-pct" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">ROI Source</span>
+                <span id="cam-roi-source" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">ROI Conf.</span>
+                <span id="cam-roi-conf" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Local Contrast</span>
+                <span id="cam-local-contrast" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Signal Norm</span>
+                <span id="cam-signal-norm" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Adaptive Lo/Hi</span>
+                <span id="cam-adaptive-lo-hi" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Adaptive Amp</span>
+                <span id="cam-adaptive-amp" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Signal Quality</span>
+                <span id="cam-signal-quality" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Sig. Freq (ac)</span>
+                <span id="cam-signal-freq" class="status-value">-- Hz</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Period. Conf.</span>
+                <span id="cam-period-conf" class="status-value">--</span>
+            </div>
+            <div class="status-row">
+                <span class="status-label">Camera</span>
+                <span id="cam-manual-camera" class="status-value">auto</span>
+            </div>
+        </div>
+        <!-- Signal-norm plot -->
+        <div class="control-group" id="signal-plot-container">
+            <canvas id="signal-plot-canvas" width="340" height="120"
+                    style="width:100%; background:#000; border-radius:4px;"></canvas>
+            <div id="signal-plot-placeholder"
+                 style="width:100%; height:120px; background:#111;
+                        display:flex; align-items:center; justify-content:center;
+                        color:#555; font-size:0.75rem; border-radius:4px;">
+                Signal plot — connect to Pi
+            </div>
+        </div>
+        <p class="hint" style="margin-top:4px;">Fullscreen hides this panel. Use windowed mode to monitor detection while the leader runs.</p>
+    </div>
+
+    <!-- ============================================================
+    Mutual HIL control panel — visible only in mutual_hil mode.
+    ============================================================ -->
+    <div id="mutual-hil-panel" style="display:none;">
+        <h2>Mutual HIL — Virtual Agents</h2>
+
+        <div class="control-group">
+            <label>Mode</label>
+            <select id="hil-mode-select">
+                <option value="fixed_leader" selected>Fixed Leader</option>
+                <option value="mutual_hil">Mutual HIL</option>
+            </select>
+        </div>
+
+        <div class="control-group" id="hil-agent-controls">
+            <label>Model</label>
+            <select id="hil-model-select">
+                <option value="eapf_consensus" selected>EAPF Consensus</option>
+                <option value="kuramoto">Kuramoto</option>
+            </select>
+
+            <label for="hil-agent-x">X (px, bottom-left) <span id="hil-agent-x-val">0</span></label>
+            <input type="range" id="hil-agent-x" min="0" max="2000" step="1" value="0">
+
+            <label for="hil-agent-y">Y (px, bottom-left) <span id="hil-agent-y-val">0</span></label>
+            <input type="range" id="hil-agent-y" min="0" max="2000" step="1" value="0">
+
+            <label for="hil-agent-size">Size (px) <span id="hil-agent-size-val">200</span></label>
+            <input type="range" id="hil-agent-size" min="20" max="600" step="1" value="200">
+
+            <label for="hil-agent-freq">Init Freq (Hz) <span id="hil-agent-freq-val">2.00</span></label>
+            <input type="range" id="hil-agent-freq" min="0.5" max="4.0" step="0.01" value="2.0">
+
+            <label>Current Freq <span id="hil-agent-cur-freq" class="hint">-- Hz</span></label>
+        </div>
+
+        <div class="control-group">
+            <button id="btn-hil-start" class="btn btn-start">▶ Start</button>
+            <button id="btn-hil-pause" class="btn btn-stop">⏹ Pause</button>
+            <button id="btn-hil-reset" class="btn btn-reset">↺ Reset</button>
+            <button id="btn-hil-refresh" class="btn btn-fullscreen">↻ Refresh</button>
+        </div>
+
+        <div class="control-group">
+            <button id="btn-display-only" class="btn btn-display-only">◼ Display Only</button>
+            <span class="hint">Hides all panels for camera testing</span>
+        </div>
+
+        <p class="hint" id="hil-status">fixed_leader mode active</p>
+    </div>
+
+    <!-- ============================================================
+    Control panel — all parameters are adjustable in real time.
+    ============================================================ -->
+    <div id="control-panel">
+        <h2>Leader Controls</h2>
+
+        <!-- ----- Run control buttons ----- -->
+        <div class="control-group">
+            <button id="btn-start" class="btn btn-start">▶ Start</button>
+            <button id="btn-stop"  class="btn btn-stop">⏹ Stop</button>
+            <button id="btn-reset" class="btn btn-reset">↺ Reset</button>
+            <button id="btn-reset-defaults" class="btn btn-reset-defaults">⟲ Reset to Defaults</button>
+            <button id="btn-fullscreen" class="btn btn-fullscreen">⛶ Fullscreen</button>
+        </div>
+
+        <!-- ----- Timing parameters ----- -->
+        <div class="control-group">
+            <label for="freq">Frequency <span id="freq-val">1.00</span> Hz</label>
+            <input type="range" id="freq" min="0.2" max="5.0" step="0.01" value="1.0">
+
+            <label for="duty">Duty cycle <span id="duty-val">0.50</span></label>
+            <input type="range" id="duty" min="0.05" max="0.95" step="0.01" value="0.50">
+        </div>
+
+        <!-- ----- Brightness parameters ----- -->
+        <div class="control-group">
+            <label for="brightness-on">ON brightness <span id="brightness-on-val">255</span></label>
+            <input type="range" id="brightness-on" min="0" max="255" step="1" value="255">
+
+            <label for="brightness-off">OFF brightness <span id="brightness-off-val">0</span></label>
+            <input type="range" id="brightness-off" min="0" max="255" step="1" value="0">
+
+            <label for="bg-brightness">Background <span id="bg-brightness-val">0</span></label>
+            <input type="range" id="bg-brightness" min="0" max="255" step="1" value="0">
+        </div>
+
+        <!-- ----- Target geometry ----- -->
+        <div class="control-group">
+            <label for="target-size">Target size <span id="target-size-val">100</span> px</label>
+            <input type="range" id="target-size" min="20" max="600" step="1" value="100">
+
+            <label for="target-shape">Shape</label>
+            <select id="target-shape">
+                <option value="circle" selected>Circle</option>
+                <option value="square">Square</option>
+            </select>
+        </div>
+
+        <!-- ----- Position offsets ----- -->
+        <div class="control-group">
+            <label for="offset-x">X offset <span id="offset-x-val">0</span> px</label>
+            <input type="range" id="offset-x" min="-500" max="500" step="1" value="0">
+
+            <label for="offset-y">Y offset <span id="offset-y-val">0</span> px</label>
+            <input type="range" id="offset-y" min="-500" max="500" step="1" value="0">
+        </div>
+
+        <!-- ----- Export ----- -->
+        <div class="control-group">
+            <button id="btn-export" class="btn btn-export">📥 Export CSV</button>
+            <span id="event-count" class="hint">0 events recorded</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

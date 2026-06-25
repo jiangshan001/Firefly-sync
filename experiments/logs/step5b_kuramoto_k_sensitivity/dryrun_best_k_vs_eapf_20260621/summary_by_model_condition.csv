@@ -1,0 +1,7 @@
+failed_or_invalid_trials,failure_timeout_count,mean_actual_detection_fcr,mean_api_drop_count,mean_capture_drop_count,mean_frequency_error_final_5s_abs_of_means,mean_frequency_error_final_5s_mean_abs,mean_frontend_warning_count,mean_kuramoto_debug_warning_count,mean_pi_freq_final_5s_std,mean_short_interval_warning_count,mean_virtual_freq_final_5s_std,model,n_trials,pi_initial_freq,std_actual_detection_fcr,std_api_drop_count,std_capture_drop_count,std_frequency_error_final_5s_abs_of_means,std_frequency_error_final_5s_mean_abs,std_frontend_warning_count,std_kuramoto_debug_warning_count,std_pi_freq_final_5s_std,std_short_interval_warning_count,std_virtual_freq_final_5s_std,virtual_initial_freq
+0,0,,0.0,0.0,,,0.0,0.0,,0.0,,eapf_consensus,3,1.2,,0.0,0.0,,,0.0,0.0,,0.0,,2.0
+0,0,,0.0,0.0,,,0.0,0.0,,0.0,,eapf_consensus,3,1.5,,0.0,0.0,,,0.0,0.0,,0.0,,2.0
+0,0,,0.0,0.0,,,0.0,0.0,,0.0,,eapf_consensus,3,2.5,,0.0,0.0,,,0.0,0.0,,0.0,,2.0
+0,0,,0.0,0.0,,,0.0,0.0,,0.0,,kuramoto,3,1.2,,0.0,0.0,,,0.0,0.0,,0.0,,2.0
+0,0,,0.0,0.0,,,0.0,0.0,,0.0,,kuramoto,3,1.5,,0.0,0.0,,,0.0,0.0,,0.0,,2.0
+0,0,,0.0,0.0,,,0.0,0.0,,0.0,,kuramoto,3,2.5,,0.0,0.0,,,0.0,0.0,,0.0,,2.0

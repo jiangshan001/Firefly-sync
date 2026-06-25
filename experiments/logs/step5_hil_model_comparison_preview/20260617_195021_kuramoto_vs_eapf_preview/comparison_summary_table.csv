@@ -1,0 +1,7 @@
+model,follower_freq_hz,n_trials,sync_success_rate,mean_time_to_sync_s,std_time_to_sync_s,mean_steady_state_mae_s,std_steady_state_mae_s,mean_leader_fcr,mean_follower_fcr,mean_final_frequency_hz
+Kuramoto,1.5,5,1.0,3.6607,0.7476,0.060299,0.011405,0.9764,nan,nan
+Kuramoto,1.8,5,1.0,2.9547,0.388,0.003317,0.002786,0.983,nan,nan
+Kuramoto,2.3,5,1.0,4.1051,1.0556,0.057774,0.004385,0.9864,nan,nan
+EAPF,1.5,5,1.0,8.6711,1.1659,0.048363,0.040382,0.9467,0.9433,2.0063
+EAPF,1.8,5,1.0,6.5205,2.5173,0.050373,0.006362,0.9467,0.97,1.9974
+EAPF,2.3,5,1.0,11.5464,7.8878,0.073709,0.026974,0.95,1.0167,2.008

@@ -1,0 +1,38 @@
+{
+  "step": "Step5c2",
+  "condition": "baseline",
+  "topology": "all_to_all",
+  "model": "EAPF Consensus",
+  "sync_success": false,
+  "time_to_sync_s": null,
+  "final_mean_pairwise_phase_error_cycles": 0.024126,
+  "final_frequency_disagreement_hz": 0.01982,
+  "final_mean_order_parameter_R": 0.991423,
+  "recovery_time_s": null,
+  "detection_recall": {
+    "V0": 0.978723,
+    "V1": 0.978495
+  },
+  "api_health": {
+    "api_request_count": 367,
+    "api_success_count": 367,
+    "api_failure_count": 0,
+    "api_latency_mean_ms": 14.225,
+    "api_latency_max_ms": 129.485
+  },
+  "fault_injection": {
+    "condition": "baseline",
+    "fault_kind": "none",
+    "virtual_events_seen": 183,
+    "virtual_events_dropped": 0,
+    "p0_events_seen": 97,
+    "p0_events_delayed": 0,
+    "p0_delayed_events_posted": 0,
+    "pause_applied": false,
+    "pause_restored": false
+  },
+  "pause_window": {
+    "pause_start_s": null,
+    "pause_end_s": null
+  }
+}

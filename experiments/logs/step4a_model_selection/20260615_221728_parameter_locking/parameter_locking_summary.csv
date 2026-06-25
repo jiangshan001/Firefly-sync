@@ -1,0 +1,6 @@
+model,locked_param_label,locked_validation_score,locked_parameters,locked_n_trials,locked_zl_rate,locked_pl_rate,locked_oto_rate,locked_mean_fcr
+kuramoto,K=5.0,0.9271,{'K': 5.0},6,0.8333,1.0,1.0,1.0
+pco_simple,additive_phase eps=0.1,0.2413,"{'coupling_mode': 'additive_phase', 'epsilon': 0.1, 'refractory_period_s': 0.05}",12,0.0,0.0,0.3333,1.459
+pco_adaptive_prc,biphasic_sine eps=0.2,0.1814,"{'prc_mode': 'biphasic_sine', 'epsilon': 0.2}",48,0.0,0.0,0.5,1.272
+eapf_tracker,pg=0.3 fg=0.15,0.5441,"{'phase_gain': 0.3, 'frequency_gain': 0.15}",6,0.5,0.1667,0.8333,1.156
+eapf_consensus,pg=0.1 fg=0.01,0.7772,"{'phase_gain': 0.1, 'frequency_gain': 0.01}",6,0.6667,0.5,1.0,1.022

@@ -1,0 +1,35 @@
+{
+  "batch_dir": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_201834_all_to_all_smoke_lock_hold",
+  "conditions": [
+    "baseline"
+  ],
+  "frequency_sets": [
+    "random_1p6_2p4"
+  ],
+  "stabilizer": "lock_hold",
+  "trials_completed": 3,
+  "condition_summaries": [
+    {
+      "condition": "baseline",
+      "frequency_set": "random_1p6_2p4",
+      "stabilizer": "lock_hold",
+      "trials": 3,
+      "success_rate": 0.0,
+      "final_sync_success_rate": 1.0,
+      "frequency_stability_success_rate": 0.0,
+      "lock_acquired_rate": 0.0,
+      "mean_time_to_sync_s": null,
+      "mean_lock_time_s": null,
+      "mean_final_phase_error_cycles": 0.03852,
+      "mean_final_frequency_disagreement_hz": 0.019598,
+      "mean_final_order_parameter_R": 0.969166,
+      "mean_final_common_frequency_std_hz": 0.036049,
+      "mean_final_common_frequency_slope_hz_per_s": -0.011982,
+      "mean_hold_duration_s": null,
+      "mean_recovery_time_s": null
+    }
+  ],
+  "overall_success_rate": 0.0,
+  "overall_final_sync_success_rate": 1.0,
+  "overall_frequency_stability_success_rate": 0.0
+}

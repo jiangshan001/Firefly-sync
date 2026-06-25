@@ -1,0 +1,35 @@
+{
+  "model": "eapf_consensus",
+  "model_parameters": {
+    "g_p": 0.02,
+    "g_f": 0.02,
+    "alpha_p": 0.2,
+    "alpha_f": 0.2,
+    "delta_theta_max_rad": 0.2,
+    "delta_f_max_hz": 0.05
+  },
+  "virtual_freq": 2.0,
+  "pi_freq": 1.5,
+  "feedback": false,
+  "dry_run": true,
+  "detect_only": true,
+  "gpio_enabled": false,
+  "pi_feedback_post_enabled": false,
+  "detector_config": {
+    "class": "PicameraFlashDetector",
+    "resolution": [
+      640,
+      480
+    ],
+    "detection_mode": "local_contrast",
+    "threshold_on": 180.0,
+    "threshold_off": 120.0,
+    "min_interval_s": 0.2,
+    "window_s": 5.0,
+    "norm_on_threshold": 0.65,
+    "norm_off_threshold": 0.35,
+    "min_amplitude": 10.0,
+    "roi": null
+  },
+  "timestamp": "2026-06-20T18:28:10.660345"
+}

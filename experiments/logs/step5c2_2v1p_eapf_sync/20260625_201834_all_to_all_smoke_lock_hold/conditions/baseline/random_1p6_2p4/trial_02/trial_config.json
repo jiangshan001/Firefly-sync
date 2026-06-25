@@ -1,0 +1,90 @@
+{
+  "step": "Step5c2",
+  "system": "mixed_reality_2_virtual_1_pi",
+  "model": "EAPF Consensus",
+  "model_parameters": {
+    "g_p": 0.02,
+    "g_f": 0.02,
+    "alpha_p": 0.2,
+    "alpha_f": 0.2,
+    "max_phase_step_rad": 0.2,
+    "max_frequency_step_hz": 0.05
+  },
+  "leader_api": "http://192.168.1.140:8000",
+  "duration_s": 60.0,
+  "topology": "all_to_all",
+  "condition": {
+    "name": "baseline",
+    "stage": "Step5c2-A/B",
+    "category": "baseline",
+    "description": "Clean all-to-all EAPF Consensus mixed-reality synchronisation.",
+    "display": {},
+    "fault": {
+      "kind": "none"
+    },
+    "required_for_readiness": true,
+    "failure_interpretation": "Baseline failure should be investigated before robustness testing."
+  },
+  "frequency_set": "random_1p6_2p4",
+  "frequency_set_definition": {
+    "description": "Legacy default: all agents random from 1.6-2.4 Hz.",
+    "agents": {
+      "V0": [
+        1.6,
+        2.4
+      ],
+      "V1": [
+        1.6,
+        2.4
+      ],
+      "P0": [
+        1.6,
+        2.4
+      ]
+    }
+  },
+  "initial_states": {
+    "V0": {
+      "initial_phase_rad": 1.897024809,
+      "initial_frequency_hz": 2.171039606
+    },
+    "V1": {
+      "initial_phase_rad": 4.304652902,
+      "initial_frequency_hz": 2.395121864
+    },
+    "P0": {
+      "initial_phase_rad": 4.267236839,
+      "initial_frequency_hz": 2.277602299
+    }
+  },
+  "sync_thresholds": {
+    "final_window_s": 10.0,
+    "required_window_s": 5.0,
+    "window_pass_ratio": 0.8,
+    "mean_pairwise_phase_error_cycles": 0.25,
+    "mean_pairwise_phase_error_rad": 1.5707963267948966,
+    "frequency_disagreement_hz": 0.1,
+    "order_parameter_R": 0.9,
+    "frequency_stability_std_hz": 0.05,
+    "frequency_stability_slope_hz_per_s": 0.005
+  },
+  "stabilizer": {
+    "stabilizer": "lock_hold",
+    "lock_r_threshold": 0.98,
+    "lock_phase_error_threshold_cycles": 0.05,
+    "lock_frequency_disagreement_threshold_hz": 0.02,
+    "lock_window_s": 5.0,
+    "lock_window_pass_ratio": 0.8,
+    "hold_frequency_anchor": "current_mean",
+    "hold_phase_gain_scale": 0.1,
+    "hold_frequency_gain_scale": 0.0,
+    "hold_anchor_gain": 0.02,
+    "unlock_r_threshold": 0.9,
+    "unlock_phase_error_threshold_cycles": 0.1,
+    "unlock_frequency_disagreement_threshold_hz": 0.05,
+    "unlock_window_s": 2.0,
+    "unlock_window_fail_ratio": 0.8
+  },
+  "roi_config": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_201834_all_to_all_smoke_lock_hold/conditions/baseline/auto_roi/auto_rois.json",
+  "created_at": "2026-06-25T20:19:55.464232"
+}

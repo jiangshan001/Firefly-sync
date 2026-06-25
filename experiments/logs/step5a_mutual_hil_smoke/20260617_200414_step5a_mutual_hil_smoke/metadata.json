@@ -1,0 +1,8 @@
+{
+  "model": "eapf_consensus",
+  "mode": "mutual_hil_smoke",
+  "virtual_freq": 2.0,
+  "pi_freq": 1.5,
+  "dry_run": true,
+  "timestamp": "2026-06-17T20:04:19.964907"
+}

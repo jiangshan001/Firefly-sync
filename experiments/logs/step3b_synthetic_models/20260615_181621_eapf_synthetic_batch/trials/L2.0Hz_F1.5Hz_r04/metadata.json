@@ -1,0 +1,16 @@
+{
+  "trial_id": "L2.0Hz_F1.5Hz_r04",
+  "model_name": "eapf",
+  "leader_freq_hz": 2.0,
+  "follower_initial_freq_hz": 1.5,
+  "duration_s": 30.0,
+  "dt": 0.01,
+  "sync_threshold_s": 0.1,
+  "sync_cycles": 5,
+  "timestamp": "2026-06-15T18:16:21.428780",
+  "model_phase_gain": 0.2,
+  "model_frequency_gain": 0.1,
+  "model_frequency_min_hz": 0.5,
+  "model_frequency_max_hz": 4.0,
+  "model_leader_period_window": 6
+}

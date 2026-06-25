@@ -1,0 +1,4 @@
+follower_freq_hz,n_trials,sync_success_rate,mean_time_to_sync_s,std_time_to_sync_s,mean_steady_state_mae_s,std_steady_state_mae_s,mean_leader_fcr,mean_follower_fcr,mean_final_frequency_hz,mean_loop_rate_hz
+1.5,5,1.0,8.6711,1.1659,0.048363,0.040382,0.9467,0.9433,2.0063,11.7
+1.8,5,1.0,6.5205,2.5173,0.050373,0.006362,0.9467,0.97,1.9974,10.7
+2.3,5,1.0,11.5464,7.8878,0.073709,0.026974,0.95,1.0167,2.008,11.6

@@ -1,0 +1,67 @@
+{
+  "kuramoto": {
+    "param_label": "K=5.0",
+    "validation_score": 0.9427,
+    "parameters": {
+      "K": 5.0
+    },
+    "n_trials": 60,
+    "zl_rate": 0.9167,
+    "pl_rate": 0.9,
+    "oto_rate": 1.0,
+    "mean_fcr": 1.0
+  },
+  "pco_simple": {
+    "param_label": "additive_phase eps=0.1",
+    "validation_score": 0.4127,
+    "parameters": {
+      "coupling_mode": "additive_phase",
+      "epsilon": 0.1,
+      "refractory_period_s": 0.05
+    },
+    "n_trials": 120,
+    "zl_rate": 0.25,
+    "pl_rate": 0.25,
+    "oto_rate": 0.4167,
+    "mean_fcr": 1.295
+  },
+  "pco_adaptive_prc": {
+    "param_label": "biphasic_sine eps=0.1",
+    "validation_score": 0.4472,
+    "parameters": {
+      "prc_mode": "biphasic_sine",
+      "epsilon": 0.1
+    },
+    "n_trials": 480,
+    "zl_rate": 0.25,
+    "pl_rate": 0.25,
+    "oto_rate": 0.75,
+    "mean_fcr": 1.175
+  },
+  "eapf_tracker": {
+    "param_label": "pg=0.4 fg=0.15",
+    "validation_score": 0.7986,
+    "parameters": {
+      "phase_gain": 0.4,
+      "frequency_gain": 0.15
+    },
+    "n_trials": 60,
+    "zl_rate": 0.7833,
+    "pl_rate": 0.7833,
+    "oto_rate": 0.7833,
+    "mean_fcr": 1.119
+  },
+  "eapf_consensus": {
+    "param_label": "pg=0.02 fg=0.02",
+    "validation_score": 0.9984,
+    "parameters": {
+      "phase_gain": 0.02,
+      "frequency_gain": 0.02
+    },
+    "n_trials": 60,
+    "zl_rate": 1.0,
+    "pl_rate": 1.0,
+    "oto_rate": 1.0,
+    "mean_fcr": 1.0
+  }
+}

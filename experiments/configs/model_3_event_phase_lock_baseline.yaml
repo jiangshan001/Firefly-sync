@@ -1,0 +1,33 @@
+# Model 3 — EAPF / Consensus-PLL Baseline Configuration (DRAFT)
+# Parameter ranges are candidates pending mock batch tuning.
+# See: docs/synchronisation_models/model_3_event_based_phase_frequency_locking.md
+
+model: event_based_phase_lock
+model_name_display: "EAPF / Consensus-PLL"
+
+# --- Oscillator parameters ---
+oscillator:
+  natural_frequency_hz: 1.5        # initial follower frequency
+  phase_gain: 0.20                 # phase correction gain [0.05, 0.40]
+  frequency_gain: 0.05             # frequency correction gain [0.01, 0.20]
+  frequency_min_hz: 0.5            # minimum allowed frequency
+  frequency_max_hz: 4.0            # maximum allowed frequency
+  leader_period_window: 6          # number of intervals for median period estimate
+
+# --- Tuning sweep candidates ---
+tuning_sweep:
+  phase_gain_values: [0.10, 0.20, 0.30]
+  frequency_gain_values: [0.02, 0.05, 0.10]
+
+# --- Detection ---
+detection:
+  min_leader_flash_interval_s: 0.20
+  detection_mode: local_contrast
+
+# --- Trial ---
+trial:
+  duration_s: 30
+  repeats_per_condition: 5
+  sync_threshold_s: 0.10
+  sync_cycles: 5
+  flash_on_time_s: 0.06

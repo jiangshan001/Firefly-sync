@@ -1,0 +1,352 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{placeins}
+
+\title{Stage 4A — Multi-Neighbour Model Selection Report}
+\author{MSc Student — BIOE70025}
+\date{\today}
+
+% Path to figures directory (set per user)
+\newcommand{\figdir}{../experiments/logs/stage4a_model_selection/20260616_113914_final_evaluation/figures}
+
+\begin{document}
+\maketitle
+
+% ======================================================================
+\section{Introduction}
+% ======================================================================
+
+This stage report documents the Stage 4A multi-neighbour simulation-based
+model selection for synchronisation algorithms prior to hardware-in-the-loop
+(HIL) testing.  Five candidate models were evaluated under identical
+decentralised multi-agent conditions using a pure-software simulator.  The
+goal is to select a primary and a secondary HIL candidate based on strict
+zero-lag synchronisation performance, robustness across topologies and
+frequency sets, N=5 scalability, hardware readiness, and interpretability.
+
+% ======================================================================
+\section{Candidate Models}
+% ======================================================================
+
+All models produce flash outputs and are evaluated with common flash-based
+synchronisation metrics.  The PCO and EAPF variants are event-driven: each
+agent updates its state only when neighbour flash events are detected.
+Kuramoto uses continuous phase coupling in simulation and would require
+phase reconstruction from flash timestamps for hardware implementation.
+Locked parameters were selected via a 60\,s $\times$ 5-repeat parameter sweep
+(seeds 1000--1004) across four frequency sets and three topologies.
+
+% --- Table 1 (locked params) placed after Candidate Models intro ---
+\input{stage4a_model_selection_tables.tex}
+
+% ----------------------------------------------------------------------
+\subsection{Kuramoto (continuous phase coupling)}
+% ----------------------------------------------------------------------
+
+\textbf{Working principle \cite{kuramoto1975self}.}
+Each agent $i$ continuously observes the phase of its visible neighbours
+and adjusts its own phase velocity according to the Kuramoto ODE:
+\begin{equation}
+  \dot\theta_i = \omega_i + \frac{K}{N_i}\sum_{j\in\mathcal{N}_i}
+                 \sin(\theta_j - \theta_i)
+\end{equation}
+where $\mathcal{N}_i$ is the neighbour set of agent $i$, $N_i = |\mathcal{N}_i|$,
+and $K$ is the coupling strength.
+
+\textbf{Locked parameter:} $K = 5.0$.
+
+\textbf{Strengths:} mathematically well-understood; achieves 91.7\% zero-lag
+success in N=3; simple to implement on hardware using phase reconstruction
+from flash timestamps.
+
+\textbf{Limitations:} requires continuous phase observability which the
+camera pipeline approximates via flash-to-phase estimation; N=5 scalability
+limited (33.3\% zero-lag success).
+
+% ----------------------------------------------------------------------
+\subsection{PCO Simple (event-driven pulse coupling)}
+% ----------------------------------------------------------------------
+
+\textbf{Working principle \cite{peskin1975mathematical,mirollo1990synchronization}.}
+Each agent maintains a normalised phase $\phi \in [0,1)$.  On detecting a
+neighbour flash, the phase is additively advanced:
+\begin{equation}
+  \phi \leftarrow \min(1.0,\; \phi + \varepsilon)
+\end{equation}
+When $\phi \geq 1.0$ the agent fires and resets to 0, entering a refractory
+period.  This is the simplest firefly-inspired pulse-coupled oscillator,
+derived from the Mirollo--Strogatz model.
+
+\textbf{Locked parameters:} additive phase, $\varepsilon = 0.10$,
+$\tau_{\text{ref}} = 0.05$\,s.
+
+\textbf{Strengths:} directly event-driven; matches the camera detection
+pipeline; conceptually simplest firefly model.
+
+\textbf{Limitations:} 25.0\% zero-lag success at N=3; 0\% at N=5;
+flash count ratio 1.308 (extra flashes in heterogeneous conditions).
+
+% ----------------------------------------------------------------------
+\subsection{PCO Adaptive PRC (phase response curve variant)}
+% ----------------------------------------------------------------------
+
+\textbf{Working principle \cite{mirollo1990synchronization,tyrrell2006fireflies}.}
+Extends PCO simple with a biphasic sine phase response curve:
+\begin{equation}
+  \Delta\phi = \varepsilon \cdot \sin\bigl(2\pi(\phi - \phi_{\text{ref}})\bigr)
+\end{equation}
+Phase delay is enabled (negative corrections allowed), and maximum correction
+is rate-limited.  Optional frequency adaptation is available but was not used
+in the locked variant.
+
+\textbf{Locked parameters:} biphasic sine PRC, $\varepsilon = 0.10$,
+phase delay enabled, $\Delta\phi_{\max} = 0.20$.
+
+\textbf{Strengths:} lower flash count ratio (1.175 vs.\ 1.308 for simple PCO);
+better 1:1 flash lock rate (75\% vs.\ 42\%).
+
+\textbf{Limitations:} 25.0\% zero-lag success at N=3; 0\% at N=5;
+still limited by excitatory pulse coupling under strong heterogeneity.
+
+% ----------------------------------------------------------------------
+\subsection{EAPF Tracker (fixed-leader phase/frequency tracker)}
+% ----------------------------------------------------------------------
+
+\textbf{Working principle \cite{gardner2005phaselock}.}
+On each detected leader flash, the agent computes the signed phase error
+and applies independent phase and frequency corrections:
+\begin{align}
+  \theta &\leftarrow \operatorname{wrap}_{2\pi}(\theta + g_p \cdot e_\theta) \\
+  f      &\leftarrow \operatorname{clamp}(f + g_f \cdot e_\theta / (2\pi),
+                                          f_{\min}, f_{\max})
+\end{align}
+where $e_\theta = \operatorname{wrap}_\pi(0 - \theta)$.
+
+\textbf{Locked parameters:} $g_p = 0.40$, $g_f = 0.15$.
+
+\textbf{Strengths:} simple engineering tracker; 76.2\% zero-lag success at N=3;
+works well for near-identical oscillators.
+
+\textbf{Limitations:} designed for fixed-leader tracking; less robust in
+mutual multi-neighbour mode (flash count ratio 1.116).
+
+% ----------------------------------------------------------------------
+\subsection{EAPF Consensus (event-based phase/frequency consensus)}
+% ----------------------------------------------------------------------
+
+\textbf{Working principle \cite{gardner2005phaselock,olfati2007consensus}.}
+Each agent maintains per-neighbour state estimates (period, frequency, phase)
+updated \emph{only} from flash timestamps.  Consensus corrections use the mean
+phase and frequency errors across all visible neighbours:
+\begin{align}
+  e_\theta &= \frac{1}{|\mathcal{N}_i|}\sum_{j\in\mathcal{N}_i}
+             \operatorname{wrap}_\pi(\hat\theta_j - \theta_i) \\
+  e_f      &= \frac{1}{|\mathcal{N}_i|}\sum_{j\in\mathcal{N}_i}
+             (\hat f_j - f_i)
+\end{align}
+where $\hat\theta_j$ and $\hat f_j$ are the estimated neighbour phase and
+frequency.  Corrections are low-pass filtered and rate-limited.
+
+\textbf{Locked parameters:} $g_p = 0.02$, $g_f = 0.02$,
+$\alpha_p = \alpha_f = 0.2$, $\Delta\theta_{\max} = 0.2$\,rad,
+$\Delta f_{\max} = 0.05$\,Hz.
+
+\textbf{Strengths:} 100\% zero-lag success at N=3 \emph{and} N=5; flash count
+ratio 1.000; nearest-flash timing error 6.6\,ms; frequency spread 0.0\,Hz;
+only model achieving perfect strict synchronisation across all conditions.
+
+\textbf{Limitations:} very low gains require 60\,s for full convergence;
+more stateful than simpler models (per-neighbour estimates).
+
+% ======================================================================
+\section{Evaluation}
+% ======================================================================
+
+% ----------------------------------------------------------------------
+\subsection{Evaluation Setup}
+% ----------------------------------------------------------------------
+
+The multi-agent simulator runs $N$ agents at fixed time-step $dt = 0.01$\,s.
+Each agent observes neighbour flash events according to a graph-based topology.
+
+\paragraph{N=3 main evaluation.}
+The primary HIL-aligned evaluation uses 3 agents with topologies
+\texttt{all\_to\_all}, \texttt{chain}, and \texttt{directed\_chain}, and four
+frequency sets: identical $[2.0, 2.0, 2.0]$\,Hz, near-identical
+$[1.9, 2.0, 2.1]$\,Hz, moderate heterogeneity $[1.8, 2.0, 2.2]$\,Hz, and
+strong heterogeneity $[1.5, 2.0, 2.3]$\,Hz.  For each model, this gives
+$4 \times 3 \times 20 = 240$ trials.  Across all five models, the N=3
+evaluation comprises $5 \times 4 \times 3 \times 20 = 1200$ trials, each
+of 60\,s duration with independent random seeds (2000--2019).
+
+\paragraph{N=5 scalability evaluation.}
+A second evaluation with 5 agents uses three local topologies
+(\texttt{local\_ring\_5}, \texttt{chain\_5}, \texttt{local\_degree\_2\_3})
+and two frequency sets (near-identical and strong heterogeneity), 10 repeats
+per combination (seeds 3000--3009), producing $5 \times 3 \times 2 \times 10
+= 300$ trials total.
+
+\paragraph{Repeatability.}
+A second independent run with seeds 4000--4019 (N=3) and 5000--5009 (N=5)
+was performed with all locked parameters unchanged.
+
+% ----------------------------------------------------------------------
+\subsection{Metrics}
+% ----------------------------------------------------------------------
+
+\paragraph{Synchronisation quality.}
+Zero-lag group sync requires phase synchronisation (pairwise timing error
+$< 0.10$\,s and order parameter $R > 0.85$), frequency lock (spread
+$< 0.05$\,Hz), and 1:1 flash lock (flash count ratio $\leq 1.2$).
+Phase-locked group sync relaxes the in-phase constraint and allows stable
+non-zero offsets (offset jitter $< 0.05$\,s).
+
+\paragraph{Convergence and steady-state.}
+Time-to-sync is the first time the 5-cycle sustained criterion is met.
+Steady-state metrics (final 10\,s) include mean pairwise timing error,
+offset jitter, frequency spread, and order parameter.
+
+\paragraph{Flash behaviour.}
+Flash count ratio is the maximum final-window flash count divided by the
+minimum, measuring extra-flash or harmonic-locking behaviour.
+
+% ----------------------------------------------------------------------
+\subsection{Weighted Evaluation Matrix}
+% ----------------------------------------------------------------------
+
+The final model score is a weighted sum of six categories:
+N=3 synchronisation performance (0.30), N=3 convergence/quality (0.15),
+N=3 robustness across conditions (0.15), N=5 scalability (0.15),
+hardware readiness (0.15, expert-assigned), and interpretability (0.10,
+expert-assigned).
+
+\FloatBarrier
+
+% ======================================================================
+\section{Results and Discussion}
+% ======================================================================
+
+% ----------------------------------------------------------------------
+\subsection{N=3 Performance}
+% ----------------------------------------------------------------------
+
+EAPF consensus achieved 100\% zero-lag group sync across all 240 N=3 trials
+for that model (4 frequency sets $\times$ 3 topologies $\times$ 20 repeats).
+Kuramoto achieved 91.7\% zero-lag success, with failures concentrated in
+chain and directed\_chain topologies under strong heterogeneity.  EAPF
+tracker achieved 76.2\%, and both PCO variants achieved 25.0\%.
+
+The flash count ratio (Table~\ref{tab:scores}) clearly separates models:
+EAPF consensus and Kuramoto maintain FCR $= 1.0$; EAPF tracker (1.12) and
+PCO adaptive PRC (1.18) show moderate extra flashes; PCO simple (1.31) shows
+significant extra flashes indicating repeated near-simultaneous group flash
+clusters with additional isolated flashes from faster agents.
+
+% ----------------------------------------------------------------------
+\subsection{N=5 Scalability}
+% ----------------------------------------------------------------------
+
+N=5 sharply separates the models.  EAPF consensus is the only model
+maintaining 100\% zero-lag sync.  EAPF tracker drops to 58.3\%, Kuramoto to
+33.3\%, and both PCO variants to 0\%.  The N=5 results confirm that consensus
+PLL with low gains scales to larger agent counts under local-neighbourhood
+topologies, while the other models degrade.
+
+% ----------------------------------------------------------------------
+\subsection{Model Ranking}
+% ----------------------------------------------------------------------
+
+Table~\ref{tab:scores} presents the final weighted scores.  EAPF consensus
+ranks first (0.938), followed by Kuramoto (0.801), EAPF tracker (0.656--0.660),
+PCO adaptive PRC (0.363), and PCO simple (0.358).
+
+% ----------------------------------------------------------------------
+\subsection{Repeatability}
+% ----------------------------------------------------------------------
+
+The second independent evaluation (seeds 4000/5000) produced nearly identical
+scores (Table~\ref{tab:repeatability}): the maximum delta was 0.0039 (EAPF
+tracker, $+$0.0039).  All models are within the ``very stable'' band
+($|\Delta| < 0.03$).  The ranking is unchanged: EAPF consensus remains first,
+Kuramoto second.
+
+% ----------------------------------------------------------------------
+\subsection{Interpretation}
+% ----------------------------------------------------------------------
+
+\paragraph{Why EAPF consensus outperforms Kuramoto.}
+EAPF consensus is a fully event-driven distributed frequency/phase agreement
+protocol \cite{gardner2005phaselock,olfati2007consensus}.  It converges slowly
+(low gains) but robustly, without overshoot or correction-induced extra
+flashes.  At 60\,s, even the 1.5--2.3\,Hz 0.8\,Hz frequency spread is
+resolved to 0.0\,Hz final spread.  Kuramoto's continuous coupling is stronger
+but less robust under directed/sparse topologies.
+
+\paragraph{Why Kuramoto remains strong but less scalable.}
+Kuramoto \cite{kuramoto1975self} achieves 91.7\% zero-lag at N=3 but drops to
+33.3\% at N=5 because continuous coupling weakens as the number of indirect
+neighbours increases and the effective coupling per link becomes diluted.
+
+\paragraph{Why PCO variants remain limited.}
+Excitatory phase-advance coupling \cite{mirollo1990synchronization} cannot
+decelerate an oscillator that is already too fast.  Under strong heterogeneity,
+the 2.3\,Hz agent consistently emits extra flashes.  The adaptive PRC
+(biphasic sine with phase delay) reduces but does not eliminate this
+behaviour.  This is consistent with the firefly-inspired synchronisation
+limitations discussed in \cite{tyrrell2006fireflies}.
+
+% ----------------------------------------------------------------------
+\subsection{Flash Raster Interpretation}
+% ----------------------------------------------------------------------
+
+Figure~\ref{fig:raster_full} shows representative flash rasters over the full
+0--60\,s interval for the all\_to\_all, strong heterogeneity condition.
+Figure~\ref{fig:raster_zoom} provides a 0--10\,s zoom to reveal early-time
+convergence dynamics.
+
+EAPF consensus (panel b) shows agents converging to a single synchronised
+flash cluster by approximately $t = 20$\,s, with perfect 1:1 locking
+thereafter.  Kuramoto (panel a) shows rapid convergence within the first
+3--5\,s.  EAPF tracker (panel c) shows slower convergence with some residual
+offset.  PCO adaptive PRC (panel d) and PCO simple (panel e) show clustered
+but non-1:1 flash patterns, with the fastest agent consistently emitting
+additional flashes between group events.
+
+Raster plots should be interpreted together with quantitative metrics:
+the 0--60\,s raster shows overall structure; early-time offsets may be
+visually compressed; the 0--10\,s zoom reveals initial convergence;
+time-to-sync and timing-error metrics provide quantitative confirmation.
+
+\input{stage4a_model_selection_figures.tex}
+
+\FloatBarrier
+
+% ======================================================================
+\section{Conclusion}
+% ======================================================================
+
+EAPF consensus (event-based phase/frequency consensus with $g_p = 0.02$,
+$g_f = 0.02$) is selected as the \textbf{primary HIL candidate} for
+Stage 4B under the tested Stage 4A conditions.  Kuramoto ($K = 5.0$) is
+selected as the \textbf{secondary comparison model}.  EAPF tracker, PCO
+adaptive PRC, and PCO simple are retained as comparative references with
+identified limitations.
+
+The primary HIL candidate achieves perfect (100\%) strict zero-lag
+synchronisation across all 240 N=3 trials for that model (1200 trials total
+across all five models) and all 300 N=5 scalability trials, uses only
+flash-event-derived neighbour state (never true internal phases), and has
+stable performance across independent random seeds.
+
+\section*{References}
+
+\bibliographystyle{plain}
+\bibliography{synchronisation_models/references}
+
+\end{document}

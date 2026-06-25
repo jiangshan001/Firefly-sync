@@ -1,0 +1,609 @@
+{
+  "V0": {
+    "roi": [
+      55,
+      282,
+      224,
+      198
+    ],
+    "method": "combined_multi_component",
+    "requested_frequency_hz": 1.0,
+    "score": 269.899,
+    "candidate_id": 1,
+    "estimated_frequency_hz": 1.084327,
+    "roi_estimated_frequency_hz": 1.084327,
+    "trace_frequency_method": "rising_edge",
+    "trace_rising_edge_count": 7,
+    "trace_rising_edge_times_s": [
+      1e-06,
+      0.600053,
+      1.600054,
+      2.533387,
+      3.533387,
+      4.533389,
+      5.533389
+    ],
+    "trace_on_threshold": 39.8,
+    "trace_off_threshold": 30.8,
+    "autocorrelation_frequency_hz": 1.000001,
+    "frequency_confidence": 0.804995,
+    "actual_virtual_flash_count": 6,
+    "actual_virtual_frequency_estimate": 0.99999,
+    "raw_signal": {
+      "count": 90,
+      "min": 14.0,
+      "max": 57.0,
+      "mean": 37.933333,
+      "std": 17.987527
+    },
+    "raw_signal_range": 43.0,
+    "warnings": [
+      "roi_close_to_image_boundary"
+    ]
+  },
+  "V1": {
+    "roi": [
+      418,
+      265,
+      222,
+      215
+    ],
+    "method": "combined_multi_component",
+    "requested_frequency_hz": 2.0,
+    "score": 404.3287,
+    "candidate_id": 0,
+    "estimated_frequency_hz": 2.022453,
+    "roi_estimated_frequency_hz": 2.022453,
+    "trace_frequency_method": "rising_edge",
+    "trace_rising_edge_count": 13,
+    "trace_rising_edge_times_s": [
+      1e-06,
+      0.46672,
+      0.933387,
+      1.46672,
+      1.933387,
+      2.400053,
+      2.933387,
+      3.400053,
+      3.933388,
+      4.400055,
+      4.933389,
+      5.400054,
+      5.933389
+    ],
+    "trace_on_threshold": 32.65,
+    "trace_off_threshold": 21.9,
+    "autocorrelation_frequency_hz": 1.000001,
+    "frequency_confidence": 0.790166,
+    "actual_virtual_flash_count": 12,
+    "actual_virtual_frequency_estimate": 1.999979,
+    "raw_signal": {
+      "count": 90,
+      "min": 8.0,
+      "max": 52.0,
+      "mean": 31.266667,
+      "std": 21.175877
+    },
+    "raw_signal_range": 44.0,
+    "warnings": [
+      "roi_close_to_image_boundary"
+    ]
+  },
+  "candidate_components": [
+    {
+      "candidate_id": 0,
+      "roi": [
+        418,
+        265,
+        222,
+        215
+      ],
+      "component_bbox": [
+        453,
+        300,
+        187,
+        180
+      ],
+      "area_px": 26911,
+      "padded_area_px": 47730,
+      "mean_change": 52.79,
+      "max_change": 61.2497,
+      "score": 404.3287,
+      "method": "temporal_variance"
+    },
+    {
+      "candidate_id": 1,
+      "roi": [
+        55,
+        282,
+        224,
+        198
+      ],
+      "component_bbox": [
+        90,
+        317,
+        154,
+        156
+      ],
+      "area_px": 18745,
+      "padded_area_px": 44352,
+      "mean_change": 42.1964,
+      "max_change": 47.5474,
+      "score": 269.899,
+      "method": "temporal_variance"
+    }
+  ],
+  "selected_components": [
+    {
+      "candidate_id": 0,
+      "roi": [
+        418,
+        265,
+        222,
+        215
+      ],
+      "component_bbox": [
+        453,
+        300,
+        187,
+        180
+      ],
+      "area_px": 26911,
+      "padded_area_px": 47730,
+      "mean_change": 52.79,
+      "max_change": 61.2497,
+      "score": 404.3287,
+      "method": "temporal_variance",
+      "selection_overlap_ratio": 0.0
+    },
+    {
+      "candidate_id": 1,
+      "roi": [
+        55,
+        282,
+        224,
+        198
+      ],
+      "component_bbox": [
+        90,
+        317,
+        154,
+        156
+      ],
+      "area_px": 18745,
+      "padded_area_px": 44352,
+      "mean_change": 42.1964,
+      "max_change": 47.5474,
+      "score": 269.899,
+      "method": "temporal_variance",
+      "selection_overlap_ratio": 0.0
+    }
+  ],
+  "rejected_candidate_components": [],
+  "assignment_method": "frequency_based",
+  "image_size": [
+    640,
+    480
+  ],
+  "timestamp": "2026-06-24T17:34:46.905672",
+  "calibration_sequence": [
+    "combined_simultaneous"
+  ],
+  "sequential_diagnostics": {},
+  "requested_v0_frequency_hz": 1.0,
+  "requested_v1_frequency_hz": 2.0,
+  "requested_v1_phase_rad": 1.5707963267948966,
+  "combined_api_config_requested": {
+    "V0": {
+      "frequency_hz": 1.0,
+      "phase_rad": 0.0,
+      "enabled": true
+    },
+    "V1": {
+      "frequency_hz": 2.0,
+      "phase_rad": 1.5707963267948966,
+      "enabled": true
+    }
+  },
+  "combined_server_start_snapshot": {
+    "V0": {
+      "agent_id": "V0",
+      "enabled": true,
+      "initial_frequency_hz": 1.0,
+      "frequency_hz": 1.0,
+      "initial_phase_rad": 0.0,
+      "phase_rad": 3.1619665103341337,
+      "fire_count": 0,
+      "flash_on": false
+    },
+    "V1": {
+      "agent_id": "V1",
+      "enabled": true,
+      "initial_frequency_hz": 2.0,
+      "frequency_hz": 2.0,
+      "initial_phase_rad": 1.5707963267948966,
+      "phase_rad": 1.6116646768971485,
+      "fire_count": 1,
+      "flash_on": true
+    }
+  },
+  "combined_server_end_snapshot": {
+    "V0": {
+      "agent_id": "V0",
+      "enabled": true,
+      "initial_frequency_hz": 1.0,
+      "frequency_hz": 1.0,
+      "initial_phase_rad": 0.0,
+      "phase_rad": 3.4042304277930064,
+      "fire_count": 6,
+      "flash_on": false
+    },
+    "V1": {
+      "agent_id": "V1",
+      "enabled": true,
+      "initial_frequency_hz": 2.0,
+      "frequency_hz": 2.0,
+      "initial_phase_rad": 1.5707963267948966,
+      "phase_rad": 2.0961522991227306,
+      "fire_count": 13,
+      "flash_on": true
+    }
+  },
+  "combined_mutual_config_snapshot": {
+    "mode": "mutual_hil",
+    "mutual_agent_mode": "multi_2v1p",
+    "topology": "all_to_all",
+    "topology_adjacency": {
+      "V0": [
+        "V1",
+        "P0"
+      ],
+      "V1": [
+        "V0",
+        "P0"
+      ],
+      "P0": [
+        "V0",
+        "V1"
+      ]
+    },
+    "available_topologies": [
+      "all_to_all",
+      "chain_pi_middle",
+      "chain_pi_downstream"
+    ],
+    "display_config": {
+      "background_brightness": 0,
+      "brightness_on": 255,
+      "brightness_off": 0,
+      "agents": [
+        {
+          "agent_id": "V0",
+          "role": "virtual",
+          "x": 520,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 255,
+          "brightness_off": 0,
+          "background_brightness": 0,
+          "initial_frequency_hz": 1.0,
+          "initial_phase_rad": 0.0,
+          "enabled": true
+        },
+        {
+          "agent_id": "V1",
+          "role": "virtual",
+          "x": 1180,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 255,
+          "brightness_off": 0,
+          "background_brightness": 0,
+          "initial_frequency_hz": 2.0,
+          "initial_phase_rad": 1.5707963267948966,
+          "enabled": true
+        },
+        {
+          "agent_id": "P0",
+          "role": "pi",
+          "x": 0,
+          "y": 0,
+          "size": 0,
+          "brightness_on": 255,
+          "brightness_off": 0,
+          "background_brightness": 0,
+          "initial_frequency_hz": 2.0,
+          "initial_phase_rad": 0.0,
+          "enabled": true
+        }
+      ]
+    }
+  },
+  "frontend_display_state_snapshot": {
+    "page": "mutual",
+    "renderer_version": 4,
+    "render_frame_count": 5611,
+    "local_running": true,
+    "feedback_enabled": false,
+    "background_brightness": 0,
+    "background_css": "rgb(0,0,0)",
+    "agents": [
+      {
+        "id": 0,
+        "agent_id": "V0",
+        "role": "virtual",
+        "x": 520,
+        "y": 420,
+        "size": 280,
+        "brightness_on": 255,
+        "brightness_off": 0,
+        "background_brightness": 0,
+        "initial_frequency_hz": 1,
+        "initial_phase_rad": 0,
+        "enabled": true,
+        "current_draw_brightness": 255
+      },
+      {
+        "id": 1,
+        "agent_id": "V1",
+        "role": "virtual",
+        "x": 1180,
+        "y": 420,
+        "size": 280,
+        "brightness_on": 255,
+        "brightness_off": 0,
+        "background_brightness": 0,
+        "initial_frequency_hz": 2,
+        "initial_phase_rad": 1.5707963267948966,
+        "enabled": true,
+        "current_draw_brightness": 0
+      }
+    ],
+    "client_timestamp_ms": 1782318885942,
+    "server_received_wall_time_s": 1782318885.9446967
+  },
+  "camera_display_evidence": {
+    "available": true,
+    "background_frame_index": 3,
+    "background_frame_t_s": 0.200053,
+    "background_mean": 116.790482,
+    "debug_files": {
+      "camera_background_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/baseline/auto_roi/camera_background_raw.jpg",
+      "camera_v0_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/baseline/auto_roi/camera_v0_flash_on_raw.jpg",
+      "camera_v1_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/baseline/auto_roi/camera_v1_flash_on_raw.jpg"
+    },
+    "agents": {
+      "V0": {
+        "roi": [
+          55,
+          282,
+          224,
+          198
+        ],
+        "flash_on_frame_index": 83,
+        "flash_on_frame_t_s": 5.533389,
+        "flash_on_roi_mean": 109.27533,
+        "background_mean": 116.790482,
+        "measured_contrast": -7.515152,
+        "roi_mean_min": 55.978153,
+        "roi_mean_max": 109.27533
+      },
+      "V1": {
+        "roi": [
+          418,
+          265,
+          222,
+          215
+        ],
+        "flash_on_frame_index": 7,
+        "flash_on_frame_t_s": 0.46672,
+        "flash_on_roi_mean": 115.01432,
+        "background_mean": 116.790482,
+        "measured_contrast": -1.776161,
+        "roi_mean_min": 37.553699,
+        "roi_mean_max": 115.01432
+      }
+    },
+    "warnings": [],
+    "mean_measured_contrast": -4.645657
+  },
+  "combined_capture_duration_s": 6.000062,
+  "actual_v0_flash_count": 6,
+  "actual_v1_flash_count": 12,
+  "actual_v0_frequency_estimate": 0.99999,
+  "actual_v1_frequency_estimate": 1.999979,
+  "combined_frequencies_hz": {
+    "V0": 1.0,
+    "V1": 2.0
+  },
+  "debug_files": {
+    "auto_roi_combined_debug.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/baseline/auto_roi/auto_roi_combined_debug.jpg",
+    "camera_background_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/baseline/auto_roi/camera_background_raw.jpg",
+    "camera_v0_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/baseline/auto_roi/camera_v0_flash_on_raw.jpg",
+    "camera_v1_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/baseline/auto_roi/camera_v1_flash_on_raw.jpg",
+    "auto_roi_candidates_debug.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/baseline/auto_roi/auto_roi_candidates_debug.jpg",
+    "auto_roi_combined_temporal_variance.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/baseline/auto_roi/auto_roi_combined_temporal_variance.jpg",
+    "auto_roi_combined_threshold_mask.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/baseline/auto_roi/auto_roi_combined_threshold_mask.jpg",
+    "auto_roi_selected_traces.png": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/baseline/auto_roi/auto_roi_selected_traces.png"
+  },
+  "overlap_ratio": 0.0,
+  "calibration_valid": true,
+  "failure_reason": null,
+  "display_verification": {
+    "requested_display_config": {
+      "condition": "baseline",
+      "category": "baseline",
+      "description": "Default positions, large dots, high contrast, V0=1 Hz, V1=2 Hz.",
+      "required_for_ready": true,
+      "intended_difficulty": "realistic",
+      "failure_interpretation": "Baseline failure means the camera/display alignment is not ready.",
+      "display_model": "browser_canvas_grayscale_radial_targets",
+      "background": {
+        "brightness": 0,
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "css_rgb": "rgb(0,0,0)"
+      },
+      "flash_on": {
+        "brightness": 255,
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "css_rgb": "rgb(255,255,255)"
+      },
+      "flash_off": {
+        "brightness": 0,
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "css_rgb": "rgb(0,0,0)"
+      },
+      "contrast": {
+        "flash_minus_background": 255,
+        "flash_minus_off": 255,
+        "off_minus_background": 0
+      },
+      "agents": {
+        "V0": {
+          "position_xy": [
+            520,
+            420
+          ],
+          "dot_size_px": 280,
+          "frequency_hz": 1.0,
+          "phase_rad": 0.0
+        },
+        "V1": {
+          "position_xy": [
+            1180,
+            420
+          ],
+          "dot_size_px": 280,
+          "frequency_hz": 2.0,
+          "phase_rad": 1.5707963267948966
+        }
+      }
+    },
+    "server_applied_mutual_config": {
+      "mode": "mutual_hil",
+      "mutual_agent_mode": "multi_2v1p",
+      "topology": "all_to_all",
+      "topology_adjacency": {
+        "V0": [
+          "V1",
+          "P0"
+        ],
+        "V1": [
+          "V0",
+          "P0"
+        ],
+        "P0": [
+          "V0",
+          "V1"
+        ]
+      },
+      "available_topologies": [
+        "all_to_all",
+        "chain_pi_middle",
+        "chain_pi_downstream"
+      ],
+      "display_config": {
+        "background_brightness": 0,
+        "brightness_on": 255,
+        "brightness_off": 0,
+        "agents": [
+          {
+            "agent_id": "V0",
+            "role": "virtual",
+            "x": 520,
+            "y": 420,
+            "size": 280,
+            "brightness_on": 255,
+            "brightness_off": 0,
+            "background_brightness": 0,
+            "initial_frequency_hz": 1.0,
+            "initial_phase_rad": 0.0,
+            "enabled": true
+          },
+          {
+            "agent_id": "V1",
+            "role": "virtual",
+            "x": 1180,
+            "y": 420,
+            "size": 280,
+            "brightness_on": 255,
+            "brightness_off": 0,
+            "background_brightness": 0,
+            "initial_frequency_hz": 2.0,
+            "initial_phase_rad": 1.5707963267948966,
+            "enabled": true
+          },
+          {
+            "agent_id": "P0",
+            "role": "pi",
+            "x": 0,
+            "y": 0,
+            "size": 0,
+            "brightness_on": 255,
+            "brightness_off": 0,
+            "background_brightness": 0,
+            "initial_frequency_hz": 2.0,
+            "initial_phase_rad": 0.0,
+            "enabled": true
+          }
+        ]
+      }
+    },
+    "frontend_applied_display_state": {
+      "page": "mutual",
+      "renderer_version": 4,
+      "render_frame_count": 5672,
+      "local_running": true,
+      "feedback_enabled": false,
+      "background_brightness": 0,
+      "background_css": "rgb(0,0,0)",
+      "agents": [
+        {
+          "id": 0,
+          "agent_id": "V0",
+          "role": "virtual",
+          "x": 520,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 255,
+          "brightness_off": 0,
+          "background_brightness": 0,
+          "initial_frequency_hz": 1,
+          "initial_phase_rad": 0,
+          "enabled": true,
+          "current_draw_brightness": 0
+        },
+        {
+          "id": 1,
+          "agent_id": "V1",
+          "role": "virtual",
+          "x": 1180,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 255,
+          "brightness_off": 0,
+          "background_brightness": 0,
+          "initial_frequency_hz": 2,
+          "initial_phase_rad": 1.5707963267948966,
+          "enabled": true,
+          "current_draw_brightness": 0
+        }
+      ],
+      "client_timestamp_ms": 1782318886450,
+      "server_received_wall_time_s": 1782318886.4529717
+    },
+    "warnings": []
+  }
+}

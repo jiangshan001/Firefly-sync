@@ -1,0 +1,7 @@
+failure_timeout_count,mean_actual_detection_fcr,mean_final_frequency_error_hz,mean_frequency_error_final_5s_abs_of_means,mean_frequency_error_final_5s_mean_abs,mean_mean_frequency_error_final_10s,mean_mean_timing_error_final_10s,mean_time_to_frequency_lock_s,mean_time_to_timing_lock_s,model,n_trials,pi_initial_freq,std_actual_detection_fcr,std_final_frequency_error_hz,std_frequency_error_final_5s_abs_of_means,std_frequency_error_final_5s_mean_abs,std_mean_frequency_error_final_10s,std_mean_timing_error_final_10s,std_time_to_frequency_lock_s,std_time_to_timing_lock_s,success_rate,virtual_initial_freq
+0,0.959733,0.019583,0.028798,0.029107,0.024821,0.090073,8.178483,7.654645,eapf_consensus,3,1.2,0.025348,0.027179,0.019515,0.019293,0.018311,0.031168,3.810906,0.847397,1.0,2.0
+0,0.937467,0.044048,0.083566,0.083566,0.081179,0.091904,15.818375,7.395021,eapf_consensus,3,1.5,0.043101,0.037207,0.045426,0.045426,0.038246,0.020989,0.0,2.547163,1.0,2.0
+0,0.941367,0.032963,0.015419,0.025556,0.026177,0.12254,13.031187,12.526105,eapf_consensus,3,2.5,0.010161,0.012487,0.010089,0.014575,0.016893,0.038823,4.777066,0.0,1.0,2.0
+0,0.9378,0.170577,0.370689,0.439704,0.392761,0.106334,,10.140671,kuramoto,3,1.2,0.056732,0.24761,0.138662,0.083945,0.043711,0.047358,,9.170126,1.0,2.0
+0,0.9461,0.07428,0.119373,0.348464,0.4261,0.107386,,5.177955,kuramoto,3,1.5,0.036851,0.015696,0.094241,0.133255,0.187073,0.069792,,2.444512,1.0,2.0
+0,0.824067,0.22591,0.107198,0.451205,0.429637,0.108768,,6.36905,kuramoto,3,2.5,0.043294,0.067757,0.098048,0.039996,0.07496,0.007594,,5.15339,1.0,2.0

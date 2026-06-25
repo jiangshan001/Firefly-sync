@@ -1,0 +1,2 @@
+feedback_enabled,virtual_detected_count,nominal_expected_flashes,nominal_fcr,virtual_fire_count_start,virtual_fire_count_end,actual_virtual_flashes,actual_fcr,virtual_frequency_start,virtual_frequency_end,pi_flash_count,pi_final_frequency_hz,frequency_error_hz,received_pi_flashes,running_start,running_end,feedback_enabled_start,feedback_enabled_end,duration_s,actual_wall_s
+False,0,0,,,,,,,,0,1.5,,,,,,,0.01,0.0

@@ -1,0 +1,15 @@
+{
+  "trial_id": "f1.5Hz_r01",
+  "mode": "mock",
+  "model_name": "kuramoto",
+  "duration_s": 3.0,
+  "leader_freq_hz": 2.0,
+  "follower_initial_freq_hz": 1.5,
+  "coupling_gain": 3.5,
+  "dt": 0.01,
+  "flash_on_time_s": 0.06,
+  "sync_threshold_s": 0.1,
+  "sync_cycles": 5,
+  "timestamp": "2026-06-09T10:52:00.061917",
+  "notes": "batch trial, rep 1/1"
+}

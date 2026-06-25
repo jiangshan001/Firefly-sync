@@ -1,0 +1,80 @@
+{
+  "mode": "multi_roi_detection_test",
+  "topology": "all_to_all",
+  "detection_preset": "none",
+  "detected_counts": {
+    "V0": 30,
+    "V1": 60
+  },
+  "actual_virtual_flash_counts": {
+    "V0": 30,
+    "V1": 60
+  },
+  "roi_signal_summary": {
+    "V0": {
+      "roi_id": 0,
+      "roi": [
+        77,
+        274,
+        222,
+        206
+      ],
+      "detected_rising_edge_count": 30,
+      "actual_virtual_flash_count": 30,
+      "detection_fcr": 1.0,
+      "raw_signal": {
+        "count": 887,
+        "min": 9.0,
+        "max": 58.0,
+        "mean": 38.335693,
+        "std": 18.472227
+      },
+      "normalized_signal": {
+        "count": 887,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.504722,
+        "std": 0.479752
+      },
+      "raw_signal_range": 49.0,
+      "estimated_detected_frequency_hz": 1.00051,
+      "last_detector_frequency_hz": 1.001,
+      "warnings": []
+    },
+    "V1": {
+      "roi_id": 1,
+      "roi": [
+        437,
+        253,
+        203,
+        227
+      ],
+      "detected_rising_edge_count": 60,
+      "actual_virtual_flash_count": 60,
+      "detection_fcr": 1.0,
+      "raw_signal": {
+        "count": 887,
+        "min": 5.0,
+        "max": 53.0,
+        "mean": 30.563247,
+        "std": 21.068903
+      },
+      "normalized_signal": {
+        "count": 887,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.511026,
+        "std": 0.481545
+      },
+      "raw_signal_range": 48.0,
+      "estimated_detected_frequency_hz": 2.001009,
+      "last_detector_frequency_hz": 2.001,
+      "warnings": []
+    }
+  },
+  "roi_debug_frames": [
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/baseline/repeat_01/roi_debug_frame_start.jpg",
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/baseline/repeat_01/roi_debug_frame_mid.jpg"
+  ],
+  "closed_loop_adaptation_enabled": false
+}

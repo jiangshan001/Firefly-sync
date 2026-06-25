@@ -1,0 +1,13 @@
+model,topology,n_trials,group_sync_success_rate,phase_sync_success_rate,frequency_lock_success_rate,one_to_one_flash_lock_success_rate,mean_flash_count_ratio,mean_extra_flash_rate_hz,mean_final_frequency_spread_hz,mean_pairwise_timing_error_s,mean_order_parameter_R,dominant_diagnostic
+eapf,all_to_all,1,0.0,0.0,0.0,0.0,1.4667,0.7,0.7335,0.1028,0.5951,extra_flashes_or_harmonic_locking
+eapf,chain,1,0.0,0.0,0.0,0.0,1.3333,0.5,0.5685,0.115,0.5622,extra_flashes_or_harmonic_locking
+eapf,directed_chain,1,0.0,0.0,0.0,0.0,1.3333,0.5,0.5316,0.1086,0.6064,extra_flashes_or_harmonic_locking
+eapf_consensus,all_to_all,1,0.0,1.0,0.0,1.0,1.0714,0.1,0.1407,0.0636,0.9425,partial_phase_lock
+eapf_consensus,chain,1,0.0,1.0,0.0,1.0,1.0714,0.1,0.1407,0.0729,0.9253,partial_phase_lock
+eapf_consensus,directed_chain,1,0.0,1.0,0.0,1.0,1.0714,0.1,0.1407,0.0729,0.9253,partial_phase_lock
+kuramoto,all_to_all,1,1.0,1.0,1.0,1.0,1.0,0.0,0.0262,0.0693,0.8676,full_group_sync
+kuramoto,chain,1,0.0,0.0,1.0,1.0,1.0526,0.1,0.0204,0.1127,0.6774,phase_not_synchronised
+kuramoto,directed_chain,1,0.0,0.0,0.0,0.0,1.3333,0.5,0.5776,0.1491,0.5182,extra_flashes_or_harmonic_locking
+pco_if,all_to_all,1,0.0,1.0,0.0,0.0,2.0714,1.5,1.528,0.0471,0.9757,partial_phase_lock_with_extra_flashes
+pco_if,chain,1,0.0,1.0,0.0,0.0,2.0714,1.5,1.4425,0.0686,0.9727,partial_phase_lock_with_extra_flashes
+pco_if,directed_chain,1,0.0,1.0,0.0,0.0,2.0714,1.5,1.4425,0.0686,0.9727,partial_phase_lock_with_extra_flashes

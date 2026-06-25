@@ -1,0 +1,222 @@
+{
+  "source_condition_dir": "experiments\\logs\\step5c1_multi_roi_detection\\20260625_152611_contrast_rerun_corrected\\conditions\\contrast_low",
+  "output_dir": "docs\\step5c1_multi_roi_detection_report\\derived\\low_contrast_debug",
+  "formal_detector_min_amplitude": null,
+  "auto_roi": {
+    "V0": {
+      "roi": [
+        0,
+        126,
+        216,
+        218
+      ],
+      "touches_boundary": null,
+      "warnings": [
+        "roi_close_to_image_boundary",
+        "signal_amplitude_too_low"
+      ],
+      "signal_min": null,
+      "signal_max": null,
+      "signal_range": null,
+      "signal_std": null,
+      "estimated_frequency_hz": 1.0,
+      "trace_rising_edge_count": null,
+      "trace_on_threshold": null,
+      "trace_off_threshold": null
+    },
+    "V1": {
+      "roi": [
+        347,
+        129,
+        261,
+        248
+      ],
+      "touches_boundary": null,
+      "warnings": [],
+      "signal_min": null,
+      "signal_max": null,
+      "signal_range": null,
+      "signal_std": null,
+      "estimated_frequency_hz": 2.022452,
+      "trace_rising_edge_count": null,
+      "trace_on_threshold": null,
+      "trace_off_threshold": null
+    }
+  },
+  "repeats": {
+    "repeat_01": {
+      "V0": {
+        "roi": [
+          0,
+          126,
+          216,
+          218
+        ],
+        "actual_flash_count": 30,
+        "detected_rising_edge_count": 0,
+        "warnings": [
+          "no_rising_edges_detected",
+          "raw_signal_amplitude_too_low",
+          "normalised_signal_never_reached_on_threshold"
+        ],
+        "raw_min": 6.0,
+        "raw_max": 13.0,
+        "raw_range": 7.0,
+        "raw_std": 2.7138694334908964,
+        "norm_min": 0.0,
+        "norm_max": 0.0,
+        "norm_range": 0.0,
+        "norm_std": 0.0,
+        "adaptive_amplitude_min": 0.0,
+        "adaptive_amplitude_max": 6.0,
+        "adaptive_amplitude_last": 6.0,
+        "norm_on_threshold": 0.65,
+        "norm_off_threshold": 0.35,
+        "rising_rows": 0,
+        "skipped_by_min_amplitude": true
+      },
+      "V1": {
+        "roi": [
+          347,
+          129,
+          261,
+          248
+        ],
+        "actual_flash_count": 60,
+        "detected_rising_edge_count": 59,
+        "warnings": [],
+        "raw_min": 2.0,
+        "raw_max": 19.0,
+        "raw_range": 17.0,
+        "raw_std": 6.831463136653616,
+        "norm_min": 0.0,
+        "norm_max": 1.0,
+        "norm_range": 1.0,
+        "norm_std": 0.4593161090288341,
+        "adaptive_amplitude_min": 0.0,
+        "adaptive_amplitude_max": 16.0,
+        "adaptive_amplitude_last": 15.0,
+        "norm_on_threshold": 0.65,
+        "norm_off_threshold": 0.35,
+        "rising_rows": 59,
+        "skipped_by_min_amplitude": false
+      }
+    },
+    "repeat_02": {
+      "V0": {
+        "roi": [
+          0,
+          126,
+          216,
+          218
+        ],
+        "actual_flash_count": 30,
+        "detected_rising_edge_count": 0,
+        "warnings": [
+          "no_rising_edges_detected",
+          "raw_signal_amplitude_too_low",
+          "normalised_signal_never_reached_on_threshold"
+        ],
+        "raw_min": 6.0,
+        "raw_max": 13.0,
+        "raw_range": 7.0,
+        "raw_std": 2.729645475102912,
+        "norm_min": 0.0,
+        "norm_max": 0.0,
+        "norm_range": 0.0,
+        "norm_std": 0.0,
+        "adaptive_amplitude_min": 0.0,
+        "adaptive_amplitude_max": 6.0,
+        "adaptive_amplitude_last": 6.0,
+        "norm_on_threshold": 0.65,
+        "norm_off_threshold": 0.35,
+        "rising_rows": 0,
+        "skipped_by_min_amplitude": true
+      },
+      "V1": {
+        "roi": [
+          347,
+          129,
+          261,
+          248
+        ],
+        "actual_flash_count": 60,
+        "detected_rising_edge_count": 59,
+        "warnings": [],
+        "raw_min": 3.0,
+        "raw_max": 19.0,
+        "raw_range": 16.0,
+        "raw_std": 6.5999623264322755,
+        "norm_min": 0.0,
+        "norm_max": 1.0,
+        "norm_range": 1.0,
+        "norm_std": 0.47399235076702767,
+        "adaptive_amplitude_min": 0.0,
+        "adaptive_amplitude_max": 15.0,
+        "adaptive_amplitude_last": 15.0,
+        "norm_on_threshold": 0.65,
+        "norm_off_threshold": 0.35,
+        "rising_rows": 59,
+        "skipped_by_min_amplitude": false
+      }
+    },
+    "repeat_03": {
+      "V0": {
+        "roi": [
+          0,
+          126,
+          216,
+          218
+        ],
+        "actual_flash_count": 30,
+        "detected_rising_edge_count": 0,
+        "warnings": [
+          "no_rising_edges_detected",
+          "raw_signal_amplitude_too_low",
+          "normalised_signal_never_reached_on_threshold"
+        ],
+        "raw_min": 6.0,
+        "raw_max": 14.0,
+        "raw_range": 8.0,
+        "raw_std": 2.664033043844532,
+        "norm_min": 0.0,
+        "norm_max": 0.0,
+        "norm_range": 0.0,
+        "norm_std": 0.0,
+        "adaptive_amplitude_min": 0.0,
+        "adaptive_amplitude_max": 7.0,
+        "adaptive_amplitude_last": 6.0,
+        "norm_on_threshold": 0.65,
+        "norm_off_threshold": 0.35,
+        "rising_rows": 0,
+        "skipped_by_min_amplitude": true
+      },
+      "V1": {
+        "roi": [
+          347,
+          129,
+          261,
+          248
+        ],
+        "actual_flash_count": 60,
+        "detected_rising_edge_count": 59,
+        "warnings": [],
+        "raw_min": 2.0,
+        "raw_max": 20.0,
+        "raw_range": 18.0,
+        "raw_std": 6.831807650123341,
+        "norm_min": 0.0,
+        "norm_max": 1.0,
+        "norm_range": 1.0,
+        "norm_std": 0.45783482591343594,
+        "adaptive_amplitude_min": 0.0,
+        "adaptive_amplitude_max": 16.0,
+        "adaptive_amplitude_last": 16.0,
+        "norm_on_threshold": 0.65,
+        "norm_off_threshold": 0.35,
+        "rising_rows": 59,
+        "skipped_by_min_amplitude": false
+      }
+    }
+  }
+}

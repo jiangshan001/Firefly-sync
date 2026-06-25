@@ -1,0 +1,4 @@
+follower_freq_hz,n_trials,sync_success_rate,mean_time_to_sync_s,mean_steady_state_mae_s,mean_final_frequency_hz,mean_flash_count_ratio
+1.5,15,1.0,2.9,0.01,2.0,0.9884
+1.8,15,1.0,2.7,0.01,2.0,0.9868
+2.3,15,1.0,2.49,0.01,2.0,0.9917

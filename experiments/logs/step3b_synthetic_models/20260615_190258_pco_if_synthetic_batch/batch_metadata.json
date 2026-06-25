@@ -1,0 +1,22 @@
+{
+  "model_name": "pco_if",
+  "leader_freqs_hz": [
+    2.0
+  ],
+  "follower_initial_freqs_hz": [
+    1.5,
+    1.8,
+    2.3
+  ],
+  "duration_s": 30.0,
+  "dt": 0.01,
+  "repeats_per_condition": 5,
+  "sync_threshold_s": 0.1,
+  "sync_cycles": 5,
+  "random_seed": 42,
+  "timestamp": "2026-06-15T19:02:58.335367",
+  "param_epsilon": 0.25,
+  "param_refractory_period_s": 0.05,
+  "param_pco_coupling_mode": "proportional_gap",
+  "param_pco_state_curve_beta": 3.0
+}

@@ -1,0 +1,12 @@
+{
+  "name": "baseline",
+  "stage": "Step5c2-A/B",
+  "category": "baseline",
+  "description": "Clean all-to-all EAPF Consensus mixed-reality synchronisation.",
+  "display": {},
+  "fault": {
+    "kind": "none"
+  },
+  "required_for_readiness": true,
+  "failure_interpretation": "Baseline failure should be investigated before robustness testing."
+}

@@ -1,0 +1,35 @@
+{
+  "agents": [
+    {
+      "id": 0,
+      "model": "eapf_consensus",
+      "x": 800,
+      "y": 400,
+      "size": 450,
+      "initial_frequency_hz": 2.0,
+      "frequency_hz": 2.092957240482755,
+      "initial_phase_rad": 1.9033915398432197,
+      "kuramoto_gain": 5.0,
+      "phase_rad": 1.7958416609371892,
+      "flash_on": true,
+      "raw_flash_on": false,
+      "fire_count": 62,
+      "enabled": true,
+      "received_pi_flashes": 64,
+      "pi_flash_posts_received": 64,
+      "pi_flash_events_consumed": 64,
+      "last_flash_time": 29.847052400000393,
+      "flash_age_s": 0.14481709996471182,
+      "snapshot_time": 29.991869499965105,
+      "server_time": 29.991869499965105,
+      "feedback_flash_hold_s": 0.25,
+      "flash_times_count": 62,
+      "calibration_elapsed": 29.992,
+      "running": true,
+      "feedback_enabled": true
+    }
+  ],
+  "mode": "mutual_hil",
+  "loop_alive": true,
+  "loop_rate_hz": 29.95
+}

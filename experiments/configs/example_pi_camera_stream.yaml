@@ -1,0 +1,20 @@
+# Example configuration for the Pi Camera MJPEG streaming server
+# Used by: experiments/stream_pi_camera_detection.py
+
+server:
+  host: "0.0.0.0"
+  port: 5000
+  duration_s: 0  # 0 = run until Ctrl+C
+
+camera:
+  resolution: [640, 480]
+  target_fps: 30
+  roi: null  # [x, y, w, h] or null for full frame
+
+detection:
+  threshold_on: 160
+  threshold_off: 80
+  min_interval_s: 0.2
+
+output:
+  log_dir: "experiments/logs"

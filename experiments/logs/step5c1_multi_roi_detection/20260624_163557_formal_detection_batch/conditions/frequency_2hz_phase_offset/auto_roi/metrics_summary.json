@@ -1,0 +1,284 @@
+{
+  "mode": "auto_roi_calibration",
+  "closed_loop_adaptation_enabled": false,
+  "auto_roi_config": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_phase_offset/auto_roi/auto_rois.json",
+  "auto_rois": {
+    "V0": {
+      "roi": [
+        77,
+        275,
+        222,
+        205
+      ],
+      "method": "combined_multi_component",
+      "requested_frequency_hz": 2.0,
+      "score": 250.7787,
+      "candidate_id": 1,
+      "estimated_frequency_hz": 2.068946,
+      "roi_estimated_frequency_hz": 2.068946,
+      "trace_frequency_method": "rising_edge",
+      "trace_rising_edge_count": 13,
+      "trace_rising_edge_times_s": [
+        0.0,
+        0.333388,
+        0.800054,
+        1.333387,
+        1.800053,
+        2.333387,
+        2.800055,
+        3.333388,
+        3.800055,
+        4.333388,
+        4.800055,
+        5.333388,
+        5.800055
+      ],
+      "trace_on_threshold": 40.35,
+      "trace_off_threshold": 31.1,
+      "autocorrelation_frequency_hz": 1.0,
+      "frequency_confidence": 0.832624,
+      "actual_virtual_flash_count": 12,
+      "actual_virtual_frequency_estimate": 1.999981,
+      "raw_signal": {
+        "count": 90,
+        "min": 19.0,
+        "max": 57.0,
+        "mean": 38.994444,
+        "std": 17.934525
+      },
+      "raw_signal_range": 38.0,
+      "warnings": [
+        "roi_close_to_image_boundary",
+        "frequency_assignment_ambiguous"
+      ]
+    },
+    "V1": {
+      "roi": [
+        436,
+        252,
+        204,
+        228
+      ],
+      "method": "combined_multi_component",
+      "requested_frequency_hz": 2.0,
+      "score": 376.6937,
+      "candidate_id": 0,
+      "estimated_frequency_hz": 1.987951,
+      "roi_estimated_frequency_hz": 1.987951,
+      "trace_frequency_method": "rising_edge",
+      "trace_rising_edge_count": 12,
+      "trace_rising_edge_times_s": [
+        0.06672,
+        0.600054,
+        1.066721,
+        1.600054,
+        2.06672,
+        2.600055,
+        3.066722,
+        3.600055,
+        4.066721,
+        4.600055,
+        5.066721,
+        5.600055
+      ],
+      "trace_on_threshold": 32.65,
+      "trace_off_threshold": 21.9,
+      "autocorrelation_frequency_hz": 1.0,
+      "frequency_confidence": 0.834385,
+      "actual_virtual_flash_count": 12,
+      "actual_virtual_frequency_estimate": 1.999981,
+      "raw_signal": {
+        "count": 90,
+        "min": 5.0,
+        "max": 52.0,
+        "mean": 30.555556,
+        "std": 20.689832
+      },
+      "raw_signal_range": 47.0,
+      "warnings": [
+        "roi_close_to_image_boundary",
+        "frequency_assignment_ambiguous"
+      ]
+    },
+    "candidate_components": [
+      {
+        "candidate_id": 0,
+        "roi": [
+          436,
+          252,
+          204,
+          228
+        ],
+        "component_bbox": [
+          471,
+          287,
+          169,
+          184
+        ],
+        "area_px": 25749,
+        "padded_area_px": 46512,
+        "mean_change": 49.8494,
+        "max_change": 57.203,
+        "score": 376.6937,
+        "method": "temporal_variance"
+      },
+      {
+        "candidate_id": 1,
+        "roi": [
+          77,
+          275,
+          222,
+          205
+        ],
+        "component_bbox": [
+          112,
+          310,
+          152,
+          156
+        ],
+        "area_px": 18545,
+        "padded_area_px": 45510,
+        "mean_change": 39.9728,
+        "max_change": 45.3864,
+        "score": 250.7787,
+        "method": "temporal_variance"
+      }
+    ],
+    "selected_components": [
+      {
+        "candidate_id": 0,
+        "roi": [
+          436,
+          252,
+          204,
+          228
+        ],
+        "component_bbox": [
+          471,
+          287,
+          169,
+          184
+        ],
+        "area_px": 25749,
+        "padded_area_px": 46512,
+        "mean_change": 49.8494,
+        "max_change": 57.203,
+        "score": 376.6937,
+        "method": "temporal_variance",
+        "selection_overlap_ratio": 0.0
+      },
+      {
+        "candidate_id": 1,
+        "roi": [
+          77,
+          275,
+          222,
+          205
+        ],
+        "component_bbox": [
+          112,
+          310,
+          152,
+          156
+        ],
+        "area_px": 18545,
+        "padded_area_px": 45510,
+        "mean_change": 39.9728,
+        "max_change": 45.3864,
+        "score": 250.7787,
+        "method": "temporal_variance",
+        "selection_overlap_ratio": 0.0
+      }
+    ],
+    "rejected_candidate_components": [],
+    "assignment_method": "left_right_fallback",
+    "image_size": [
+      640,
+      480
+    ],
+    "timestamp": "2026-06-24T16:50:37.712752",
+    "calibration_sequence": [
+      "combined_simultaneous"
+    ],
+    "sequential_diagnostics": {},
+    "requested_v0_frequency_hz": 2.0,
+    "requested_v1_frequency_hz": 2.0,
+    "requested_v1_phase_rad": 3.141592653589793,
+    "combined_api_config_requested": {
+      "V0": {
+        "frequency_hz": 2.0,
+        "phase_rad": 0.0,
+        "enabled": true
+      },
+      "V1": {
+        "frequency_hz": 2.0,
+        "phase_rad": 3.141592653589793,
+        "enabled": true
+      }
+    },
+    "combined_server_start_snapshot": {
+      "V0": {
+        "agent_id": "V0",
+        "enabled": true,
+        "initial_frequency_hz": 2.0,
+        "frequency_hz": 2.0,
+        "initial_phase_rad": 0.0,
+        "phase_rad": 0.030027341547873815,
+        "fire_count": 1,
+        "flash_on": true
+      },
+      "V1": {
+        "agent_id": "V1",
+        "enabled": true,
+        "initial_frequency_hz": 2.0,
+        "frequency_hz": 2.0,
+        "initial_phase_rad": 3.141592653589793,
+        "phase_rad": 3.1717531996804564,
+        "fire_count": 1,
+        "flash_on": false
+      }
+    },
+    "combined_server_end_snapshot": {
+      "V0": {
+        "agent_id": "V0",
+        "enabled": true,
+        "initial_frequency_hz": 2.0,
+        "frequency_hz": 2.0,
+        "initial_phase_rad": 0.0,
+        "phase_rad": 0.07430369244132391,
+        "fire_count": 13,
+        "flash_on": true
+      },
+      "V1": {
+        "agent_id": "V1",
+        "enabled": true,
+        "initial_frequency_hz": 2.0,
+        "frequency_hz": 2.0,
+        "initial_phase_rad": 3.141592653589793,
+        "phase_rad": 3.216030805757619,
+        "fire_count": 13,
+        "flash_on": false
+      }
+    },
+    "combined_capture_duration_s": 6.000058,
+    "actual_v0_flash_count": 12,
+    "actual_v1_flash_count": 12,
+    "actual_v0_frequency_estimate": 1.999981,
+    "actual_v1_frequency_estimate": 1.999981,
+    "combined_frequencies_hz": {
+      "V0": 2.0,
+      "V1": 2.0
+    },
+    "debug_files": {
+      "auto_roi_combined_debug.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_phase_offset/auto_roi/auto_roi_combined_debug.jpg",
+      "auto_roi_candidates_debug.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_phase_offset/auto_roi/auto_roi_candidates_debug.jpg",
+      "auto_roi_combined_temporal_variance.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_phase_offset/auto_roi/auto_roi_combined_temporal_variance.jpg",
+      "auto_roi_combined_threshold_mask.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_phase_offset/auto_roi/auto_roi_combined_threshold_mask.jpg",
+      "auto_roi_selected_traces.png": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_phase_offset/auto_roi/auto_roi_selected_traces.png"
+    },
+    "overlap_ratio": 0.0,
+    "calibration_valid": true,
+    "failure_reason": null
+  },
+  "api_post_success_count": 12
+}

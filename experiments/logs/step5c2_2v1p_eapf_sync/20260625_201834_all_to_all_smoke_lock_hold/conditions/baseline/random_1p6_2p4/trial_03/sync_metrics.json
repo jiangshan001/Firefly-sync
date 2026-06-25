@@ -1,0 +1,52 @@
+{
+  "sync_success": false,
+  "final_sync_success": true,
+  "continuous_sync_success": false,
+  "time_to_sync_s": null,
+  "time_to_sync_criterion": {
+    "phase_or_order_parameter": true,
+    "required_continuous_window_s": 5.0,
+    "window_pass_ratio_gte": 0.8,
+    "mean_pairwise_phase_error_cycles_lt": 0.25,
+    "mean_pairwise_phase_error_rad_lt": 1.5707963267948966,
+    "frequency_disagreement_hz_lt": 0.1,
+    "order_parameter_R_gt": 0.9
+  },
+  "final_window_s": 10.0,
+  "final_mean_pairwise_phase_error_rad": 0.115302,
+  "final_max_pairwise_phase_error_rad": 1.263904,
+  "final_mean_pairwise_phase_error_cycles": 0.018351,
+  "final_max_pairwise_phase_error_cycles": 0.201157,
+  "final_frequency_disagreement_hz": 0.00666,
+  "final_max_frequency_disagreement_hz": 0.015283,
+  "final_mean_order_parameter_R": 0.992121,
+  "final_min_order_parameter_R": 0.830555,
+  "final_frequency_mean_hz": {
+    "V0": 1.340197,
+    "V1": 1.340197,
+    "P0": 1.336003
+  },
+  "final_mean_common_frequency_hz": 1.338799,
+  "final_common_frequency_std_hz": 0.041057,
+  "final_common_frequency_slope_hz_per_s": -0.013928829,
+  "frequency_stability_success": false,
+  "frequency_stability_criterion": {
+    "final_common_frequency_std_hz_lte": 0.05,
+    "abs_final_common_frequency_slope_hz_per_s_lte": 0.005
+  },
+  "lock_hold_enabled": true,
+  "lock_acquired": false,
+  "lock_time_s": null,
+  "hold_duration_s": null,
+  "unlock_count": 0,
+  "relock_count": 0,
+  "final_hold_state": "acquisition",
+  "mean_hold_R": null,
+  "mean_hold_phase_error_cycles": null,
+  "mean_hold_frequency_disagreement_hz": null,
+  "hold_common_frequency_std_hz": null,
+  "hold_common_frequency_slope_hz_per_s": null,
+  "recovery_time_s": null,
+  "recovery_time_absolute_s": null,
+  "sample_count": 259
+}

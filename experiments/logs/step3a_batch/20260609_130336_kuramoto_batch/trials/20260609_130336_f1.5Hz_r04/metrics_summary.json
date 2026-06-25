@@ -1,0 +1,11 @@
+{
+  "synchronization_success": true,
+  "time_to_synchronization_s": 3.5799999999999677,
+  "steady_state_mean_abs_timing_error_s": 0.08,
+  "steady_state_rmse_timing_error_s": 0.08,
+  "steady_state_jitter_s": 0.0,
+  "final_frequency_error_hz": 0.002762,
+  "convergence_quality": 1.0,
+  "detection_success_rate": 1.0,
+  "false_positive_rate": 0.0
+}

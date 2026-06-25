@@ -1,0 +1,53 @@
+{
+  "kuramoto": {
+    "model": "kuramoto",
+    "variant": "baseline",
+    "params": {
+      "kuramoto_k": 5.0
+    },
+    "label": "Kuramoto (K=5.0)"
+  },
+  "pco_simple": {
+    "model": "pco_if",
+    "variant": "simple",
+    "params": {
+      "pco_coupling_mode": "additive_phase",
+      "pco_epsilon": 0.1,
+      "pco_refractory_period_s": 0.05,
+      "pco_state_curve_beta": 3.0
+    },
+    "label": "PCO Simple (additive, eps=0.10)"
+  },
+  "pco_adaptive_prc": {
+    "model": "pco_if",
+    "variant": "adaptive_prc",
+    "params": {
+      "pco_coupling_mode": "biphasic_sine",
+      "pco_epsilon": 0.1,
+      "pco_enable_phase_delay": true,
+      "pco_enable_frequency_adaptation": false,
+      "pco_max_phase_correction": 0.2,
+      "pco_min_inter_flash_interval_s": 0.2,
+      "pco_post_flash_lockout_s": 0.1
+    },
+    "label": "PCO Adaptive PRC (biphasic, eps=0.10)"
+  },
+  "eapf_tracker": {
+    "model": "eapf",
+    "variant": "tracker",
+    "params": {
+      "eapf_phase_gain": 0.4,
+      "eapf_frequency_gain": 0.15
+    },
+    "label": "EAPF Tracker (pg=0.40, fg=0.15)"
+  },
+  "eapf_consensus": {
+    "model": "eapf_consensus",
+    "variant": "consensus",
+    "params": {
+      "eapf_phase_gain": 0.02,
+      "eapf_frequency_gain": 0.02
+    },
+    "label": "EAPF Consensus (pg=0.02, fg=0.02)"
+  }
+}

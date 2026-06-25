@@ -1,0 +1,40 @@
+flowchart TD
+    A["Start Trial"] --> B["Initialise follower:<br/>phase_rad = 0.0<br/>frequency_hz = follower_initial<br/>omega = 2π * frequency_hz"]
+    B --> C["Start leader UI (already flashing)"]
+    C --> D["Start Pi camera detector"]
+    D --> E["Wait random start delay"]
+    E --> F{"t_wall < duration_s ?"}
+    F -->|yes| G["1. Compute measured dt<br/>dt = now - last_loop_time"]
+    G --> H["2. Advance follower phase:<br/>phase_rad += omega * dt"]
+    H --> I{"3. Phase wrap past 2π ?"}
+    I -->|yes| J["Trigger follower flash (GPIO17 LED)"]
+    J --> K["phase_rad -= 2π"]
+    K --> L["4. Read camera frame + detect leader flash rising edge<br/>(state OFF→ON + min_interval gate)"]
+    I -->|no| L
+    L --> M{"Valid leader flash event ?"}
+    M -->|yes| N["Record leader timestamp"]
+    N --> O{">= 2 leader flashes ?"}
+    O -->|yes| P["Estimate leader period:<br/>median(intervals[-window:])"]
+    O -->|no| Q["Use bootstrap period guess"]
+    P --> R["5a. Compute signed phase error:<br/>phase_error = wrap_to_pi(0 - phase_rad)"]
+    Q --> R
+    R --> S["5b. Apply phase correction:<br/>phase_rad = wrap_to_2pi(phase_rad + phase_gain * phase_error)"]
+    S --> T["5c. Apply frequency correction:<br/>freq_corr = frequency_gain * phase_error / (2π)<br/>frequency_hz = clamp(frequency_hz + freq_corr, f_min, f_max)<br/>omega = 2π * frequency_hz"]
+    T --> U["6. Log oscillator + detection state"]
+    M -->|no| U
+    U --> V["7. Loop until wall-clock duration ends"]
+    V --> F
+    F -->|no| W["Stop camera + turn off LED"]
+    W --> X["Compute metrics"]
+    X --> Y["Save logs"]
+    Y --> Z["End Trial"]
+
+    style A fill:#e1f5fe
+    style Z fill:#e1f5fe
+    style J fill:#ffcc80
+    style S fill:#bbdefb
+    style T fill:#bbdefb
+    style H fill:#fff9c4
+
+    note1["NOTE:<br/>The sign of phase and frequency<br/>correction MUST be verified with<br/>unit tests before hardware use.<br/>Wrong sign → follower diverges<br/>instead of converging."]
+    style note1 fill:#ffcc80,stroke:#e65100

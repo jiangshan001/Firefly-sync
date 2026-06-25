@@ -1,0 +1,13 @@
+elapsed_ms,endpoint,error,monotonic_time_s,ok
+12.019,POST /api/reset,,15725.075837,1
+6.977,POST /api/mode,,15725.087866,1
+13.233,POST /api/leader/config,,15725.094851,1
+21.834,POST /api/mutual/config,,15725.108091,1
+24.722,POST /api/agents/0,,15725.129938,1
+8.527,POST /api/agents/1,,15725.154671,1
+7.401,POST /api/agents/2,,15725.163207,1
+17.616,POST /api/start,,15725.170615,1
+7.436,POST /api/feedback,,15725.188238,1
+10.131,GET /api/agents,,15725.695744,1
+10.757,GET /api/agents,,15731.705952,1
+8.2,POST /api/pause,,15739.689335,1

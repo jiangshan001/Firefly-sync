@@ -1,0 +1,2 @@
+batch_id,trial_id,model_name,leader_freq_hz,follower_initial_freq_hz,coupling_gain,duration_s,synchronization_success,time_to_synchronization_s,steady_state_mean_abs_timing_error_s,steady_state_rmse_timing_error_s,steady_state_jitter_s,final_frequency_error_hz,convergence_quality,detection_success_rate,false_positive_rate,trial_log_dir
+20260609_105200_kuramoto_batch,f1.5Hz_r01,kuramoto,2.0,1.5,3.5,3.0,False,,0.098,0.098691,0.011662,0.030457,0.0,1.0,0.0,experiments\logs\step3a_batch\20260609_105200_kuramoto_batch\trials\20260609_105200_f1.5Hz_r01

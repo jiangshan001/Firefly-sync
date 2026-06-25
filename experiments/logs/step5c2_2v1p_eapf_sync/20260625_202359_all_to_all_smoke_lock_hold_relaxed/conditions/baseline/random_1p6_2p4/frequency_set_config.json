@@ -1,0 +1,17 @@
+{
+  "description": "Legacy default: all agents random from 1.6-2.4 Hz.",
+  "agents": {
+    "V0": [
+      1.6,
+      2.4
+    ],
+    "V1": [
+      1.6,
+      2.4
+    ],
+    "P0": [
+      1.6,
+      2.4
+    ]
+  }
+}

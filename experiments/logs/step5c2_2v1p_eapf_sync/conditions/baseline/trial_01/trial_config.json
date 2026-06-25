@@ -1,0 +1,52 @@
+{
+  "step": "Step5c2",
+  "system": "mixed_reality_2_virtual_1_pi",
+  "model": "EAPF Consensus",
+  "model_parameters": {
+    "g_p": 0.02,
+    "g_f": 0.02,
+    "alpha_p": 0.2,
+    "alpha_f": 0.2,
+    "max_phase_step_rad": 0.2,
+    "max_frequency_step_hz": 0.05
+  },
+  "leader_api": "http://192.168.1.140:8000",
+  "duration_s": 60.0,
+  "topology": "all_to_all",
+  "condition": {
+    "name": "baseline",
+    "stage": "Step5c2-A/B",
+    "category": "baseline",
+    "description": "Clean all-to-all EAPF Consensus mixed-reality synchronisation.",
+    "display": {},
+    "fault": {
+      "kind": "none"
+    },
+    "required_for_readiness": true,
+    "failure_interpretation": "Baseline failure should be investigated before robustness testing."
+  },
+  "initial_states": {
+    "V0": {
+      "initial_phase_rad": 6.114814434,
+      "initial_frequency_hz": 2.347068304
+    },
+    "V1": {
+      "initial_phase_rad": 5.417377739,
+      "initial_frequency_hz": 1.80688926
+    },
+    "P0": {
+      "initial_phase_rad": 3.83479113,
+      "initial_frequency_hz": 1.68111968
+    }
+  },
+  "sync_thresholds": {
+    "final_window_s": 10.0,
+    "required_window_s": 5.0,
+    "mean_pairwise_phase_error_cycles": 0.25,
+    "mean_pairwise_phase_error_rad": 1.5707963267948966,
+    "frequency_disagreement_hz": 0.1,
+    "order_parameter_R": 0.9
+  },
+  "roi_config": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_180539_all_to_all_smoke/conditions/baseline/auto_roi/auto_rois.json",
+  "created_at": "2026-06-25T18:05:55.955284"
+}

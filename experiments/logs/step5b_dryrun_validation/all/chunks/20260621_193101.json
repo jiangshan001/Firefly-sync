@@ -1,0 +1,83 @@
+{
+  "chunk_id": "20260621_193101",
+  "chunk_label": null,
+  "dry_run": true,
+  "command_line": [
+    "experiments/run_step5b_mutual_hil_batch.py",
+    "--dry-run",
+    "--run-dir",
+    "experiments/logs/step5b_dryrun_validation/all",
+    "--duration",
+    "30",
+    "--models",
+    "eapf_consensus",
+    "kuramoto",
+    "--freq-pairs",
+    "2.0:1.2,2.0:1.5,2.0:2.5",
+    "--repeats",
+    "3",
+    "--seed",
+    "20260620"
+  ],
+  "models": [
+    "eapf_consensus",
+    "kuramoto"
+  ],
+  "freq_pairs": [
+    {
+      "virtual": 2.0,
+      "pi": 1.2
+    },
+    {
+      "virtual": 2.0,
+      "pi": 1.5
+    },
+    {
+      "virtual": 2.0,
+      "pi": 2.5
+    }
+  ],
+  "canonical_freq_pairs": [
+    {
+      "virtual": 2.0,
+      "pi": 1.2
+    },
+    {
+      "virtual": 2.0,
+      "pi": 1.5
+    },
+    {
+      "virtual": 2.0,
+      "pi": 2.5
+    }
+  ],
+  "repeats": 3,
+  "duration": 30.0,
+  "random_phase_enabled": true,
+  "seed": 20260620,
+  "started_at": "2026-06-21T19:31:01.925397",
+  "finished_at": "2026-06-21T19:31:01.925404",
+  "completed_trial_ids": [],
+  "skipped_trial_ids": [],
+  "failed_trial_ids": [],
+  "planned_trial_ids": [
+    "eapf_consensus_V2_P1.2_r01",
+    "kuramoto_V2_P1.2_r01",
+    "eapf_consensus_V2_P1.5_r01",
+    "kuramoto_V2_P1.5_r01",
+    "eapf_consensus_V2_P2.5_r01",
+    "kuramoto_V2_P2.5_r01",
+    "eapf_consensus_V2_P1.2_r02",
+    "kuramoto_V2_P1.2_r02",
+    "eapf_consensus_V2_P1.5_r02",
+    "kuramoto_V2_P1.5_r02",
+    "eapf_consensus_V2_P2.5_r02",
+    "kuramoto_V2_P2.5_r02",
+    "eapf_consensus_V2_P1.2_r03",
+    "kuramoto_V2_P1.2_r03",
+    "eapf_consensus_V2_P1.5_r03",
+    "kuramoto_V2_P1.5_r03",
+    "eapf_consensus_V2_P2.5_r03",
+    "kuramoto_V2_P2.5_r03"
+  ]
+}

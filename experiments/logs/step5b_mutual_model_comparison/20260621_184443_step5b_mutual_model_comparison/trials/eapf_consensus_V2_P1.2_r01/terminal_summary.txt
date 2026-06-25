@@ -1,0 +1,8 @@
+
+[TRIAL] eapf_consensus_V2_P1.2_r01
+  initial phases: seed=20260621 random_phase=True virtual=2.951395 rad pi=3.693125 rad diff=0.741730 rad
+  start: running=True feedback=True freq=2.0 fire_count=0
+  virtual detected=55/58 actual FCR=0.948
+  pi flashes=51 final freq error=0.0404 Hz
+  final 5s error mean_abs=0.0908 Hz abs_of_means=0.0908 Hz
+  pi feedback counters: posts_received=51 events_consumed=51

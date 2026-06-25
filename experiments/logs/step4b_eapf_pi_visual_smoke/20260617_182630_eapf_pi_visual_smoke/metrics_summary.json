@@ -1,0 +1,15 @@
+{
+  "sync_success": true,
+  "time_to_sync_s": 7.8222,
+  "steady_state_mae_s": 0.0,
+  "steady_state_jitter_s": 0.0,
+  "final_frequency_hz": 1.999147,
+  "leader_flash_count": 57,
+  "expected_leader_count": 60.0,
+  "leader_fcr": 0.95,
+  "follower_flash_count": 55,
+  "follower_fcr": 0.9167,
+  "effective_loop_rate_hz": 11.71,
+  "actual_wall_duration_s": 30.474,
+  "requested_duration_s": 30.0
+}

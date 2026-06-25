@@ -1,0 +1,23 @@
+{
+  "feedback_enabled": false,
+  "model": "kuramoto",
+  "virtual_detected_count": 0,
+  "nominal_expected_flashes": 0,
+  "nominal_fcr": null,
+  "virtual_fire_count_start": null,
+  "virtual_fire_count_end": null,
+  "actual_virtual_flashes": null,
+  "actual_fcr": null,
+  "virtual_frequency_start": null,
+  "virtual_frequency_end": null,
+  "pi_flash_count": 0,
+  "pi_final_frequency_hz": 1.5,
+  "frequency_error_hz": null,
+  "received_pi_flashes": null,
+  "running_start": null,
+  "running_end": null,
+  "feedback_enabled_start": null,
+  "feedback_enabled_end": null,
+  "duration_s": 0.01,
+  "actual_wall_s": 0.0
+}

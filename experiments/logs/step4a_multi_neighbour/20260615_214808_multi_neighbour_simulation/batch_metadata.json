@@ -1,0 +1,22 @@
+{
+  "models": [
+    "kuramoto",
+    "pco_if",
+    "eapf",
+    "eapf_consensus"
+  ],
+  "topologies": [
+    "all_to_all",
+    "chain",
+    "directed_chain"
+  ],
+  "duration_s": 10.0,
+  "dt": 0.01,
+  "repeats": 1,
+  "initial_frequencies": [
+    1.5,
+    2.0,
+    2.3
+  ],
+  "timestamp": "2026-06-15T21:48:08.330252"
+}

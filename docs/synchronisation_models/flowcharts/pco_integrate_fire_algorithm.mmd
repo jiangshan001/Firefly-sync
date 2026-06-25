@@ -1,0 +1,30 @@
+flowchart TD
+    A["Start Trial"] --> B["Initialise follower:<br/>phase = 0.0<br/>refractory_timer = 0.0"]
+    B --> C["Start leader UI (already flashing)"]
+    C --> D["Start Pi camera detector"]
+    D --> E["Wait random start delay"]
+    E --> F{"t_wall < duration_s ?"}
+    F -->|yes| G["1. Compute measured dt<br/>dt = now - last_loop_time"]
+    G --> H["2. Natural phase evolution:<br/>phase += natural_frequency_hz * dt"]
+    H --> I["3. Decay refractory timer:<br/>refractory_timer -= dt"]
+    I --> J["4. Read camera frame + detect leader flash rising edge<br/>(state OFF→ON + min_interval gate)"]
+    J --> K{"Valid leader flash event AND<br/>refractory_timer <= 0 ?"}
+    K -->|yes| L["5. Apply PCO coupling:<br/>phase = phase + epsilon * (1.0 - phase)"]
+    L --> M{"6. phase >= fire_threshold ?"}
+    M -->|yes| N["Trigger follower flash (GPIO17 LED)"]
+    N --> O["phase = 0.0<br/>refractory_timer = refractory_period_s"]
+    O --> P["7. Log oscillator + detection state"]
+    M -->|no| P
+    K -->|no| M
+    P --> Q["8. Sleep spare time (target loop rate)"]
+    Q --> F
+    F -->|no| R["Stop camera + turn off LED"]
+    R --> S["Compute metrics"]
+    S --> T["Save logs"]
+    T --> U["End Trial"]
+
+    style A fill:#e1f5fe
+    style U fill:#e1f5fe
+    style N fill:#ffcc80
+    style L fill:#c8e6c9
+    style H fill:#fff9c4

@@ -1,0 +1,1 @@
+[DRY-RUN] kuramoto_K4p5_V2_P1p2_r01: would run kuramoto V=2.0Hz P=1.2Hz seed=20260621 phases=(2.951395, 3.693125)

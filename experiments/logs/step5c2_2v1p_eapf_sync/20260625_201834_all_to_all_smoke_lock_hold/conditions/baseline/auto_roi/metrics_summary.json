@@ -1,0 +1,436 @@
+{
+  "mode": "auto_roi_calibration",
+  "closed_loop_adaptation_enabled": false,
+  "auto_roi_config": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_201834_all_to_all_smoke_lock_hold/conditions/baseline/auto_roi/auto_rois.json",
+  "auto_rois": {
+    "V0": {
+      "roi": [
+        0,
+        104,
+        234,
+        227
+      ],
+      "method": "combined_multi_component",
+      "requested_frequency_hz": 1.0,
+      "score": 388.1014,
+      "candidate_id": 0,
+      "estimated_frequency_hz": 1.071418,
+      "roi_estimated_frequency_hz": 1.071418,
+      "trace_frequency_method": "rising_edge",
+      "trace_rising_edge_count": 7,
+      "trace_rising_edge_times_s": [
+        1e-06,
+        0.533388,
+        1.533387,
+        2.533388,
+        3.533388,
+        4.533389,
+        5.600057
+      ],
+      "trace_on_threshold": 50.7,
+      "trace_off_threshold": 37.2,
+      "autocorrelation_frequency_hz": 1.000001,
+      "frequency_confidence": 0.813498,
+      "actual_virtual_flash_count": 6,
+      "actual_virtual_frequency_estimate": 0.99999,
+      "raw_signal": {
+        "count": 90,
+        "min": 18.0,
+        "max": 79.0,
+        "mean": 48.459222,
+        "std": 25.617446
+      },
+      "raw_signal_range": 61.0,
+      "warnings": [
+        "roi_close_to_image_boundary"
+      ]
+    },
+    "V1": {
+      "roi": [
+        352,
+        110,
+        276,
+        263
+      ],
+      "method": "combined_multi_component",
+      "requested_frequency_hz": 2.0,
+      "score": 522.1196,
+      "candidate_id": 1,
+      "estimated_frequency_hz": 2.022454,
+      "roi_estimated_frequency_hz": 2.022454,
+      "trace_frequency_method": "rising_edge",
+      "trace_rising_edge_count": 13,
+      "trace_rising_edge_times_s": [
+        1e-06,
+        0.400055,
+        0.933387,
+        1.400054,
+        1.933388,
+        2.400055,
+        2.933387,
+        3.400055,
+        3.933391,
+        4.400057,
+        4.933388,
+        5.40012,
+        5.933388
+      ],
+      "trace_on_threshold": 70.4,
+      "trace_off_threshold": 43.4,
+      "autocorrelation_frequency_hz": 1.000001,
+      "frequency_confidence": 0.820825,
+      "actual_virtual_flash_count": 12,
+      "actual_virtual_frequency_estimate": 1.999979,
+      "raw_signal": {
+        "count": 90,
+        "min": 9.0,
+        "max": 121.0,
+        "mean": 64.533333,
+        "std": 49.561903
+      },
+      "raw_signal_range": 112.0,
+      "warnings": []
+    },
+    "candidate_components": [
+      {
+        "candidate_id": 1,
+        "roi": [
+          352,
+          110,
+          276,
+          263
+        ],
+        "component_bbox": [
+          387,
+          145,
+          206,
+          193
+        ],
+        "area_px": 31169,
+        "padded_area_px": 72588,
+        "mean_change": 77.0048,
+        "max_change": 89.2638,
+        "score": 522.1196,
+        "method": "temporal_variance"
+      },
+      {
+        "candidate_id": 0,
+        "roi": [
+          0,
+          104,
+          234,
+          227
+        ],
+        "component_bbox": [
+          27,
+          139,
+          164,
+          157
+        ],
+        "area_px": 20082,
+        "padded_area_px": 53118,
+        "mean_change": 63.7078,
+        "max_change": 71.0878,
+        "score": 388.1014,
+        "method": "temporal_variance"
+      }
+    ],
+    "selected_components": [
+      {
+        "candidate_id": 1,
+        "roi": [
+          352,
+          110,
+          276,
+          263
+        ],
+        "component_bbox": [
+          387,
+          145,
+          206,
+          193
+        ],
+        "area_px": 31169,
+        "padded_area_px": 72588,
+        "mean_change": 77.0048,
+        "max_change": 89.2638,
+        "score": 522.1196,
+        "method": "temporal_variance",
+        "selection_overlap_ratio": 0.0
+      },
+      {
+        "candidate_id": 0,
+        "roi": [
+          0,
+          104,
+          234,
+          227
+        ],
+        "component_bbox": [
+          27,
+          139,
+          164,
+          157
+        ],
+        "area_px": 20082,
+        "padded_area_px": 53118,
+        "mean_change": 63.7078,
+        "max_change": 71.0878,
+        "score": 388.1014,
+        "method": "temporal_variance",
+        "selection_overlap_ratio": 0.0
+      }
+    ],
+    "rejected_candidate_components": [],
+    "assignment_method": "frequency_based",
+    "image_size": [
+      640,
+      480
+    ],
+    "timestamp": "2026-06-25T20:18:51.473196",
+    "calibration_sequence": [
+      "combined_simultaneous"
+    ],
+    "sequential_diagnostics": {},
+    "requested_v0_frequency_hz": 1.0,
+    "requested_v1_frequency_hz": 2.0,
+    "requested_v1_phase_rad": 1.5707963267948966,
+    "combined_api_config_requested": {
+      "V0": {
+        "frequency_hz": 1.0,
+        "phase_rad": 0.0,
+        "enabled": true
+      },
+      "V1": {
+        "frequency_hz": 2.0,
+        "phase_rad": 1.5707963267948966,
+        "enabled": true
+      }
+    },
+    "combined_server_start_snapshot": {
+      "V0": {
+        "agent_id": "V0",
+        "enabled": true,
+        "initial_frequency_hz": 1.0,
+        "frequency_hz": 1.0,
+        "initial_phase_rad": 0.0,
+        "phase_rad": 3.1549758385274504,
+        "fire_count": 0,
+        "flash_on": false
+      },
+      "V1": {
+        "agent_id": "V1",
+        "enabled": true,
+        "initial_frequency_hz": 2.0,
+        "frequency_hz": 2.0,
+        "initial_phase_rad": 1.5707963267948966,
+        "phase_rad": 1.5976544318742076,
+        "fire_count": 1,
+        "flash_on": true
+      }
+    },
+    "combined_server_end_snapshot": {
+      "V0": {
+        "agent_id": "V0",
+        "enabled": true,
+        "initial_frequency_hz": 1.0,
+        "frequency_hz": 1.0,
+        "initial_phase_rad": 0.0,
+        "phase_rad": 3.348386733907576,
+        "fire_count": 6,
+        "flash_on": false
+      },
+      "V1": {
+        "agent_id": "V1",
+        "enabled": true,
+        "initial_frequency_hz": 2.0,
+        "frequency_hz": 2.0,
+        "initial_phase_rad": 1.5707963267948966,
+        "phase_rad": 1.9847514253206127,
+        "fire_count": 13,
+        "flash_on": true
+      }
+    },
+    "combined_mutual_config_snapshot": {
+      "mode": "mutual_hil",
+      "mutual_agent_mode": "multi_2v1p",
+      "topology": "all_to_all",
+      "topology_adjacency": {
+        "V0": [
+          "V1",
+          "P0"
+        ],
+        "V1": [
+          "V0",
+          "P0"
+        ],
+        "P0": [
+          "V0",
+          "V1"
+        ]
+      },
+      "available_topologies": [
+        "all_to_all",
+        "chain_pi_middle",
+        "chain_pi_downstream"
+      ],
+      "display_config": {
+        "background_brightness": 0,
+        "brightness_on": 255,
+        "brightness_off": 15,
+        "agents": [
+          {
+            "agent_id": "V0",
+            "role": "virtual",
+            "x": 520,
+            "y": 420,
+            "size": 280,
+            "brightness_on": 255,
+            "brightness_off": 15,
+            "background_brightness": 0,
+            "initial_frequency_hz": 1.0,
+            "initial_phase_rad": 0.0,
+            "enabled": true
+          },
+          {
+            "agent_id": "V1",
+            "role": "virtual",
+            "x": 1180,
+            "y": 420,
+            "size": 280,
+            "brightness_on": 255,
+            "brightness_off": 15,
+            "background_brightness": 0,
+            "initial_frequency_hz": 2.0,
+            "initial_phase_rad": 1.5707963267948966,
+            "enabled": true
+          },
+          {
+            "agent_id": "P0",
+            "role": "pi",
+            "x": 0,
+            "y": 0,
+            "size": 0,
+            "brightness_on": 255,
+            "brightness_off": 0,
+            "background_brightness": 0,
+            "initial_frequency_hz": 2.0,
+            "initial_phase_rad": 0.0,
+            "enabled": true
+          }
+        ]
+      }
+    },
+    "frontend_display_state_snapshot": {
+      "page": "mutual",
+      "renderer_version": 4,
+      "render_frame_count": 17689,
+      "local_running": true,
+      "feedback_enabled": false,
+      "background_brightness": 0,
+      "background_css": "rgb(0,0,0)",
+      "agents": [
+        {
+          "id": 0,
+          "agent_id": "V0",
+          "role": "virtual",
+          "x": 520,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 255,
+          "brightness_off": 15,
+          "background_brightness": 0,
+          "initial_frequency_hz": 1,
+          "initial_phase_rad": 0,
+          "enabled": true,
+          "current_draw_brightness": 15
+        },
+        {
+          "id": 1,
+          "agent_id": "V1",
+          "role": "virtual",
+          "x": 1180,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 255,
+          "brightness_off": 15,
+          "background_brightness": 0,
+          "initial_frequency_hz": 2,
+          "initial_phase_rad": 1.5707963267948966,
+          "enabled": true,
+          "current_draw_brightness": 15
+        }
+      ],
+      "client_timestamp_ms": 1782415130354,
+      "server_received_wall_time_s": 1782415130.3564882
+    },
+    "camera_display_evidence": {
+      "available": true,
+      "background_frame_index": 18,
+      "background_frame_t_s": 1.200056,
+      "background_mean": 68.797401,
+      "debug_files": {
+        "camera_background_raw.jpg": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_201834_all_to_all_smoke_lock_hold/conditions/baseline/auto_roi/camera_background_raw.jpg",
+        "camera_v0_flash_on_raw.jpg": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_201834_all_to_all_smoke_lock_hold/conditions/baseline/auto_roi/camera_v0_flash_on_raw.jpg",
+        "camera_v1_flash_on_raw.jpg": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_201834_all_to_all_smoke_lock_hold/conditions/baseline/auto_roi/camera_v1_flash_on_raw.jpg"
+      },
+      "agents": {
+        "V0": {
+          "roi": [
+            0,
+            104,
+            234,
+            227
+          ],
+          "flash_on_frame_index": 23,
+          "flash_on_frame_t_s": 1.533387,
+          "flash_on_roi_mean": 185.043015,
+          "background_mean": 68.797401,
+          "measured_contrast": 116.245613,
+          "roi_mean_min": 66.671234,
+          "roi_mean_max": 185.043015
+        },
+        "V1": {
+          "roi": [
+            352,
+            110,
+            276,
+            263
+          ],
+          "flash_on_frame_index": 22,
+          "flash_on_frame_t_s": 1.466721,
+          "flash_on_roi_mean": 183.631454,
+          "background_mean": 68.797401,
+          "measured_contrast": 114.834053,
+          "roi_mean_min": 48.930279,
+          "roi_mean_max": 183.631454
+        }
+      },
+      "warnings": [],
+      "mean_measured_contrast": 115.539833
+    },
+    "combined_capture_duration_s": 6.000063,
+    "actual_v0_flash_count": 6,
+    "actual_v1_flash_count": 12,
+    "actual_v0_frequency_estimate": 0.99999,
+    "actual_v1_frequency_estimate": 1.999979,
+    "combined_frequencies_hz": {
+      "V0": 1.0,
+      "V1": 2.0
+    },
+    "debug_files": {
+      "auto_roi_combined_debug.jpg": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_201834_all_to_all_smoke_lock_hold/conditions/baseline/auto_roi/auto_roi_combined_debug.jpg",
+      "camera_background_raw.jpg": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_201834_all_to_all_smoke_lock_hold/conditions/baseline/auto_roi/camera_background_raw.jpg",
+      "camera_v0_flash_on_raw.jpg": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_201834_all_to_all_smoke_lock_hold/conditions/baseline/auto_roi/camera_v0_flash_on_raw.jpg",
+      "camera_v1_flash_on_raw.jpg": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_201834_all_to_all_smoke_lock_hold/conditions/baseline/auto_roi/camera_v1_flash_on_raw.jpg",
+      "auto_roi_candidates_debug.jpg": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_201834_all_to_all_smoke_lock_hold/conditions/baseline/auto_roi/auto_roi_candidates_debug.jpg",
+      "auto_roi_combined_temporal_variance.jpg": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_201834_all_to_all_smoke_lock_hold/conditions/baseline/auto_roi/auto_roi_combined_temporal_variance.jpg",
+      "auto_roi_combined_threshold_mask.jpg": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_201834_all_to_all_smoke_lock_hold/conditions/baseline/auto_roi/auto_roi_combined_threshold_mask.jpg",
+      "auto_roi_selected_traces.png": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_201834_all_to_all_smoke_lock_hold/conditions/baseline/auto_roi/auto_roi_selected_traces.png"
+    },
+    "overlap_ratio": 0.0,
+    "calibration_valid": true,
+    "failure_reason": null
+  },
+  "api_post_success_count": 14
+}

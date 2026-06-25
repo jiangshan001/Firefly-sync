@@ -1,0 +1,80 @@
+{
+  "mode": "multi_roi_detection_test",
+  "topology": "all_to_all",
+  "detection_preset": "none",
+  "detected_counts": {
+    "V0": 29,
+    "V1": 59
+  },
+  "actual_virtual_flash_counts": {
+    "V0": 30,
+    "V1": 60
+  },
+  "roi_signal_summary": {
+    "V0": {
+      "roi_id": 0,
+      "roi": [
+        76,
+        274,
+        224,
+        206
+      ],
+      "detected_rising_edge_count": 29,
+      "actual_virtual_flash_count": 30,
+      "detection_fcr": 0.966667,
+      "raw_signal": {
+        "count": 886,
+        "min": 9.0,
+        "max": 59.0,
+        "mean": 39.03579,
+        "std": 18.610125
+      },
+      "normalized_signal": {
+        "count": 886,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.490909,
+        "std": 0.490969
+      },
+      "raw_signal_range": 50.0,
+      "estimated_detected_frequency_hz": 1.000512,
+      "last_detector_frequency_hz": 1.001,
+      "warnings": []
+    },
+    "V1": {
+      "roi_id": 1,
+      "roi": [
+        495,
+        305,
+        141,
+        139
+      ],
+      "detected_rising_edge_count": 59,
+      "actual_virtual_flash_count": 60,
+      "detection_fcr": 0.983333,
+      "raw_signal": {
+        "count": 886,
+        "min": 4.0,
+        "max": 103.0,
+        "mean": 55.164808,
+        "std": 46.871803
+      },
+      "normalized_signal": {
+        "count": 886,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.518273,
+        "std": 0.484692
+      },
+      "raw_signal_range": 99.0,
+      "estimated_detected_frequency_hz": 2.001013,
+      "last_detector_frequency_hz": 2.001,
+      "warnings": []
+    }
+  },
+  "roi_debug_frames": [
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/size_large_small/repeat_03/roi_debug_frame_start.jpg",
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/size_large_small/repeat_03/roi_debug_frame_mid.jpg"
+  ],
+  "closed_loop_adaptation_enabled": false
+}

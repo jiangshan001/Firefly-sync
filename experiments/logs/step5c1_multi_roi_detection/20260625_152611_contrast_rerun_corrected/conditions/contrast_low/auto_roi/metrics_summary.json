@@ -1,0 +1,613 @@
+{
+  "mode": "auto_roi_calibration",
+  "closed_loop_adaptation_enabled": false,
+  "auto_roi_config": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/auto_rois.json",
+  "auto_rois": {
+    "V0": {
+      "roi": [
+        0,
+        126,
+        216,
+        218
+      ],
+      "method": "combined_multi_component",
+      "requested_frequency_hz": 1.0,
+      "score": 36.4878,
+      "candidate_id": 0,
+      "estimated_frequency_hz": 1.0,
+      "roi_estimated_frequency_hz": 1.0,
+      "trace_frequency_method": "rising_edge",
+      "trace_rising_edge_count": 6,
+      "trace_rising_edge_times_s": [
+        0.066722,
+        1.066724,
+        2.066725,
+        3.066725,
+        4.066726,
+        5.066723
+      ],
+      "trace_on_threshold": 10.3,
+      "trace_off_threshold": 8.8,
+      "autocorrelation_frequency_hz": 1.0,
+      "frequency_confidence": 0.817009,
+      "actual_virtual_flash_count": 6,
+      "actual_virtual_frequency_estimate": 0.99999,
+      "raw_signal": {
+        "count": 90,
+        "min": 6.0,
+        "max": 13.0,
+        "mean": 9.544444,
+        "std": 2.69634
+      },
+      "raw_signal_range": 7.0,
+      "warnings": [
+        "roi_close_to_image_boundary",
+        "signal_amplitude_too_low"
+      ]
+    },
+    "V1": {
+      "roi": [
+        347,
+        129,
+        261,
+        248
+      ],
+      "method": "combined_multi_component",
+      "requested_frequency_hz": 2.0,
+      "score": 65.2912,
+      "candidate_id": 1,
+      "estimated_frequency_hz": 2.022452,
+      "roi_estimated_frequency_hz": 2.022452,
+      "trace_frequency_method": "rising_edge",
+      "trace_rising_edge_count": 13,
+      "trace_rising_edge_times_s": [
+        0.0,
+        0.466725,
+        0.933392,
+        1.466725,
+        1.933392,
+        2.466725,
+        2.933391,
+        3.400057,
+        3.933391,
+        4.400059,
+        4.933392,
+        5.400058,
+        5.933391
+      ],
+      "trace_on_threshold": 11.305,
+      "trace_off_threshold": 7.53,
+      "autocorrelation_frequency_hz": 1.0,
+      "frequency_confidence": 0.831948,
+      "actual_virtual_flash_count": 12,
+      "actual_virtual_frequency_estimate": 1.99998,
+      "raw_signal": {
+        "count": 90,
+        "min": 3.0,
+        "max": 19.0,
+        "mean": 10.666667,
+        "std": 7.127412
+      },
+      "raw_signal_range": 16.0,
+      "warnings": []
+    },
+    "candidate_components": [
+      {
+        "candidate_id": 1,
+        "roi": [
+          347,
+          129,
+          261,
+          248
+        ],
+        "component_bbox": [
+          382,
+          164,
+          191,
+          178
+        ],
+        "area_px": 26007,
+        "padded_area_px": 64728,
+        "mean_change": 10.1321,
+        "max_change": 12.4115,
+        "score": 65.2912,
+        "method": "temporal_variance"
+      },
+      {
+        "candidate_id": 0,
+        "roi": [
+          0,
+          126,
+          216,
+          218
+        ],
+        "component_bbox": [
+          29,
+          161,
+          146,
+          148
+        ],
+        "area_px": 16240,
+        "padded_area_px": 47088,
+        "mean_change": 6.4084,
+        "max_change": 7.7859,
+        "score": 36.4878,
+        "method": "temporal_variance"
+      }
+    ],
+    "selected_components": [
+      {
+        "candidate_id": 1,
+        "roi": [
+          347,
+          129,
+          261,
+          248
+        ],
+        "component_bbox": [
+          382,
+          164,
+          191,
+          178
+        ],
+        "area_px": 26007,
+        "padded_area_px": 64728,
+        "mean_change": 10.1321,
+        "max_change": 12.4115,
+        "score": 65.2912,
+        "method": "temporal_variance",
+        "selection_overlap_ratio": 0.0
+      },
+      {
+        "candidate_id": 0,
+        "roi": [
+          0,
+          126,
+          216,
+          218
+        ],
+        "component_bbox": [
+          29,
+          161,
+          146,
+          148
+        ],
+        "area_px": 16240,
+        "padded_area_px": 47088,
+        "mean_change": 6.4084,
+        "max_change": 7.7859,
+        "score": 36.4878,
+        "method": "temporal_variance",
+        "selection_overlap_ratio": 0.0
+      }
+    ],
+    "rejected_candidate_components": [],
+    "assignment_method": "frequency_based",
+    "image_size": [
+      640,
+      480
+    ],
+    "timestamp": "2026-06-25T15:30:03.719289",
+    "calibration_sequence": [
+      "combined_simultaneous"
+    ],
+    "sequential_diagnostics": {},
+    "requested_v0_frequency_hz": 1.0,
+    "requested_v1_frequency_hz": 2.0,
+    "requested_v1_phase_rad": 1.5707963267948966,
+    "combined_api_config_requested": {
+      "V0": {
+        "frequency_hz": 1.0,
+        "phase_rad": 0.0,
+        "enabled": true
+      },
+      "V1": {
+        "frequency_hz": 2.0,
+        "phase_rad": 1.5707963267948966,
+        "enabled": true
+      }
+    },
+    "combined_server_start_snapshot": {
+      "V0": {
+        "agent_id": "V0",
+        "enabled": true,
+        "initial_frequency_hz": 1.0,
+        "frequency_hz": 1.0,
+        "initial_phase_rad": 0.0,
+        "phase_rad": 3.145905431908607,
+        "fire_count": 0,
+        "flash_on": false
+      },
+      "V1": {
+        "agent_id": "V1",
+        "enabled": true,
+        "initial_frequency_hz": 2.0,
+        "frequency_hz": 2.0,
+        "initial_phase_rad": 1.5707963267948966,
+        "phase_rad": 1.579528698396082,
+        "fire_count": 1,
+        "flash_on": true
+      }
+    },
+    "combined_server_end_snapshot": {
+      "V0": {
+        "agent_id": "V0",
+        "enabled": true,
+        "initial_frequency_hz": 1.0,
+        "frequency_hz": 1.0,
+        "initial_phase_rad": 0.0,
+        "phase_rad": 3.2664037316950334,
+        "fire_count": 6,
+        "flash_on": false
+      },
+      "V1": {
+        "agent_id": "V1",
+        "enabled": true,
+        "initial_frequency_hz": 2.0,
+        "frequency_hz": 2.0,
+        "initial_phase_rad": 1.5707963267948966,
+        "phase_rad": 1.8205177566262358,
+        "fire_count": 13,
+        "flash_on": true
+      }
+    },
+    "combined_mutual_config_snapshot": {
+      "mode": "mutual_hil",
+      "mutual_agent_mode": "multi_2v1p",
+      "topology": "all_to_all",
+      "topology_adjacency": {
+        "V0": [
+          "V1",
+          "P0"
+        ],
+        "V1": [
+          "V0",
+          "P0"
+        ],
+        "P0": [
+          "V0",
+          "V1"
+        ]
+      },
+      "available_topologies": [
+        "all_to_all",
+        "chain_pi_middle",
+        "chain_pi_downstream"
+      ],
+      "display_config": {
+        "background_brightness": 80,
+        "brightness_on": 120,
+        "brightness_off": 80,
+        "agents": [
+          {
+            "agent_id": "V0",
+            "role": "virtual",
+            "x": 520,
+            "y": 420,
+            "size": 280,
+            "brightness_on": 120,
+            "brightness_off": 80,
+            "background_brightness": 80,
+            "initial_frequency_hz": 1.0,
+            "initial_phase_rad": 0.0,
+            "enabled": true
+          },
+          {
+            "agent_id": "V1",
+            "role": "virtual",
+            "x": 1180,
+            "y": 420,
+            "size": 280,
+            "brightness_on": 120,
+            "brightness_off": 80,
+            "background_brightness": 80,
+            "initial_frequency_hz": 2.0,
+            "initial_phase_rad": 1.5707963267948966,
+            "enabled": true
+          },
+          {
+            "agent_id": "P0",
+            "role": "pi",
+            "x": 0,
+            "y": 0,
+            "size": 0,
+            "brightness_on": 255,
+            "brightness_off": 0,
+            "background_brightness": 0,
+            "initial_frequency_hz": 2.0,
+            "initial_phase_rad": 0.0,
+            "enabled": true
+          }
+        ]
+      }
+    },
+    "frontend_display_state_snapshot": {
+      "page": "mutual",
+      "renderer_version": 4,
+      "render_frame_count": 29955,
+      "local_running": true,
+      "feedback_enabled": false,
+      "background_brightness": 80,
+      "background_css": "rgb(80,80,80)",
+      "agents": [
+        {
+          "id": 0,
+          "agent_id": "V0",
+          "role": "virtual",
+          "x": 520,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 120,
+          "brightness_off": 80,
+          "background_brightness": 80,
+          "initial_frequency_hz": 1,
+          "initial_phase_rad": 0,
+          "enabled": true,
+          "current_draw_brightness": 80
+        },
+        {
+          "id": 1,
+          "agent_id": "V1",
+          "role": "virtual",
+          "x": 1180,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 120,
+          "brightness_off": 80,
+          "background_brightness": 80,
+          "initial_frequency_hz": 2,
+          "initial_phase_rad": 1.5707963267948966,
+          "enabled": true,
+          "current_draw_brightness": 80
+        }
+      ],
+      "client_timestamp_ms": 1782397802591,
+      "server_received_wall_time_s": 1782397802.5945392
+    },
+    "camera_display_evidence": {
+      "available": true,
+      "background_frame_index": 33,
+      "background_frame_t_s": 2.200058,
+      "background_mean": 184.53157,
+      "debug_files": {
+        "camera_background_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/camera_background_raw.jpg",
+        "camera_v0_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/camera_v0_flash_on_raw.jpg",
+        "camera_v1_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/camera_v1_flash_on_raw.jpg"
+      },
+      "agents": {
+        "V0": {
+          "roi": [
+            0,
+            126,
+            216,
+            218
+          ],
+          "flash_on_frame_index": 83,
+          "flash_on_frame_t_s": 5.533392,
+          "flash_on_roi_mean": 195.47554,
+          "background_mean": 184.53157,
+          "measured_contrast": 10.94397,
+          "roi_mean_min": 187.204208,
+          "roi_mean_max": 195.47554
+        },
+        "V1": {
+          "roi": [
+            347,
+            129,
+            261,
+            248
+          ],
+          "flash_on_frame_index": 7,
+          "flash_on_frame_t_s": 0.466725,
+          "flash_on_roi_mean": 189.413101,
+          "background_mean": 184.53157,
+          "measured_contrast": 4.881531,
+          "roi_mean_min": 176.115601,
+          "roi_mean_max": 189.413101
+        }
+      },
+      "warnings": [],
+      "mean_measured_contrast": 7.91275
+    },
+    "combined_capture_duration_s": 6.00006,
+    "actual_v0_flash_count": 6,
+    "actual_v1_flash_count": 12,
+    "actual_v0_frequency_estimate": 0.99999,
+    "actual_v1_frequency_estimate": 1.99998,
+    "combined_frequencies_hz": {
+      "V0": 1.0,
+      "V1": 2.0
+    },
+    "debug_files": {
+      "auto_roi_combined_debug.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/auto_roi_combined_debug.jpg",
+      "camera_background_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/camera_background_raw.jpg",
+      "camera_v0_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/camera_v0_flash_on_raw.jpg",
+      "camera_v1_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/camera_v1_flash_on_raw.jpg",
+      "auto_roi_candidates_debug.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/auto_roi_candidates_debug.jpg",
+      "auto_roi_combined_temporal_variance.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/auto_roi_combined_temporal_variance.jpg",
+      "auto_roi_combined_threshold_mask.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/auto_roi_combined_threshold_mask.jpg",
+      "auto_roi_selected_traces.png": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/auto_roi_selected_traces.png"
+    },
+    "overlap_ratio": 0.0,
+    "calibration_valid": true,
+    "failure_reason": null,
+    "display_verification": {
+      "requested_display_config": {
+        "condition": "contrast_low",
+        "category": "contrast",
+        "description": "Low contrast flashes.",
+        "required_for_ready": true,
+        "intended_difficulty": "challenging",
+        "failure_interpretation": "Low-contrast failure means this lighting/display contrast should be avoided formally.",
+        "display_model": "browser_canvas_grayscale_radial_targets",
+        "background": {
+          "brightness": 80,
+          "rgb": [
+            80,
+            80,
+            80
+          ],
+          "css_rgb": "rgb(80,80,80)"
+        },
+        "flash_on": {
+          "brightness": 120,
+          "rgb": [
+            120,
+            120,
+            120
+          ],
+          "css_rgb": "rgb(120,120,120)"
+        },
+        "flash_off": {
+          "brightness": 80,
+          "rgb": [
+            80,
+            80,
+            80
+          ],
+          "css_rgb": "rgb(80,80,80)"
+        },
+        "contrast": {
+          "flash_minus_background": 40,
+          "flash_minus_off": 40,
+          "off_minus_background": 0
+        },
+        "agents": {
+          "V0": {
+            "position_xy": [
+              520,
+              420
+            ],
+            "dot_size_px": 280,
+            "frequency_hz": 1.0,
+            "phase_rad": 0.0
+          },
+          "V1": {
+            "position_xy": [
+              1180,
+              420
+            ],
+            "dot_size_px": 280,
+            "frequency_hz": 2.0,
+            "phase_rad": 1.5707963267948966
+          }
+        }
+      },
+      "server_applied_mutual_config": {
+        "mode": "mutual_hil",
+        "mutual_agent_mode": "multi_2v1p",
+        "topology": "all_to_all",
+        "topology_adjacency": {
+          "V0": [
+            "V1",
+            "P0"
+          ],
+          "V1": [
+            "V0",
+            "P0"
+          ],
+          "P0": [
+            "V0",
+            "V1"
+          ]
+        },
+        "available_topologies": [
+          "all_to_all",
+          "chain_pi_middle",
+          "chain_pi_downstream"
+        ],
+        "display_config": {
+          "background_brightness": 80,
+          "brightness_on": 120,
+          "brightness_off": 80,
+          "agents": [
+            {
+              "agent_id": "V0",
+              "role": "virtual",
+              "x": 520,
+              "y": 420,
+              "size": 280,
+              "brightness_on": 120,
+              "brightness_off": 80,
+              "background_brightness": 80,
+              "initial_frequency_hz": 1.0,
+              "initial_phase_rad": 0.0,
+              "enabled": true
+            },
+            {
+              "agent_id": "V1",
+              "role": "virtual",
+              "x": 1180,
+              "y": 420,
+              "size": 280,
+              "brightness_on": 120,
+              "brightness_off": 80,
+              "background_brightness": 80,
+              "initial_frequency_hz": 2.0,
+              "initial_phase_rad": 1.5707963267948966,
+              "enabled": true
+            },
+            {
+              "agent_id": "P0",
+              "role": "pi",
+              "x": 0,
+              "y": 0,
+              "size": 0,
+              "brightness_on": 255,
+              "brightness_off": 0,
+              "background_brightness": 0,
+              "initial_frequency_hz": 2.0,
+              "initial_phase_rad": 0.0,
+              "enabled": true
+            }
+          ]
+        }
+      },
+      "frontend_applied_display_state": {
+        "page": "mutual",
+        "renderer_version": 4,
+        "render_frame_count": 30015,
+        "local_running": true,
+        "feedback_enabled": false,
+        "background_brightness": 80,
+        "background_css": "rgb(80,80,80)",
+        "agents": [
+          {
+            "id": 0,
+            "agent_id": "V0",
+            "role": "virtual",
+            "x": 520,
+            "y": 420,
+            "size": 280,
+            "brightness_on": 120,
+            "brightness_off": 80,
+            "background_brightness": 80,
+            "initial_frequency_hz": 1,
+            "initial_phase_rad": 0,
+            "enabled": true,
+            "current_draw_brightness": 120
+          },
+          {
+            "id": 1,
+            "agent_id": "V1",
+            "role": "virtual",
+            "x": 1180,
+            "y": 420,
+            "size": 280,
+            "brightness_on": 120,
+            "brightness_off": 80,
+            "background_brightness": 80,
+            "initial_frequency_hz": 2,
+            "initial_phase_rad": 1.5707963267948966,
+            "enabled": true,
+            "current_draw_brightness": 80
+          }
+        ],
+        "client_timestamp_ms": 1782397803091,
+        "server_received_wall_time_s": 1782397803.0940156
+      },
+      "warnings": []
+    }
+  },
+  "api_post_success_count": 14
+}

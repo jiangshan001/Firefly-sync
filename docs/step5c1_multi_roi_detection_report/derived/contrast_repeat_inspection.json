@@ -1,0 +1,119 @@
+{
+  "folder": "experiments\\logs\\step5c1_multi_roi_detection\\20260625_152611_contrast_rerun_corrected",
+  "batch_summary_json_exists": true,
+  "batch_summary_csv_exists": true,
+  "conditions_dir_exists": true,
+  "configured_repeats": 3,
+  "configured_duration_s": 30.0,
+  "conditions": {
+    "baseline": {
+      "path": "experiments\\logs\\step5c1_multi_roi_detection\\20260625_152611_contrast_rerun_corrected\\conditions\\baseline",
+      "condition_folder_exists": true,
+      "auto_rois_json_exists": true,
+      "repeat_folder_count": 3,
+      "repeat_folders": [
+        "repeat_01",
+        "repeat_02",
+        "repeat_03"
+      ],
+      "per_repeat_metrics_summary_count": 3,
+      "per_repeat_pi_detection_roi_count": 3,
+      "per_agent": {
+        "V0": {
+          "repeat_count": 3,
+          "count_recall_mean": 0.966667,
+          "frequency_absolute_error_mean_hz": 0.00022533333333333333,
+          "pass_flags": [
+            "True",
+            "True",
+            "True"
+          ]
+        },
+        "V1": {
+          "repeat_count": 3,
+          "count_recall_mean": 0.983333,
+          "frequency_absolute_error_mean_hz": 0.00048466666666666667,
+          "pass_flags": [
+            "True",
+            "True",
+            "True"
+          ]
+        }
+      }
+    },
+    "contrast_medium": {
+      "path": "experiments\\logs\\step5c1_multi_roi_detection\\20260625_152611_contrast_rerun_corrected\\conditions\\contrast_medium",
+      "condition_folder_exists": true,
+      "auto_rois_json_exists": true,
+      "repeat_folder_count": 3,
+      "repeat_folders": [
+        "repeat_01",
+        "repeat_02",
+        "repeat_03"
+      ],
+      "per_repeat_metrics_summary_count": 3,
+      "per_repeat_pi_detection_roi_count": 3,
+      "per_agent": {
+        "V0": {
+          "repeat_count": 3,
+          "count_recall_mean": 0.9333336666666666,
+          "frequency_absolute_error_mean_hz": 0.0005113333333333334,
+          "pass_flags": [
+            "True",
+            "True",
+            "True"
+          ]
+        },
+        "V1": {
+          "repeat_count": 3,
+          "count_recall_mean": 0.983333,
+          "frequency_absolute_error_mean_hz": 0.001027,
+          "pass_flags": [
+            "True",
+            "True",
+            "True"
+          ]
+        }
+      }
+    },
+    "contrast_low": {
+      "path": "experiments\\logs\\step5c1_multi_roi_detection\\20260625_152611_contrast_rerun_corrected\\conditions\\contrast_low",
+      "condition_folder_exists": true,
+      "auto_rois_json_exists": true,
+      "repeat_folder_count": 3,
+      "repeat_folders": [
+        "repeat_01",
+        "repeat_02",
+        "repeat_03"
+      ],
+      "per_repeat_metrics_summary_count": 3,
+      "per_repeat_pi_detection_roi_count": 3,
+      "per_agent": {
+        "V0": {
+          "repeat_count": 3,
+          "count_recall_mean": 0.0,
+          "frequency_absolute_error_mean_hz": null,
+          "pass_flags": [
+            "False",
+            "False",
+            "False"
+          ]
+        },
+        "V1": {
+          "repeat_count": 3,
+          "count_recall_mean": 0.983333,
+          "frequency_absolute_error_mean_hz": 0.0012929999999999999,
+          "pass_flags": [
+            "True",
+            "True",
+            "True"
+          ]
+        }
+      }
+    }
+  },
+  "corrected_contrast_detection_repeats_exist": true,
+  "recall_frequency_error_computable": true,
+  "duration_s": 30.0,
+  "diagnosis": "Corrected contrast repeat detection data are complete and usable."
+}

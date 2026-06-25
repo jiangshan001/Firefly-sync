@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-06-20T17:52:09.117823",
+  "duration": 20.0,
+  "models": [
+    "eapf_consensus",
+    "kuramoto"
+  ],
+  "freq_pairs": [
+    {
+      "virtual": 2.0,
+      "pi": 1.5
+    }
+  ],
+  "repeats": 1,
+  "alternate_models": true,
+  "dry_run": true,
+  "schedule": [
+    {
+      "model": "eapf_consensus",
+      "virtual_freq": 2.0,
+      "pi_freq": 1.5,
+      "repeat": 1,
+      "trial_id": "eapf_consensus_V2_P1.5_r01"
+    },
+    {
+      "model": "kuramoto",
+      "virtual_freq": 2.0,
+      "pi_freq": 1.5,
+      "repeat": 1,
+      "trial_id": "kuramoto_V2_P1.5_r01"
+    }
+  ]
+}

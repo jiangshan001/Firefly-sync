@@ -1,0 +1,28 @@
+# Core numerical and scientific computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Plotting and visualisation
+matplotlib>=3.7.0
+
+# Configuration management
+pyyaml>=6.0
+
+# Testing
+pytest>=7.3.0
+
+# Code quality (development)
+flake8>=6.0.0
+black>=23.0.0
+
+# --- Future / Hardware Dependencies (uncomment when needed) ---
+# pymavlink>=2.4.0        # MAVLink communication for real drones
+# opencv-python>=4.8.0    # Real camera-based flash detection
+# RPi.GPIO>=0.7.0         # GPIO LED control on Raspberry Pi
+
+# --- Raspberry Pi 5 Hardware Dependencies ---
+# Install on Pi OS via apt (preferred):
+#   sudo apt install -y python3-flask python3-opencv python3-picamera2 python3-gpiozero
+#
+# Or via pip if apt packages are unavailable:
+#   pip install flask opencv-python picamera2 gpiozero

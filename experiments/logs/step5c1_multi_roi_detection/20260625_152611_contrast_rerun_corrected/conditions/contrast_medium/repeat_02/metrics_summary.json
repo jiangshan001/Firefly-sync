@@ -1,0 +1,80 @@
+{
+  "mode": "multi_roi_detection_test",
+  "topology": "all_to_all",
+  "detection_preset": "none",
+  "detected_counts": {
+    "V0": 29,
+    "V1": 59
+  },
+  "actual_virtual_flash_counts": {
+    "V0": 30,
+    "V1": 60
+  },
+  "roi_signal_summary": {
+    "V0": {
+      "roi_id": 0,
+      "roi": [
+        9,
+        137,
+        201,
+        209
+      ],
+      "detected_rising_edge_count": 29,
+      "actual_virtual_flash_count": 30,
+      "detection_fcr": 0.966667,
+      "raw_signal": {
+        "count": 885,
+        "min": 8.0,
+        "max": 31.0,
+        "mean": 22.088136,
+        "std": 4.74492
+      },
+      "normalized_signal": {
+        "count": 885,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.472452,
+        "std": 0.407011
+      },
+      "raw_signal_range": 23.0,
+      "estimated_detected_frequency_hz": 0.999489,
+      "last_detector_frequency_hz": 1.0,
+      "warnings": []
+    },
+    "V1": {
+      "roi_id": 1,
+      "roi": [
+        349,
+        131,
+        260,
+        249
+      ],
+      "detected_rising_edge_count": 59,
+      "actual_virtual_flash_count": 60,
+      "detection_fcr": 0.983333,
+      "raw_signal": {
+        "count": 885,
+        "min": 6.0,
+        "max": 58.0,
+        "mean": 32.419017,
+        "std": 21.174403
+      },
+      "normalized_signal": {
+        "count": 885,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.477177,
+        "std": 0.439516
+      },
+      "raw_signal_range": 52.0,
+      "estimated_detected_frequency_hz": 1.998985,
+      "last_detector_frequency_hz": 1.999,
+      "warnings": []
+    }
+  },
+  "roi_debug_frames": [
+    "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_medium/repeat_02/roi_debug_frame_start.jpg",
+    "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_medium/repeat_02/roi_debug_frame_mid.jpg"
+  ],
+  "closed_loop_adaptation_enabled": false
+}

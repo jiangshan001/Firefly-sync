@@ -1,0 +1,80 @@
+{
+  "mode": "multi_roi_detection_test",
+  "topology": "all_to_all",
+  "detection_preset": "none",
+  "detected_counts": {
+    "V0": 29,
+    "V1": 60
+  },
+  "actual_virtual_flash_counts": {
+    "V0": 30,
+    "V1": 60
+  },
+  "roi_signal_summary": {
+    "V0": {
+      "roi_id": 0,
+      "roi": [
+        77,
+        276,
+        222,
+        204
+      ],
+      "detected_rising_edge_count": 29,
+      "actual_virtual_flash_count": 30,
+      "detection_fcr": 0.966667,
+      "raw_signal": {
+        "count": 886,
+        "min": 8.0,
+        "max": 58.0,
+        "mean": 37.50974,
+        "std": 18.108584
+      },
+      "normalized_signal": {
+        "count": 886,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.491954,
+        "std": 0.47765
+      },
+      "raw_signal_range": 50.0,
+      "estimated_detected_frequency_hz": 1.000508,
+      "last_detector_frequency_hz": 1.0,
+      "warnings": []
+    },
+    "V1": {
+      "roi_id": 1,
+      "roi": [
+        438,
+        254,
+        202,
+        226
+      ],
+      "detected_rising_edge_count": 60,
+      "actual_virtual_flash_count": 60,
+      "detection_fcr": 1.0,
+      "raw_signal": {
+        "count": 886,
+        "min": 3.0,
+        "max": 50.0,
+        "mean": 28.436783,
+        "std": 19.439112
+      },
+      "normalized_signal": {
+        "count": 886,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.500553,
+        "std": 0.478478
+      },
+      "raw_signal_range": 47.0,
+      "estimated_detected_frequency_hz": 2.001017,
+      "last_detector_frequency_hz": 2.001,
+      "warnings": []
+    }
+  },
+  "roi_debug_frames": [
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/contrast_medium/repeat_02/roi_debug_frame_start.jpg",
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/contrast_medium/repeat_02/roi_debug_frame_mid.jpg"
+  ],
+  "closed_loop_adaptation_enabled": false
+}

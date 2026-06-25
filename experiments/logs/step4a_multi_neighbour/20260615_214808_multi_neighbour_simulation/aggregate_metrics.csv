@@ -1,0 +1,13 @@
+trial_id,model,topology,n_agents,group_sync_success,phase_sync_success,offset_phase_lock_success,phase_locked_group_success,frequency_lock_success,one_to_one_flash_lock_success,final_frequency_spread_hz,mean_pairwise_timing_error_s,flash_timing_dispersion_s,mean_order_parameter_R,final_order_parameter_R,flash_count_ratio,extra_flash_rate_hz,sync_diagnostic_label,sync_failure_reason
+kuramoto_all_to_all_r01,kuramoto,all_to_all,3,True,True,True,True,True,True,0.026226,0.069333,0.104,0.867588,0.874471,1.0,0.0,full_group_sync,success
+kuramoto_chain_r01,kuramoto,chain,3,False,False,False,False,True,True,0.020376,0.112712,0.128421,0.677395,0.754906,1.0526,0.1,phase_not_synchronised,phase_not_synchronised
+kuramoto_directed_chain_r01,kuramoto,directed_chain,3,False,False,False,False,False,False,0.577573,0.149111,0.122,0.518183,0.823365,1.3333,0.5,extra_flashes_or_harmonic_locking,extra_flashes_or_harmonic_locking
+pco_if_all_to_all_r01,pco_if,all_to_all,3,False,True,False,False,False,False,1.527959,0.047059,0.053077,0.975678,0.980317,2.0714,1.5,partial_phase_lock_with_extra_flashes,extra_flashes_or_harmonic_locking
+pco_if_chain_r01,pco_if,chain,3,False,True,False,False,False,False,1.442473,0.068627,0.065217,0.972655,0.93699,2.0714,1.5,partial_phase_lock_with_extra_flashes,extra_flashes_or_harmonic_locking
+pco_if_directed_chain_r01,pco_if,directed_chain,3,False,True,False,False,False,False,1.442473,0.068627,0.065217,0.972655,0.93699,2.0714,1.5,partial_phase_lock_with_extra_flashes,extra_flashes_or_harmonic_locking
+eapf_all_to_all_r01,eapf,all_to_all,3,False,False,False,False,False,False,0.733507,0.1028,0.100909,0.59507,0.905407,1.4667,0.7,extra_flashes_or_harmonic_locking,extra_flashes_or_harmonic_locking
+eapf_chain_r01,eapf,chain,3,False,False,False,False,False,False,0.568535,0.115,0.112222,0.562204,0.800832,1.3333,0.5,extra_flashes_or_harmonic_locking,extra_flashes_or_harmonic_locking
+eapf_directed_chain_r01,eapf,directed_chain,3,False,False,False,False,False,False,0.53155,0.1086,0.112778,0.606365,0.995099,1.3333,0.5,extra_flashes_or_harmonic_locking,extra_flashes_or_harmonic_locking
+eapf_consensus_all_to_all_r01,eapf_consensus,all_to_all,3,False,True,False,False,False,True,0.140703,0.063556,0.019286,0.942458,0.999725,1.0714,0.1,partial_phase_lock,frequency_not_locked
+eapf_consensus_chain_r01,eapf_consensus,chain,3,False,True,False,False,False,True,0.140703,0.072889,0.017143,0.925319,0.99911,1.0714,0.1,partial_phase_lock,frequency_not_locked
+eapf_consensus_directed_chain_r01,eapf_consensus,directed_chain,3,False,True,False,False,False,True,0.140703,0.072889,0.017143,0.925319,0.99911,1.0714,0.1,partial_phase_lock,frequency_not_locked

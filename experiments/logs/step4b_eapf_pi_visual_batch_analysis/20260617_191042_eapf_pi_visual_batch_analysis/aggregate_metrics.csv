@@ -1,0 +1,16 @@
+trial_dir,follower_freq_hz,leader_freq_hz,duration_s,sync_success,time_to_sync_s,steady_state_mae_s,steady_state_jitter_s,final_frequency_hz,leader_fcr,follower_fcr,leader_flash_count,follower_flash_count,expected_leader_count,effective_loop_rate_hz
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_182517_eapf_pi_visual_smoke,1.5,2.0,30.0,True,10.0184,0.058365,0.093593,2.003047,0.9333,0.95,56,57,60.0,11.24
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_182554_eapf_pi_visual_smoke,1.5,2.0,30.0,True,8.9245,0.080337,0.027101,2.011905,0.95,0.9333,57,56,60.0,12.11
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_182630_eapf_pi_visual_smoke,1.5,2.0,30.0,True,7.8222,0.0,0.0,1.999147,0.95,0.9167,57,55,60.0,11.71
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_182707_eapf_pi_visual_smoke,1.5,2.0,30.0,True,7.165,0.090552,0.081151,2.030711,0.95,0.9667,57,58,60.0,11.87
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_182744_eapf_pi_visual_smoke,1.5,2.0,30.0,True,9.4256,0.012563,0.028476,1.986547,0.95,0.95,57,57,60.0,11.71
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_182820_eapf_pi_visual_smoke,1.8,2.0,30.0,True,3.8528,0.046417,0.046419,1.998142,0.95,0.9833,57,59,60.0,10.76
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_182857_eapf_pi_visual_smoke,1.8,2.0,30.0,True,10.0008,0.048674,0.046182,1.997859,0.95,0.9667,57,58,60.0,10.7
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_182934_eapf_pi_visual_smoke,1.8,2.0,30.0,True,5.583,0.061546,0.105958,1.995949,0.9333,0.9833,56,59,60.0,10.68
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_183010_eapf_pi_visual_smoke,1.8,2.0,30.0,True,4.9655,0.046328,0.046332,1.999505,0.95,0.95,57,57,60.0,10.68
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_183047_eapf_pi_visual_smoke,1.8,2.0,30.0,True,8.2002,0.0489,0.046394,1.995564,0.95,0.9667,57,58,60.0,10.73
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_183124_eapf_pi_visual_smoke,2.3,2.0,30.0,True,9.4484,0.078777,0.035336,2.003282,0.95,1.0333,57,62,60.0,10.67
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_183200_eapf_pi_visual_smoke,2.3,2.0,30.0,True,6.7733,0.044173,0.054063,1.961469,0.95,1.0,57,60,60.0,10.79
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_183237_eapf_pi_visual_smoke,2.3,2.0,30.0,True,8.7608,0.048474,0.033653,2.037588,0.95,1.0,57,60,60.0,11.61
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_183314_eapf_pi_visual_smoke,2.3,2.0,30.0,True,25.5209,0.090181,0.076645,1.995024,0.95,1.05,57,63,60.0,12.47
+experiments\logs\step4b_eapf_pi_visual_smoke\20260617_183350_eapf_pi_visual_smoke,2.3,2.0,30.0,True,7.2288,0.106938,0.031446,2.042715,0.95,1.0,57,60,60.0,12.28

@@ -1,0 +1,277 @@
+{
+  "V0": {
+    "roi": [
+      77,
+      276,
+      222,
+      204
+    ],
+    "method": "combined_multi_component",
+    "requested_frequency_hz": 2.0,
+    "score": 249.8204,
+    "candidate_id": 1,
+    "estimated_frequency_hz": 2.012191,
+    "roi_estimated_frequency_hz": 2.012191,
+    "trace_frequency_method": "rising_edge",
+    "trace_rising_edge_count": 12,
+    "trace_rising_edge_times_s": [
+      0.200053,
+      0.666721,
+      1.200053,
+      1.666719,
+      2.200055,
+      2.666721,
+      3.200057,
+      3.666722,
+      4.200057,
+      4.666722,
+      5.200057,
+      5.666731
+    ],
+    "trace_on_threshold": 39.9,
+    "trace_off_threshold": 30.4,
+    "autocorrelation_frequency_hz": 1.0,
+    "frequency_confidence": 0.835571,
+    "actual_virtual_flash_count": 12,
+    "actual_virtual_frequency_estimate": 1.99998,
+    "raw_signal": {
+      "count": 90,
+      "min": 19.0,
+      "max": 58.0,
+      "mean": 38.612556,
+      "std": 17.979095
+    },
+    "raw_signal_range": 39.0,
+    "warnings": [
+      "roi_close_to_image_boundary",
+      "frequency_assignment_ambiguous"
+    ]
+  },
+  "V1": {
+    "roi": [
+      438,
+      254,
+      202,
+      226
+    ],
+    "method": "combined_multi_component",
+    "requested_frequency_hz": 2.0,
+    "score": 380.8247,
+    "candidate_id": 0,
+    "estimated_frequency_hz": 2.012191,
+    "roi_estimated_frequency_hz": 2.012191,
+    "trace_frequency_method": "rising_edge",
+    "trace_rising_edge_count": 12,
+    "trace_rising_edge_times_s": [
+      0.200053,
+      0.666721,
+      1.200053,
+      1.666719,
+      2.200055,
+      2.666721,
+      3.200057,
+      3.666722,
+      4.200057,
+      4.666722,
+      5.200057,
+      5.666731
+    ],
+    "trace_on_threshold": 30.0,
+    "trace_off_threshold": 20.0,
+    "autocorrelation_frequency_hz": 1.0,
+    "frequency_confidence": 0.832319,
+    "actual_virtual_flash_count": 12,
+    "actual_virtual_frequency_estimate": 1.99998,
+    "raw_signal": {
+      "count": 90,
+      "min": 7.0,
+      "max": 48.0,
+      "mean": 28.511111,
+      "std": 19.057949
+    },
+    "raw_signal_range": 41.0,
+    "warnings": [
+      "roi_close_to_image_boundary",
+      "frequency_assignment_ambiguous"
+    ]
+  },
+  "candidate_components": [
+    {
+      "candidate_id": 0,
+      "roi": [
+        438,
+        254,
+        202,
+        226
+      ],
+      "component_bbox": [
+        473,
+        289,
+        167,
+        180
+      ],
+      "area_px": 25168,
+      "padded_area_px": 45652,
+      "mean_change": 50.6147,
+      "max_change": 57.1968,
+      "score": 380.8247,
+      "method": "temporal_variance"
+    },
+    {
+      "candidate_id": 1,
+      "roi": [
+        77,
+        276,
+        222,
+        204
+      ],
+      "component_bbox": [
+        112,
+        311,
+        152,
+        155
+      ],
+      "area_px": 18382,
+      "padded_area_px": 45288,
+      "mean_change": 39.9345,
+      "max_change": 45.1389,
+      "score": 249.8204,
+      "method": "temporal_variance"
+    }
+  ],
+  "selected_components": [
+    {
+      "candidate_id": 0,
+      "roi": [
+        438,
+        254,
+        202,
+        226
+      ],
+      "component_bbox": [
+        473,
+        289,
+        167,
+        180
+      ],
+      "area_px": 25168,
+      "padded_area_px": 45652,
+      "mean_change": 50.6147,
+      "max_change": 57.1968,
+      "score": 380.8247,
+      "method": "temporal_variance",
+      "selection_overlap_ratio": 0.0
+    },
+    {
+      "candidate_id": 1,
+      "roi": [
+        77,
+        276,
+        222,
+        204
+      ],
+      "component_bbox": [
+        112,
+        311,
+        152,
+        155
+      ],
+      "area_px": 18382,
+      "padded_area_px": 45288,
+      "mean_change": 39.9345,
+      "max_change": 45.1389,
+      "score": 249.8204,
+      "method": "temporal_variance",
+      "selection_overlap_ratio": 0.0
+    }
+  ],
+  "rejected_candidate_components": [],
+  "assignment_method": "left_right_fallback",
+  "image_size": [
+    640,
+    480
+  ],
+  "timestamp": "2026-06-24T16:52:24.409036",
+  "calibration_sequence": [
+    "combined_simultaneous"
+  ],
+  "sequential_diagnostics": {},
+  "requested_v0_frequency_hz": 2.0,
+  "requested_v1_frequency_hz": 2.0,
+  "requested_v1_phase_rad": 0.08,
+  "combined_api_config_requested": {
+    "V0": {
+      "frequency_hz": 2.0,
+      "phase_rad": 0.0,
+      "enabled": true
+    },
+    "V1": {
+      "frequency_hz": 2.0,
+      "phase_rad": 0.08,
+      "enabled": true
+    }
+  },
+  "combined_server_start_snapshot": {
+    "V0": {
+      "agent_id": "V0",
+      "enabled": true,
+      "initial_frequency_hz": 2.0,
+      "frequency_hz": 2.0,
+      "initial_phase_rad": 0.0,
+      "phase_rad": 0.022960015028213834,
+      "fire_count": 1,
+      "flash_on": true
+    },
+    "V1": {
+      "agent_id": "V1",
+      "enabled": true,
+      "initial_frequency_hz": 2.0,
+      "frequency_hz": 2.0,
+      "initial_phase_rad": 0.08,
+      "phase_rad": 0.10309321810808592,
+      "fire_count": 1,
+      "flash_on": true
+    }
+  },
+  "combined_server_end_snapshot": {
+    "V0": {
+      "agent_id": "V0",
+      "enabled": true,
+      "initial_frequency_hz": 2.0,
+      "frequency_hz": 2.0,
+      "initial_phase_rad": 0.0,
+      "phase_rad": 0.3419246608202908,
+      "fire_count": 13,
+      "flash_on": true
+    },
+    "V1": {
+      "agent_id": "V1",
+      "enabled": true,
+      "initial_frequency_hz": 2.0,
+      "frequency_hz": 2.0,
+      "initial_phase_rad": 0.08,
+      "phase_rad": 0.422033987614187,
+      "fire_count": 13,
+      "flash_on": true
+    }
+  },
+  "combined_capture_duration_s": 6.00006,
+  "actual_v0_flash_count": 12,
+  "actual_v1_flash_count": 12,
+  "actual_v0_frequency_estimate": 1.99998,
+  "actual_v1_frequency_estimate": 1.99998,
+  "combined_frequencies_hz": {
+    "V0": 2.0,
+    "V1": 2.0
+  },
+  "debug_files": {
+    "auto_roi_combined_debug.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_near_simultaneous/auto_roi/auto_roi_combined_debug.jpg",
+    "auto_roi_candidates_debug.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_near_simultaneous/auto_roi/auto_roi_candidates_debug.jpg",
+    "auto_roi_combined_temporal_variance.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_near_simultaneous/auto_roi/auto_roi_combined_temporal_variance.jpg",
+    "auto_roi_combined_threshold_mask.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_near_simultaneous/auto_roi/auto_roi_combined_threshold_mask.jpg",
+    "auto_roi_selected_traces.png": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_near_simultaneous/auto_roi/auto_roi_selected_traces.png"
+  },
+  "overlap_ratio": 0.0,
+  "calibration_valid": true,
+  "failure_reason": null
+}

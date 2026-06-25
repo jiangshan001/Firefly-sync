@@ -1,0 +1,4 @@
+V0_detection_recall,V1_detection_recall,api_failure_count,category,condition,fault_kind,final_frequency_disagreement_hz,final_mean_order_parameter_R,final_mean_pairwise_phase_error_cycles,p0_events_delayed,recovery_time_s,sync_success,time_to_sync_s,trial,trial_dir,virtual_events_dropped
+0.920792,0.959184,0,baseline,baseline,none,0.009203,0.985332,0.029783,0,,False,,1,experiments/logs/step5c2_2v1p_eapf_sync/20260625_180539_all_to_all_smoke/conditions/baseline/trial_01,0
+0.95,0.92,0,baseline,baseline,none,0.008746,0.99336,0.018771,0,,False,,2,experiments/logs/step5c2_2v1p_eapf_sync/20260625_180539_all_to_all_smoke/conditions/baseline/trial_02,0
+0.978723,0.978495,0,baseline,baseline,none,0.01982,0.991423,0.024126,0,,False,,3,experiments/logs/step5c2_2v1p_eapf_sync/20260625_180539_all_to_all_smoke/conditions/baseline/trial_03,0

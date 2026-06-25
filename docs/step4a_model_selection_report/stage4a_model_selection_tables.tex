@@ -1,0 +1,81 @@
+% ======================================================================
+% Stage 4A Model Selection — Tables
+% ======================================================================
+
+% --- Table 1: Locked Model Parameters ---
+\begin{table}[htbp]
+\centering
+\caption{Locked model parameters selected via 60\,s $\times$ 5-repeat
+         parameter-locking sweep (seeds 1000--1004).}
+\label{tab:locked}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Model} & \textbf{Key Parameters} & \textbf{Variant} \\
+\midrule
+Kuramoto & $K = 5.0$ & baseline \\
+PCO simple & additive phase, $\varepsilon = 0.10$, $\tau_{\text{ref}} = 0.05$\,s & simple \\
+PCO adaptive PRC & biphasic sine PRC, $\varepsilon = 0.10$, phase delay on,
+                  $\Delta\phi_{\max} = 0.20$ & adaptive\_prc \\
+EAPF tracker & $g_p = 0.40$, $g_f = 0.15$ & tracker \\
+EAPF consensus & $g_p = 0.02$, $g_f = 0.02$, $\alpha_{p,f} = 0.2$,
+                 $\Delta\theta_{\max} = 0.2$\,rad, $\Delta f_{\max} = 0.05$\,Hz & consensus \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% --- Table 2: Final Weighted Scores ---
+\begin{table}[htbp]
+\centering
+\caption{Final weighted model evaluation scores (N=3: 1200 trials, N=5: 300 trials,
+         seeds 2000--2019 / 3000--3009).}
+\label{tab:scores}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+\textbf{Model} & \textbf{N3 Sync} & \textbf{N3 Conv} & \textbf{N3 Robust}
+               & \textbf{N5 Scale} & \textbf{HW} & \textbf{Int.} & \textbf{Total} \\
+\midrule
+EAPF consensus & 1.000 & 0.984 & 1.000 & 0.933 & 0.800 & 0.800 & \textbf{0.938} \\
+Kuramoto       & 0.902 & 0.891 & 0.767 & 0.427 & 0.850 & 0.900 & 0.801 \\
+EAPF tracker   & 0.763 & 0.752 & 0.335 & 0.597 & 0.700 & 0.700 & 0.656 \\
+PCO adaptive   & 0.350 & 0.467 & 0.100 & 0.000 & 0.650 & 0.750 & 0.363 \\
+PCO simple     & 0.283 & 0.370 & 0.100 & 0.000 & 0.750 & 0.900 & 0.358 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% --- Table 3: Repeatability Comparison ---
+\begin{table}[htbp]
+\centering
+\caption{Repeatability across two independent final evaluations (seeds
+         2000/3000 vs.\ 4000/5000).}
+\label{tab:repeatability}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Model} & \textbf{Run 1} & \textbf{Run 2} & \textbf{$\Delta$} \\
+\midrule
+EAPF consensus & 0.9375 & 0.9375 & 0.0000 \\
+Kuramoto       & 0.8008 & 0.8020 & $+$0.0012 \\
+EAPF tracker   & 0.6563 & 0.6602 & $+$0.0039 \\
+PCO adaptive   & 0.3625 & 0.3625 & 0.0000 \\
+PCO simple     & 0.3579 & 0.3579 & 0.0000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% --- Table 4: Final Decision Summary ---
+\begin{table}[htbp]
+\centering
+\caption{Final Stage 4A model-selection decision summary.}
+\label{tab:decision}
+\begin{tabular}{@{}llp{6.5cm}@{}}
+\toprule
+\textbf{Rank} & \textbf{Model} & \textbf{Decision} \\
+\midrule
+1 & EAPF consensus & \textbf{Primary HIL candidate} \\
+2 & Kuramoto & Secondary comparison model \\
+3 & EAPF tracker & Retained — works for near-identical oscillators \\
+4 & PCO adaptive PRC & Retained — reduced extra flashes vs.\ simple PCO \\
+5 & PCO simple & Retained — simplest firefly-inspired baseline \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,65 @@
+{
+  "chunk_id": "20260621_193101",
+  "chunk_label": "pi_1.2",
+  "dry_run": true,
+  "command_line": [
+    "experiments/run_step5b_mutual_hil_batch.py",
+    "--dry-run",
+    "--run-dir",
+    "experiments/logs/step5b_dryrun_validation/chunk_12",
+    "--duration",
+    "30",
+    "--models",
+    "eapf_consensus",
+    "kuramoto",
+    "--freq-pairs",
+    "2.0:1.2",
+    "--repeats",
+    "3",
+    "--seed",
+    "20260620",
+    "--chunk-label",
+    "pi_1.2"
+  ],
+  "models": [
+    "eapf_consensus",
+    "kuramoto"
+  ],
+  "freq_pairs": [
+    {
+      "virtual": 2.0,
+      "pi": 1.2
+    }
+  ],
+  "canonical_freq_pairs": [
+    {
+      "virtual": 2.0,
+      "pi": 1.2
+    },
+    {
+      "virtual": 2.0,
+      "pi": 1.5
+    },
+    {
+      "virtual": 2.0,
+      "pi": 2.5
+    }
+  ],
+  "repeats": 3,
+  "duration": 30.0,
+  "random_phase_enabled": true,
+  "seed": 20260620,
+  "started_at": "2026-06-21T19:31:01.925585",
+  "finished_at": "2026-06-21T19:31:01.925592",
+  "completed_trial_ids": [],
+  "skipped_trial_ids": [],
+  "failed_trial_ids": [],
+  "planned_trial_ids": [
+    "eapf_consensus_V2_P1.2_r01",
+    "kuramoto_V2_P1.2_r01",
+    "eapf_consensus_V2_P1.2_r02",
+    "kuramoto_V2_P1.2_r02",
+    "eapf_consensus_V2_P1.2_r03",
+    "kuramoto_V2_P1.2_r03"
+  ]
+}

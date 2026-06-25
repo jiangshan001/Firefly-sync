@@ -1,0 +1,20 @@
+{
+  "batch_dir": "experiments/logs/step5c2_2v1p_eapf_sync/20260625_180539_all_to_all_smoke",
+  "conditions": [
+    "baseline"
+  ],
+  "trials_completed": 3,
+  "condition_summaries": [
+    {
+      "condition": "baseline",
+      "trials": 3,
+      "success_rate": 0.0,
+      "mean_time_to_sync_s": null,
+      "mean_final_phase_error_cycles": 0.024227,
+      "mean_final_frequency_disagreement_hz": 0.01259,
+      "mean_final_order_parameter_R": 0.990038,
+      "mean_recovery_time_s": null
+    }
+  ],
+  "overall_success_rate": 0.0
+}

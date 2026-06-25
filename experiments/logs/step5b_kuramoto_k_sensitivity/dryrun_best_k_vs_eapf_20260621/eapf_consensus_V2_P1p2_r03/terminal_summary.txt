@@ -1,0 +1,1 @@
+[DRY-RUN] eapf_consensus_V2_P1p2_r03: would run eapf_consensus V=2.0Hz P=1.2Hz seed=20260627 phases=(5.033519, 1.237926)

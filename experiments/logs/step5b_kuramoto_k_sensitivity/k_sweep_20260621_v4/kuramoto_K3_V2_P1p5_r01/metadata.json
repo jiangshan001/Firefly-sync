@@ -1,0 +1,21 @@
+{
+  "trial_id": "kuramoto_K3_V2_P1p5_r01",
+  "model": "kuramoto",
+  "model_parameters": {
+    "K": 3.0
+  },
+  "virtual_initial_freq": 2.0,
+  "pi_initial_freq": 1.5,
+  "seed": 20260620,
+  "trial_seed": 20260622,
+  "random_phase_enabled": true,
+  "virtual_initial_phase_rad": 5.834590435731924,
+  "pi_initial_phase_rad": 4.376969797522959,
+  "initial_phase_difference_rad": -1.4576206382089651,
+  "duration": 30.0,
+  "repeat": 1,
+  "feedback_enabled": true,
+  "dot_size": 450,
+  "leader_api": "http://192.168.1.111:8000",
+  "timestamp": "2026-06-21T21:53:36.650454"
+}

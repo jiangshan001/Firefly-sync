@@ -1,0 +1,283 @@
+{
+  "condition": "contrast_low",
+  "category": "contrast",
+  "description": "Low contrast flashes.",
+  "required_for_ready": true,
+  "intended_difficulty": "challenging",
+  "failure_interpretation": "Low-contrast failure means this lighting/display contrast should be avoided formally.",
+  "display_model": "browser_canvas_grayscale_radial_targets",
+  "background": {
+    "brightness": 80,
+    "rgb": [
+      80,
+      80,
+      80
+    ],
+    "css_rgb": "rgb(80,80,80)"
+  },
+  "flash_on": {
+    "brightness": 120,
+    "rgb": [
+      120,
+      120,
+      120
+    ],
+    "css_rgb": "rgb(120,120,120)"
+  },
+  "flash_off": {
+    "brightness": 80,
+    "rgb": [
+      80,
+      80,
+      80
+    ],
+    "css_rgb": "rgb(80,80,80)"
+  },
+  "contrast": {
+    "flash_minus_background": 40,
+    "flash_minus_off": 40,
+    "off_minus_background": 0
+  },
+  "agents": {
+    "V0": {
+      "position_xy": [
+        520,
+        420
+      ],
+      "dot_size_px": 280,
+      "frequency_hz": 1.0,
+      "phase_rad": 0.0
+    },
+    "V1": {
+      "position_xy": [
+        1180,
+        420
+      ],
+      "dot_size_px": 280,
+      "frequency_hz": 2.0,
+      "phase_rad": 1.5707963267948966
+    }
+  },
+  "display_verification": {
+    "requested_display_config": {
+      "condition": "contrast_low",
+      "category": "contrast",
+      "description": "Low contrast flashes.",
+      "required_for_ready": true,
+      "intended_difficulty": "challenging",
+      "failure_interpretation": "Low-contrast failure means this lighting/display contrast should be avoided formally.",
+      "display_model": "browser_canvas_grayscale_radial_targets",
+      "background": {
+        "brightness": 80,
+        "rgb": [
+          80,
+          80,
+          80
+        ],
+        "css_rgb": "rgb(80,80,80)"
+      },
+      "flash_on": {
+        "brightness": 120,
+        "rgb": [
+          120,
+          120,
+          120
+        ],
+        "css_rgb": "rgb(120,120,120)"
+      },
+      "flash_off": {
+        "brightness": 80,
+        "rgb": [
+          80,
+          80,
+          80
+        ],
+        "css_rgb": "rgb(80,80,80)"
+      },
+      "contrast": {
+        "flash_minus_background": 40,
+        "flash_minus_off": 40,
+        "off_minus_background": 0
+      },
+      "agents": {
+        "V0": {
+          "position_xy": [
+            520,
+            420
+          ],
+          "dot_size_px": 280,
+          "frequency_hz": 1.0,
+          "phase_rad": 0.0
+        },
+        "V1": {
+          "position_xy": [
+            1180,
+            420
+          ],
+          "dot_size_px": 280,
+          "frequency_hz": 2.0,
+          "phase_rad": 1.5707963267948966
+        }
+      }
+    },
+    "server_applied_mutual_config": {
+      "mode": "mutual_hil",
+      "mutual_agent_mode": "multi_2v1p",
+      "topology": "all_to_all",
+      "topology_adjacency": {
+        "V0": [
+          "V1",
+          "P0"
+        ],
+        "V1": [
+          "V0",
+          "P0"
+        ],
+        "P0": [
+          "V0",
+          "V1"
+        ]
+      },
+      "available_topologies": [
+        "all_to_all",
+        "chain_pi_middle",
+        "chain_pi_downstream"
+      ],
+      "display_config": {
+        "background_brightness": 80,
+        "brightness_on": 120,
+        "brightness_off": 80,
+        "agents": [
+          {
+            "agent_id": "V0",
+            "role": "virtual",
+            "x": 520,
+            "y": 420,
+            "size": 280,
+            "brightness_on": 120,
+            "brightness_off": 80,
+            "background_brightness": 80,
+            "initial_frequency_hz": 1.0,
+            "initial_phase_rad": 0.0,
+            "enabled": true
+          },
+          {
+            "agent_id": "V1",
+            "role": "virtual",
+            "x": 1180,
+            "y": 420,
+            "size": 280,
+            "brightness_on": 120,
+            "brightness_off": 80,
+            "background_brightness": 80,
+            "initial_frequency_hz": 2.0,
+            "initial_phase_rad": 1.5707963267948966,
+            "enabled": true
+          },
+          {
+            "agent_id": "P0",
+            "role": "pi",
+            "x": 0,
+            "y": 0,
+            "size": 0,
+            "brightness_on": 255,
+            "brightness_off": 0,
+            "background_brightness": 0,
+            "initial_frequency_hz": 2.0,
+            "initial_phase_rad": 0.0,
+            "enabled": true
+          }
+        ]
+      }
+    },
+    "frontend_applied_display_state": {
+      "page": "mutual",
+      "renderer_version": 4,
+      "render_frame_count": 30015,
+      "local_running": true,
+      "feedback_enabled": false,
+      "background_brightness": 80,
+      "background_css": "rgb(80,80,80)",
+      "agents": [
+        {
+          "id": 0,
+          "agent_id": "V0",
+          "role": "virtual",
+          "x": 520,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 120,
+          "brightness_off": 80,
+          "background_brightness": 80,
+          "initial_frequency_hz": 1,
+          "initial_phase_rad": 0,
+          "enabled": true,
+          "current_draw_brightness": 120
+        },
+        {
+          "id": 1,
+          "agent_id": "V1",
+          "role": "virtual",
+          "x": 1180,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 120,
+          "brightness_off": 80,
+          "background_brightness": 80,
+          "initial_frequency_hz": 2,
+          "initial_phase_rad": 1.5707963267948966,
+          "enabled": true,
+          "current_draw_brightness": 80
+        }
+      ],
+      "client_timestamp_ms": 1782397803091,
+      "server_received_wall_time_s": 1782397803.0940156
+    },
+    "warnings": []
+  },
+  "camera_display_evidence": {
+    "available": true,
+    "background_frame_index": 33,
+    "background_frame_t_s": 2.200058,
+    "background_mean": 184.53157,
+    "debug_files": {
+      "camera_background_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/camera_background_raw.jpg",
+      "camera_v0_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/camera_v0_flash_on_raw.jpg",
+      "camera_v1_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/contrast_low/auto_roi/camera_v1_flash_on_raw.jpg"
+    },
+    "agents": {
+      "V0": {
+        "roi": [
+          0,
+          126,
+          216,
+          218
+        ],
+        "flash_on_frame_index": 83,
+        "flash_on_frame_t_s": 5.533392,
+        "flash_on_roi_mean": 195.47554,
+        "background_mean": 184.53157,
+        "measured_contrast": 10.94397,
+        "roi_mean_min": 187.204208,
+        "roi_mean_max": 195.47554
+      },
+      "V1": {
+        "roi": [
+          347,
+          129,
+          261,
+          248
+        ],
+        "flash_on_frame_index": 7,
+        "flash_on_frame_t_s": 0.466725,
+        "flash_on_roi_mean": 189.413101,
+        "background_mean": 184.53157,
+        "measured_contrast": 4.881531,
+        "roi_mean_min": 176.115601,
+        "roi_mean_max": 189.413101
+      }
+    },
+    "warnings": [],
+    "mean_measured_contrast": 7.91275
+  }
+}

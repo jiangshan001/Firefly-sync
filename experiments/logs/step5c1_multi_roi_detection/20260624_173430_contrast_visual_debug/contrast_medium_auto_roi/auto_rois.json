@@ -1,0 +1,608 @@
+{
+  "V0": {
+    "roi": [
+      56,
+      282,
+      223,
+      198
+    ],
+    "method": "combined_multi_component",
+    "requested_frequency_hz": 1.0,
+    "score": 163.3215,
+    "candidate_id": 1,
+    "estimated_frequency_hz": 1.0,
+    "roi_estimated_frequency_hz": 1.0,
+    "trace_frequency_method": "rising_edge",
+    "trace_rising_edge_count": 6,
+    "trace_rising_edge_times_s": [
+      0.533389,
+      1.53339,
+      2.533389,
+      3.533389,
+      4.533388,
+      5.533389
+    ],
+    "trace_on_threshold": 26.8,
+    "trace_off_threshold": 22.8,
+    "autocorrelation_frequency_hz": 0.999999,
+    "frequency_confidence": 0.821987,
+    "actual_virtual_flash_count": 6,
+    "actual_virtual_frequency_estimate": 0.999989,
+    "raw_signal": {
+      "count": 90,
+      "min": 17.0,
+      "max": 35.0,
+      "mean": 25.438556,
+      "std": 7.405907
+    },
+    "raw_signal_range": 18.0,
+    "warnings": [
+      "roi_close_to_image_boundary"
+    ]
+  },
+  "V1": {
+    "roi": [
+      418,
+      265,
+      222,
+      215
+    ],
+    "method": "combined_multi_component",
+    "requested_frequency_hz": 2.0,
+    "score": 264.0004,
+    "candidate_id": 0,
+    "estimated_frequency_hz": 2.045435,
+    "roi_estimated_frequency_hz": 2.045435,
+    "trace_frequency_method": "rising_edge",
+    "trace_rising_edge_count": 13,
+    "trace_rising_edge_times_s": [
+      1e-06,
+      0.400055,
+      0.866723,
+      1.400055,
+      1.866723,
+      2.400066,
+      2.866723,
+      3.400056,
+      3.866723,
+      4.400056,
+      4.866723,
+      5.400056,
+      5.866723
+    ],
+    "trace_on_threshold": 23.6,
+    "trace_off_threshold": 15.6,
+    "autocorrelation_frequency_hz": 0.999999,
+    "frequency_confidence": 0.832135,
+    "actual_virtual_flash_count": 12,
+    "actual_virtual_frequency_estimate": 1.999979,
+    "raw_signal": {
+      "count": 90,
+      "min": 6.0,
+      "max": 38.0,
+      "mean": 22.777778,
+      "std": 15.235031
+    },
+    "raw_signal_range": 32.0,
+    "warnings": [
+      "roi_close_to_image_boundary"
+    ]
+  },
+  "candidate_components": [
+    {
+      "candidate_id": 0,
+      "roi": [
+        418,
+        265,
+        222,
+        215
+      ],
+      "component_bbox": [
+        453,
+        300,
+        187,
+        180
+      ],
+      "area_px": 27081,
+      "padded_area_px": 47730,
+      "mean_change": 34.3389,
+      "max_change": 40.4771,
+      "score": 264.0004,
+      "method": "temporal_variance"
+    },
+    {
+      "candidate_id": 1,
+      "roi": [
+        56,
+        282,
+        223,
+        198
+      ],
+      "component_bbox": [
+        91,
+        317,
+        153,
+        156
+      ],
+      "area_px": 18586,
+      "padded_area_px": 44154,
+      "mean_change": 25.6078,
+      "max_change": 29.8646,
+      "score": 163.3215,
+      "method": "temporal_variance"
+    }
+  ],
+  "selected_components": [
+    {
+      "candidate_id": 0,
+      "roi": [
+        418,
+        265,
+        222,
+        215
+      ],
+      "component_bbox": [
+        453,
+        300,
+        187,
+        180
+      ],
+      "area_px": 27081,
+      "padded_area_px": 47730,
+      "mean_change": 34.3389,
+      "max_change": 40.4771,
+      "score": 264.0004,
+      "method": "temporal_variance",
+      "selection_overlap_ratio": 0.0
+    },
+    {
+      "candidate_id": 1,
+      "roi": [
+        56,
+        282,
+        223,
+        198
+      ],
+      "component_bbox": [
+        91,
+        317,
+        153,
+        156
+      ],
+      "area_px": 18586,
+      "padded_area_px": 44154,
+      "mean_change": 25.6078,
+      "max_change": 29.8646,
+      "score": 163.3215,
+      "method": "temporal_variance",
+      "selection_overlap_ratio": 0.0
+    }
+  ],
+  "rejected_candidate_components": [],
+  "assignment_method": "frequency_based",
+  "image_size": [
+    640,
+    480
+  ],
+  "timestamp": "2026-06-24T17:35:13.261461",
+  "calibration_sequence": [
+    "combined_simultaneous"
+  ],
+  "sequential_diagnostics": {},
+  "requested_v0_frequency_hz": 1.0,
+  "requested_v1_frequency_hz": 2.0,
+  "requested_v1_phase_rad": 1.5707963267948966,
+  "combined_api_config_requested": {
+    "V0": {
+      "frequency_hz": 1.0,
+      "phase_rad": 0.0,
+      "enabled": true
+    },
+    "V1": {
+      "frequency_hz": 2.0,
+      "phase_rad": 1.5707963267948966,
+      "enabled": true
+    }
+  },
+  "combined_server_start_snapshot": {
+    "V0": {
+      "agent_id": "V0",
+      "enabled": true,
+      "initial_frequency_hz": 1.0,
+      "frequency_hz": 1.0,
+      "initial_phase_rad": 0.0,
+      "phase_rad": 3.3725983594703925,
+      "fire_count": 0,
+      "flash_on": false
+    },
+    "V1": {
+      "agent_id": "V1",
+      "enabled": true,
+      "initial_frequency_hz": 2.0,
+      "frequency_hz": 2.0,
+      "initial_phase_rad": 1.5707963267948966,
+      "phase_rad": 2.0329045003466124,
+      "fire_count": 1,
+      "flash_on": true
+    }
+  },
+  "combined_server_end_snapshot": {
+    "V0": {
+      "agent_id": "V0",
+      "enabled": true,
+      "initial_frequency_hz": 1.0,
+      "frequency_hz": 1.0,
+      "initial_phase_rad": 0.0,
+      "phase_rad": 3.400471197925993,
+      "fire_count": 6,
+      "flash_on": false
+    },
+    "V1": {
+      "agent_id": "V1",
+      "enabled": true,
+      "initial_frequency_hz": 2.0,
+      "frequency_hz": 2.0,
+      "initial_phase_rad": 1.5707963267948966,
+      "phase_rad": 2.088648919148265,
+      "fire_count": 13,
+      "flash_on": true
+    }
+  },
+  "combined_mutual_config_snapshot": {
+    "mode": "mutual_hil",
+    "mutual_agent_mode": "multi_2v1p",
+    "topology": "all_to_all",
+    "topology_adjacency": {
+      "V0": [
+        "V1",
+        "P0"
+      ],
+      "V1": [
+        "V0",
+        "P0"
+      ],
+      "P0": [
+        "V0",
+        "V1"
+      ]
+    },
+    "available_topologies": [
+      "all_to_all",
+      "chain_pi_middle",
+      "chain_pi_downstream"
+    ],
+    "display_config": {
+      "background_brightness": 40,
+      "brightness_on": 180,
+      "brightness_off": 40,
+      "agents": [
+        {
+          "agent_id": "V0",
+          "role": "virtual",
+          "x": 520,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 180,
+          "brightness_off": 40,
+          "background_brightness": 40,
+          "initial_frequency_hz": 1.0,
+          "initial_phase_rad": 0.0,
+          "enabled": true
+        },
+        {
+          "agent_id": "V1",
+          "role": "virtual",
+          "x": 1180,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 180,
+          "brightness_off": 40,
+          "background_brightness": 40,
+          "initial_frequency_hz": 2.0,
+          "initial_phase_rad": 1.5707963267948966,
+          "enabled": true
+        },
+        {
+          "agent_id": "P0",
+          "role": "pi",
+          "x": 0,
+          "y": 0,
+          "size": 0,
+          "brightness_on": 255,
+          "brightness_off": 0,
+          "background_brightness": 0,
+          "initial_frequency_hz": 2.0,
+          "initial_phase_rad": 0.0,
+          "enabled": true
+        }
+      ]
+    }
+  },
+  "frontend_display_state_snapshot": {
+    "page": "mutual",
+    "renderer_version": 4,
+    "render_frame_count": 8819,
+    "local_running": true,
+    "feedback_enabled": false,
+    "background_brightness": 40,
+    "background_css": "rgb(40,40,40)",
+    "agents": [
+      {
+        "id": 0,
+        "agent_id": "V0",
+        "role": "virtual",
+        "x": 520,
+        "y": 420,
+        "size": 280,
+        "brightness_on": 180,
+        "brightness_off": 40,
+        "background_brightness": 40,
+        "initial_frequency_hz": 1,
+        "initial_phase_rad": 0,
+        "enabled": true,
+        "current_draw_brightness": 180
+      },
+      {
+        "id": 1,
+        "agent_id": "V1",
+        "role": "virtual",
+        "x": 1180,
+        "y": 420,
+        "size": 280,
+        "brightness_on": 180,
+        "brightness_off": 40,
+        "background_brightness": 40,
+        "initial_frequency_hz": 2,
+        "initial_phase_rad": 1.5707963267948966,
+        "enabled": true,
+        "current_draw_brightness": 180
+      }
+    ],
+    "client_timestamp_ms": 1782318912675,
+    "server_received_wall_time_s": 1782318912.6779292
+  },
+  "camera_display_evidence": {
+    "available": true,
+    "background_frame_index": 2,
+    "background_frame_t_s": 0.133389,
+    "background_mean": 119.430351,
+    "debug_files": {
+      "camera_background_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/contrast_medium/auto_roi/camera_background_raw.jpg",
+      "camera_v0_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/contrast_medium/auto_roi/camera_v0_flash_on_raw.jpg",
+      "camera_v1_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/contrast_medium/auto_roi/camera_v1_flash_on_raw.jpg"
+    },
+    "agents": {
+      "V0": {
+        "roi": [
+          56,
+          282,
+          223,
+          198
+        ],
+        "flash_on_frame_index": 38,
+        "flash_on_frame_t_s": 2.533389,
+        "flash_on_roi_mean": 96.510735,
+        "background_mean": 119.430351,
+        "measured_contrast": -22.919617,
+        "roi_mean_min": 65.275131,
+        "roi_mean_max": 96.510735
+      },
+      "V1": {
+        "roi": [
+          418,
+          265,
+          222,
+          215
+        ],
+        "flash_on_frame_index": 7,
+        "flash_on_frame_t_s": 0.466723,
+        "flash_on_roi_mean": 96.50309,
+        "background_mean": 119.430351,
+        "measured_contrast": -22.927261,
+        "roi_mean_min": 47.984894,
+        "roi_mean_max": 96.50309
+      }
+    },
+    "warnings": [],
+    "mean_measured_contrast": -22.923439
+  },
+  "combined_capture_duration_s": 6.000064,
+  "actual_v0_flash_count": 6,
+  "actual_v1_flash_count": 12,
+  "actual_v0_frequency_estimate": 0.999989,
+  "actual_v1_frequency_estimate": 1.999979,
+  "combined_frequencies_hz": {
+    "V0": 1.0,
+    "V1": 2.0
+  },
+  "debug_files": {
+    "auto_roi_combined_debug.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/contrast_medium/auto_roi/auto_roi_combined_debug.jpg",
+    "camera_background_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/contrast_medium/auto_roi/camera_background_raw.jpg",
+    "camera_v0_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/contrast_medium/auto_roi/camera_v0_flash_on_raw.jpg",
+    "camera_v1_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/contrast_medium/auto_roi/camera_v1_flash_on_raw.jpg",
+    "auto_roi_candidates_debug.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/contrast_medium/auto_roi/auto_roi_candidates_debug.jpg",
+    "auto_roi_combined_temporal_variance.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/contrast_medium/auto_roi/auto_roi_combined_temporal_variance.jpg",
+    "auto_roi_combined_threshold_mask.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/contrast_medium/auto_roi/auto_roi_combined_threshold_mask.jpg",
+    "auto_roi_selected_traces.png": "experiments/logs/step5c1_multi_roi_detection/20260624_173430_contrast_visual_debug/conditions/contrast_medium/auto_roi/auto_roi_selected_traces.png"
+  },
+  "overlap_ratio": 0.0,
+  "calibration_valid": true,
+  "failure_reason": null,
+  "display_verification": {
+    "requested_display_config": {
+      "condition": "contrast_medium",
+      "category": "contrast",
+      "description": "Medium contrast flashes.",
+      "required_for_ready": true,
+      "intended_difficulty": "realistic",
+      "failure_interpretation": "Failure suggests moderate contrast is not robust enough under current lighting.",
+      "display_model": "browser_canvas_grayscale_radial_targets",
+      "background": {
+        "brightness": 40,
+        "rgb": [
+          40,
+          40,
+          40
+        ],
+        "css_rgb": "rgb(40,40,40)"
+      },
+      "flash_on": {
+        "brightness": 180,
+        "rgb": [
+          180,
+          180,
+          180
+        ],
+        "css_rgb": "rgb(180,180,180)"
+      },
+      "flash_off": {
+        "brightness": 40,
+        "rgb": [
+          40,
+          40,
+          40
+        ],
+        "css_rgb": "rgb(40,40,40)"
+      },
+      "contrast": {
+        "flash_minus_background": 140,
+        "flash_minus_off": 140,
+        "off_minus_background": 0
+      },
+      "agents": {
+        "V0": {
+          "position_xy": [
+            520,
+            420
+          ],
+          "dot_size_px": 280,
+          "frequency_hz": 1.0,
+          "phase_rad": 0.0
+        },
+        "V1": {
+          "position_xy": [
+            1180,
+            420
+          ],
+          "dot_size_px": 280,
+          "frequency_hz": 2.0,
+          "phase_rad": 1.5707963267948966
+        }
+      }
+    },
+    "server_applied_mutual_config": {
+      "mode": "mutual_hil",
+      "mutual_agent_mode": "multi_2v1p",
+      "topology": "all_to_all",
+      "topology_adjacency": {
+        "V0": [
+          "V1",
+          "P0"
+        ],
+        "V1": [
+          "V0",
+          "P0"
+        ],
+        "P0": [
+          "V0",
+          "V1"
+        ]
+      },
+      "available_topologies": [
+        "all_to_all",
+        "chain_pi_middle",
+        "chain_pi_downstream"
+      ],
+      "display_config": {
+        "background_brightness": 40,
+        "brightness_on": 180,
+        "brightness_off": 40,
+        "agents": [
+          {
+            "agent_id": "V0",
+            "role": "virtual",
+            "x": 520,
+            "y": 420,
+            "size": 280,
+            "brightness_on": 180,
+            "brightness_off": 40,
+            "background_brightness": 40,
+            "initial_frequency_hz": 1.0,
+            "initial_phase_rad": 0.0,
+            "enabled": true
+          },
+          {
+            "agent_id": "V1",
+            "role": "virtual",
+            "x": 1180,
+            "y": 420,
+            "size": 280,
+            "brightness_on": 180,
+            "brightness_off": 40,
+            "background_brightness": 40,
+            "initial_frequency_hz": 2.0,
+            "initial_phase_rad": 1.5707963267948966,
+            "enabled": true
+          },
+          {
+            "agent_id": "P0",
+            "role": "pi",
+            "x": 0,
+            "y": 0,
+            "size": 0,
+            "brightness_on": 255,
+            "brightness_off": 0,
+            "background_brightness": 0,
+            "initial_frequency_hz": 2.0,
+            "initial_phase_rad": 0.0,
+            "enabled": true
+          }
+        ]
+      }
+    },
+    "frontend_applied_display_state": {
+      "page": "mutual",
+      "renderer_version": 4,
+      "render_frame_count": 8879,
+      "local_running": true,
+      "feedback_enabled": false,
+      "background_brightness": 40,
+      "background_css": "rgb(40,40,40)",
+      "agents": [
+        {
+          "id": 0,
+          "agent_id": "V0",
+          "role": "virtual",
+          "x": 520,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 180,
+          "brightness_off": 40,
+          "background_brightness": 40,
+          "initial_frequency_hz": 1,
+          "initial_phase_rad": 0,
+          "enabled": true,
+          "current_draw_brightness": 40
+        },
+        {
+          "id": 1,
+          "agent_id": "V1",
+          "role": "virtual",
+          "x": 1180,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 180,
+          "brightness_off": 40,
+          "background_brightness": 40,
+          "initial_frequency_hz": 2,
+          "initial_phase_rad": 1.5707963267948966,
+          "enabled": true,
+          "current_draw_brightness": 180
+        }
+      ],
+      "client_timestamp_ms": 1782318913175,
+      "server_received_wall_time_s": 1782318913.1778598
+    },
+    "warnings": []
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "chunk_id": "20260621_215305",
+  "chunk_label": "V2_P1p5",
+  "workflow": "k-sweep",
+  "dry_run": false,
+  "command_line": [
+    "experiments/run_step5b_kuramoto_k_sweep.py",
+    "--leader-api",
+    "http://192.168.1.111:8000",
+    "--duration",
+    "30",
+    "--freq-pairs",
+    "2.0:1.5",
+    "--kuramoto-gains",
+    "2.5",
+    "3.0",
+    "3.5",
+    "4.0",
+    "4.5",
+    "--repeats",
+    "2",
+    "--seed",
+    "20260620",
+    "--random-phase",
+    "--min-interval",
+    "0.35",
+    "--run-dir",
+    "experiments/logs/step5b_kuramoto_k_sensitivity/k_sweep_20260621_v4",
+    "--resume",
+    "--chunk-label",
+    "V2_P1p5",
+    "--api-timeout",
+    "10",
+    "--api-retries",
+    "3"
+  ],
+  "freq_pairs": [
+    {
+      "virtual": 2.0,
+      "pi": 1.5
+    }
+  ],
+  "kuramoto_gains": [
+    2.5,
+    3.0,
+    3.5,
+    4.0,
+    4.5
+  ],
+  "best_k": null,
+  "repeats": 2,
+  "duration": 30.0,
+  "random_phase_enabled": true,
+  "seed": 20260620,
+  "started_at": "2026-06-21T21:53:05.338696",
+  "finished_at": "2026-06-21T21:58:16.840697",
+  "completed_trial_ids": [
+    "kuramoto_K2p5_V2_P1p5_r01",
+    "kuramoto_K3_V2_P1p5_r01",
+    "kuramoto_K3p5_V2_P1p5_r01",
+    "kuramoto_K4_V2_P1p5_r01",
+    "kuramoto_K4p5_V2_P1p5_r01",
+    "kuramoto_K2p5_V2_P1p5_r02",
+    "kuramoto_K3_V2_P1p5_r02",
+    "kuramoto_K3p5_V2_P1p5_r02",
+    "kuramoto_K4_V2_P1p5_r02",
+    "kuramoto_K4p5_V2_P1p5_r02"
+  ],
+  "skipped_trial_ids": [],
+  "failed_trial_ids": [],
+  "planned_trial_ids": [
+    "kuramoto_K2p5_V2_P1p5_r01",
+    "kuramoto_K3_V2_P1p5_r01",
+    "kuramoto_K3p5_V2_P1p5_r01",
+    "kuramoto_K4_V2_P1p5_r01",
+    "kuramoto_K4p5_V2_P1p5_r01",
+    "kuramoto_K2p5_V2_P1p5_r02",
+    "kuramoto_K3_V2_P1p5_r02",
+    "kuramoto_K3p5_V2_P1p5_r02",
+    "kuramoto_K4_V2_P1p5_r02",
+    "kuramoto_K4p5_V2_P1p5_r02"
+  ]
+}

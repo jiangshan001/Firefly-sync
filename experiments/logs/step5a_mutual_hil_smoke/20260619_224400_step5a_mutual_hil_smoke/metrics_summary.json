@@ -1,0 +1,10 @@
+{
+  "virtual_detected": 0,
+  "virtual_expected": 10.0,
+  "virtual_fcr": 0.0,
+  "pi_flash_count": 7,
+  "pi_final_freq_hz": 1.5,
+  "duration_s": 5.0,
+  "actual_wall_s": 5.0,
+  "feedback_enabled": false
+}

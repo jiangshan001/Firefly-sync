@@ -1,0 +1,71 @@
+% ======================================================================
+% Stage 4A Model Selection — Figures
+% Figure paths are relative to the figures/ directory inside the final
+% evaluation output folder.  Set \figdir in the main document.
+% ======================================================================
+
+% --- Figure 1: N=3 Zero-Lag Success Heatmap ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{\figdir/fig1_n3_zero_lag_success_heatmap.png}
+\caption{N=3 zero-lag group sync success rate by model and frequency set
+         (all topologies pooled).}
+\label{fig:n3_heatmap}
+\end{figure}
+
+% --- Figure 7: N=5 Scalability Heatmap ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{\figdir/fig7_n5_scalability_success_heatmap.png}
+\caption{N=5 scalability — zero-lag success rate by model and frequency set
+         (all topologies pooled).}
+\label{fig:n5_heatmap}
+\end{figure}
+
+% --- Figure 4: Flash Count Ratio ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{\figdir/fig4_n3_flash_count_ratio_comparison.png}
+\caption{N=3 mean flash count ratio by model.  The dashed line at 1.2 marks
+         the 1:1 flash lock threshold.}
+\label{fig:fcr}
+\end{figure}
+
+% --- Figure 8: Weighted Scores ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{\figdir/fig8_weighted_model_scores.png}
+\caption{Total weighted model evaluation scores.}
+\label{fig:total}
+\end{figure}
+
+% --- Figure 9: Category Breakdown ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{\figdir/fig9_category_score_breakdown.png}
+\caption{Category score breakdown: N3 Sync (0.30), N3 Conv (0.15),
+         N3 Robust (0.15), N5 Scale (0.15), HW Ready (0.15), Interp (0.10).}
+\label{fig:categories}
+\end{figure}
+
+% --- Figure 10: Full 0-60 s Flash Rasters ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{\figdir/fig10_representative_flash_rasters_full_0_60s.png}
+\caption{Representative flash rasters for all five models (all\_to\_all,
+         strong heterogeneity, full 0--60\,s).  Each panel shows agent flash
+         events as vertical tick marks.  (a) Kuramoto, (b) EAPF consensus,
+         (c) EAPF tracker, (d) PCO adaptive PRC, (e) PCO simple.
+         Extra flashes from faster agents are visible in panels (d) and (e).}
+\label{fig:raster_full}
+\end{figure}
+
+% --- Figure 10b: 0-10 s Zoom ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{\figdir/fig10b_representative_flash_rasters_zoom_0_10s.png}
+\caption{Representative flash rasters — 0--10\,s zoom showing early
+         convergence dynamics.  Kuramoto (a) and EAPF consensus (b) converge
+         rapidly; PCO variants (d,e) show extra flashes from the start.}
+\label{fig:raster_zoom}
+\end{figure}

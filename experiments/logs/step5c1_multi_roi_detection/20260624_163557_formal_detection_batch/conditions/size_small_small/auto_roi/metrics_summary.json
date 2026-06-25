@@ -1,0 +1,273 @@
+{
+  "mode": "auto_roi_calibration",
+  "closed_loop_adaptation_enabled": false,
+  "auto_roi_config": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/size_small_small/auto_roi/auto_rois.json",
+  "auto_rois": {
+    "V0": {
+      "roi": [
+        124,
+        322,
+        126,
+        128
+      ],
+      "method": "combined_multi_component",
+      "requested_frequency_hz": 1.0,
+      "score": 111.6116,
+      "candidate_id": 1,
+      "estimated_frequency_hz": 1.0,
+      "roi_estimated_frequency_hz": 1.0,
+      "trace_frequency_method": "rising_edge",
+      "trace_rising_edge_count": 6,
+      "trace_rising_edge_times_s": [
+        0.133387,
+        1.133387,
+        2.133387,
+        3.133387,
+        4.133387,
+        5.133389
+      ],
+      "trace_on_threshold": 45.2,
+      "trace_off_threshold": 29.2,
+      "autocorrelation_frequency_hz": 1.0,
+      "frequency_confidence": 0.832243,
+      "actual_virtual_flash_count": 6,
+      "actual_virtual_frequency_estimate": 0.99999,
+      "raw_signal": {
+        "count": 90,
+        "min": 10.0,
+        "max": 75.0,
+        "mean": 40.766667,
+        "std": 31.230345
+      },
+      "raw_signal_range": 65.0,
+      "warnings": []
+    },
+    "V1": {
+      "roi": [
+        494,
+        305,
+        143,
+        139
+      ],
+      "method": "combined_multi_component",
+      "requested_frequency_hz": 2.0,
+      "score": 163.8016,
+      "candidate_id": 0,
+      "estimated_frequency_hz": 2.012175,
+      "roi_estimated_frequency_hz": 2.012175,
+      "trace_frequency_method": "rising_edge",
+      "trace_rising_edge_count": 12,
+      "trace_rising_edge_times_s": [
+        0.0,
+        0.46672,
+        1.000053,
+        1.46672,
+        2.000054,
+        2.46672,
+        3.000054,
+        3.46672,
+        4.000054,
+        4.466722,
+        5.000055,
+        5.466722
+      ],
+      "trace_on_threshold": 58.35,
+      "trace_off_threshold": 34.1,
+      "autocorrelation_frequency_hz": 1.0,
+      "frequency_confidence": 0.83257,
+      "actual_virtual_flash_count": 12,
+      "actual_virtual_frequency_estimate": 1.99998,
+      "raw_signal": {
+        "count": 90,
+        "min": 4.0,
+        "max": 102.0,
+        "mean": 54.285778,
+        "std": 46.632538
+      },
+      "raw_signal_range": 98.0,
+      "warnings": [
+        "roi_close_to_image_boundary"
+      ]
+    },
+    "candidate_components": [
+      {
+        "candidate_id": 0,
+        "roi": [
+          494,
+          305,
+          143,
+          139
+        ],
+        "component_bbox": [
+          529,
+          340,
+          73,
+          69
+        ],
+        "area_px": 3912,
+        "padded_area_px": 19877,
+        "mean_change": 44.6355,
+        "max_change": 54.3886,
+        "score": 163.8016,
+        "method": "temporal_variance"
+      },
+      {
+        "candidate_id": 1,
+        "roi": [
+          124,
+          322,
+          126,
+          128
+        ],
+        "component_bbox": [
+          159,
+          357,
+          56,
+          58
+        ],
+        "area_px": 2531,
+        "padded_area_px": 16128,
+        "mean_change": 35.9515,
+        "max_change": 40.6754,
+        "score": 111.6116,
+        "method": "temporal_variance"
+      }
+    ],
+    "selected_components": [
+      {
+        "candidate_id": 0,
+        "roi": [
+          494,
+          305,
+          143,
+          139
+        ],
+        "component_bbox": [
+          529,
+          340,
+          73,
+          69
+        ],
+        "area_px": 3912,
+        "padded_area_px": 19877,
+        "mean_change": 44.6355,
+        "max_change": 54.3886,
+        "score": 163.8016,
+        "method": "temporal_variance",
+        "selection_overlap_ratio": 0.0
+      },
+      {
+        "candidate_id": 1,
+        "roi": [
+          124,
+          322,
+          126,
+          128
+        ],
+        "component_bbox": [
+          159,
+          357,
+          56,
+          58
+        ],
+        "area_px": 2531,
+        "padded_area_px": 16128,
+        "mean_change": 35.9515,
+        "max_change": 40.6754,
+        "score": 111.6116,
+        "method": "temporal_variance",
+        "selection_overlap_ratio": 0.0
+      }
+    ],
+    "rejected_candidate_components": [],
+    "assignment_method": "frequency_based",
+    "image_size": [
+      640,
+      480
+    ],
+    "timestamp": "2026-06-24T16:41:44.320490",
+    "calibration_sequence": [
+      "combined_simultaneous"
+    ],
+    "sequential_diagnostics": {},
+    "requested_v0_frequency_hz": 1.0,
+    "requested_v1_frequency_hz": 2.0,
+    "requested_v1_phase_rad": 1.5707963267948966,
+    "combined_api_config_requested": {
+      "V0": {
+        "frequency_hz": 1.0,
+        "phase_rad": 0.0,
+        "enabled": true
+      },
+      "V1": {
+        "frequency_hz": 2.0,
+        "phase_rad": 1.5707963267948966,
+        "enabled": true
+      }
+    },
+    "combined_server_start_snapshot": {
+      "V0": {
+        "agent_id": "V0",
+        "enabled": true,
+        "initial_frequency_hz": 1.0,
+        "frequency_hz": 1.0,
+        "initial_phase_rad": 0.0,
+        "phase_rad": 3.1552171124860506,
+        "fire_count": 0,
+        "flash_on": false
+      },
+      "V1": {
+        "agent_id": "V1",
+        "enabled": true,
+        "initial_frequency_hz": 2.0,
+        "frequency_hz": 2.0,
+        "initial_phase_rad": 1.5707963267948966,
+        "phase_rad": 1.5981319532048877,
+        "fire_count": 1,
+        "flash_on": true
+      }
+    },
+    "combined_server_end_snapshot": {
+      "V0": {
+        "agent_id": "V0",
+        "enabled": true,
+        "initial_frequency_hz": 1.0,
+        "frequency_hz": 1.0,
+        "initial_phase_rad": 0.0,
+        "phase_rad": 3.322816053791825,
+        "fire_count": 6,
+        "flash_on": false
+      },
+      "V1": {
+        "agent_id": "V1",
+        "enabled": true,
+        "initial_frequency_hz": 2.0,
+        "frequency_hz": 2.0,
+        "initial_phase_rad": 1.5707963267948966,
+        "phase_rad": 1.9333373756962176,
+        "fire_count": 13,
+        "flash_on": true
+      }
+    },
+    "combined_capture_duration_s": 6.000059,
+    "actual_v0_flash_count": 6,
+    "actual_v1_flash_count": 12,
+    "actual_v0_frequency_estimate": 0.99999,
+    "actual_v1_frequency_estimate": 1.99998,
+    "combined_frequencies_hz": {
+      "V0": 1.0,
+      "V1": 2.0
+    },
+    "debug_files": {
+      "auto_roi_combined_debug.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/size_small_small/auto_roi/auto_roi_combined_debug.jpg",
+      "auto_roi_candidates_debug.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/size_small_small/auto_roi/auto_roi_candidates_debug.jpg",
+      "auto_roi_combined_temporal_variance.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/size_small_small/auto_roi/auto_roi_combined_temporal_variance.jpg",
+      "auto_roi_combined_threshold_mask.jpg": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/size_small_small/auto_roi/auto_roi_combined_threshold_mask.jpg",
+      "auto_roi_selected_traces.png": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/size_small_small/auto_roi/auto_roi_selected_traces.png"
+    },
+    "overlap_ratio": 0.0,
+    "calibration_valid": true,
+    "failure_reason": null
+  },
+  "api_post_success_count": 12
+}

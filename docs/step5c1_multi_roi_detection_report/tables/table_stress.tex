@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{p{0.26\textwidth}p{0.17\textwidth}p{0.17\textwidth}p{0.30\textwidth}}
+\toprule
+Stress condition & Auto ROI & Detection result & Interpretation \\
+\midrule
+Too-close stress & invalid & auto-ROI failed; repeats skipped & Intentionally difficult; failure indicates a boundary case when large halos nearly touch or padded ROIs overlap. Not representative of the intended 2V+1P layout. \\
+Tiny-small stress & valid & pass & Passed; this optional very-small-target condition shows additional size robustness. \\
+Small low-contrast stress & valid & boundary/fail & Optional combined small-target low-contrast stress. Failure does not block readiness, but marks a difficult visual boundary case. \\
+\bottomrule
+\end{tabular}
+\caption{Optional stress outcomes.}
+\label{tab:stress}
+\end{table}

@@ -1,0 +1,15 @@
+{
+  "synchronization_success": true,
+  "time_to_synchronization_s": 2.5899999999999888,
+  "steady_state_mean_abs_timing_error_s": 0.006552,
+  "steady_state_rmse_timing_error_s": 0.008094,
+  "steady_state_jitter_s": 0.004753,
+  "final_frequency_error_hz": 7.094557054276862e-06,
+  "convergence_quality": 1.0,
+  "detection_success_rate": 1.0,
+  "false_positive_rate": 0.0,
+  "leader_flash_count": 60,
+  "follower_flash_count": 59,
+  "expected_leader_flash_count": 60.0,
+  "leader_flash_count_ratio": 1.0
+}

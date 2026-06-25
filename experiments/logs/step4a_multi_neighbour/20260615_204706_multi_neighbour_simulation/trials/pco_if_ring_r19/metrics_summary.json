@@ -1,0 +1,12 @@
+{
+  "group_sync_success": false,
+  "time_to_group_sync_s": null,
+  "final_frequency_spread_hz": 1.494074,
+  "mean_pairwise_timing_error_s": 0.055714,
+  "flash_timing_dispersion_s": 0.051111,
+  "mean_order_parameter_R": 0.975757,
+  "final_order_parameter_R": 0.937332,
+  "model": "pco_if",
+  "topology": "ring",
+  "n_agents": 3
+}

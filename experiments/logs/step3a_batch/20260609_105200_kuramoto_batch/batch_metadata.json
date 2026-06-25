@@ -1,0 +1,17 @@
+{
+  "model_name": "kuramoto",
+  "mode": "mock",
+  "leader_freq_hz": 2.0,
+  "follower_initial_freqs_hz": [
+    1.5
+  ],
+  "coupling_gain": 3.5,
+  "duration_s": 3.0,
+  "dt": 0.01,
+  "flash_on_time_s": 0.06,
+  "sync_threshold_s": 0.1,
+  "sync_cycles": 5,
+  "repeats_per_condition": 1,
+  "timestamp": "2026-06-09T10:52:00.060917",
+  "trial_prefix": ""
+}

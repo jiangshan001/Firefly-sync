@@ -1,0 +1,283 @@
+{
+  "condition": "baseline",
+  "category": "baseline",
+  "description": "Default positions, large dots, high contrast, V0=1 Hz, V1=2 Hz.",
+  "required_for_ready": true,
+  "intended_difficulty": "realistic",
+  "failure_interpretation": "Baseline failure means the camera/display alignment is not ready.",
+  "display_model": "browser_canvas_grayscale_radial_targets",
+  "background": {
+    "brightness": 0,
+    "rgb": [
+      0,
+      0,
+      0
+    ],
+    "css_rgb": "rgb(0,0,0)"
+  },
+  "flash_on": {
+    "brightness": 255,
+    "rgb": [
+      255,
+      255,
+      255
+    ],
+    "css_rgb": "rgb(255,255,255)"
+  },
+  "flash_off": {
+    "brightness": 0,
+    "rgb": [
+      0,
+      0,
+      0
+    ],
+    "css_rgb": "rgb(0,0,0)"
+  },
+  "contrast": {
+    "flash_minus_background": 255,
+    "flash_minus_off": 255,
+    "off_minus_background": 0
+  },
+  "agents": {
+    "V0": {
+      "position_xy": [
+        520,
+        420
+      ],
+      "dot_size_px": 280,
+      "frequency_hz": 1.0,
+      "phase_rad": 0.0
+    },
+    "V1": {
+      "position_xy": [
+        1180,
+        420
+      ],
+      "dot_size_px": 280,
+      "frequency_hz": 2.0,
+      "phase_rad": 1.5707963267948966
+    }
+  },
+  "display_verification": {
+    "requested_display_config": {
+      "condition": "baseline",
+      "category": "baseline",
+      "description": "Default positions, large dots, high contrast, V0=1 Hz, V1=2 Hz.",
+      "required_for_ready": true,
+      "intended_difficulty": "realistic",
+      "failure_interpretation": "Baseline failure means the camera/display alignment is not ready.",
+      "display_model": "browser_canvas_grayscale_radial_targets",
+      "background": {
+        "brightness": 0,
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "css_rgb": "rgb(0,0,0)"
+      },
+      "flash_on": {
+        "brightness": 255,
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "css_rgb": "rgb(255,255,255)"
+      },
+      "flash_off": {
+        "brightness": 0,
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "css_rgb": "rgb(0,0,0)"
+      },
+      "contrast": {
+        "flash_minus_background": 255,
+        "flash_minus_off": 255,
+        "off_minus_background": 0
+      },
+      "agents": {
+        "V0": {
+          "position_xy": [
+            520,
+            420
+          ],
+          "dot_size_px": 280,
+          "frequency_hz": 1.0,
+          "phase_rad": 0.0
+        },
+        "V1": {
+          "position_xy": [
+            1180,
+            420
+          ],
+          "dot_size_px": 280,
+          "frequency_hz": 2.0,
+          "phase_rad": 1.5707963267948966
+        }
+      }
+    },
+    "server_applied_mutual_config": {
+      "mode": "mutual_hil",
+      "mutual_agent_mode": "multi_2v1p",
+      "topology": "all_to_all",
+      "topology_adjacency": {
+        "V0": [
+          "V1",
+          "P0"
+        ],
+        "V1": [
+          "V0",
+          "P0"
+        ],
+        "P0": [
+          "V0",
+          "V1"
+        ]
+      },
+      "available_topologies": [
+        "all_to_all",
+        "chain_pi_middle",
+        "chain_pi_downstream"
+      ],
+      "display_config": {
+        "background_brightness": 0,
+        "brightness_on": 255,
+        "brightness_off": 0,
+        "agents": [
+          {
+            "agent_id": "V0",
+            "role": "virtual",
+            "x": 520,
+            "y": 420,
+            "size": 280,
+            "brightness_on": 255,
+            "brightness_off": 0,
+            "background_brightness": 0,
+            "initial_frequency_hz": 1.0,
+            "initial_phase_rad": 0.0,
+            "enabled": true
+          },
+          {
+            "agent_id": "V1",
+            "role": "virtual",
+            "x": 1180,
+            "y": 420,
+            "size": 280,
+            "brightness_on": 255,
+            "brightness_off": 0,
+            "background_brightness": 0,
+            "initial_frequency_hz": 2.0,
+            "initial_phase_rad": 1.5707963267948966,
+            "enabled": true
+          },
+          {
+            "agent_id": "P0",
+            "role": "pi",
+            "x": 0,
+            "y": 0,
+            "size": 0,
+            "brightness_on": 255,
+            "brightness_off": 0,
+            "background_brightness": 0,
+            "initial_frequency_hz": 2.0,
+            "initial_phase_rad": 0.0,
+            "enabled": true
+          }
+        ]
+      }
+    },
+    "frontend_applied_display_state": {
+      "page": "mutual",
+      "renderer_version": 4,
+      "render_frame_count": 4165,
+      "local_running": true,
+      "feedback_enabled": false,
+      "background_brightness": 0,
+      "background_css": "rgb(0,0,0)",
+      "agents": [
+        {
+          "id": 0,
+          "agent_id": "V0",
+          "role": "virtual",
+          "x": 520,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 255,
+          "brightness_off": 0,
+          "background_brightness": 0,
+          "initial_frequency_hz": 1,
+          "initial_phase_rad": 0,
+          "enabled": true,
+          "current_draw_brightness": 255
+        },
+        {
+          "id": 1,
+          "agent_id": "V1",
+          "role": "virtual",
+          "x": 1180,
+          "y": 420,
+          "size": 280,
+          "brightness_on": 255,
+          "brightness_off": 0,
+          "background_brightness": 0,
+          "initial_frequency_hz": 2,
+          "initial_phase_rad": 1.5707963267948966,
+          "enabled": true,
+          "current_draw_brightness": 0
+        }
+      ],
+      "client_timestamp_ms": 1782397587675,
+      "server_received_wall_time_s": 1782397587.6777117
+    },
+    "warnings": []
+  },
+  "camera_display_evidence": {
+    "available": true,
+    "background_frame_index": 2,
+    "background_frame_t_s": 0.133389,
+    "background_mean": 92.138374,
+    "debug_files": {
+      "camera_background_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/baseline/auto_roi/camera_background_raw.jpg",
+      "camera_v0_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/baseline/auto_roi/camera_v0_flash_on_raw.jpg",
+      "camera_v1_flash_on_raw.jpg": "experiments/logs/step5c1_multi_roi_detection/20260625_152611_contrast_rerun_corrected/conditions/baseline/auto_roi/camera_v1_flash_on_raw.jpg"
+    },
+    "agents": {
+      "V0": {
+        "roi": [
+          0,
+          127,
+          225,
+          221
+        ],
+        "flash_on_frame_index": 68,
+        "flash_on_frame_t_s": 4.533389,
+        "flash_on_roi_mean": 200.049072,
+        "background_mean": 92.138374,
+        "measured_contrast": 107.910698,
+        "roi_mean_min": 93.32753,
+        "roi_mean_max": 200.049072
+      },
+      "V1": {
+        "roi": [
+          348,
+          130,
+          262,
+          252
+        ],
+        "flash_on_frame_index": 52,
+        "flash_on_frame_t_s": 3.466722,
+        "flash_on_roi_mean": 200.730896,
+        "background_mean": 92.138374,
+        "measured_contrast": 108.592522,
+        "roi_mean_min": 73.773209,
+        "roi_mean_max": 200.730896
+      }
+    },
+    "warnings": [],
+    "mean_measured_contrast": 108.25161
+  }
+}

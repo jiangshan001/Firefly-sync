@@ -1,0 +1,8 @@
+
+[TRIAL] kuramoto_V2_P2.5_r02
+  initial phases: seed=20260632 random_phase=True virtual=1.214597 rad pi=2.835978 rad diff=1.621381 rad
+  start: running=True feedback=True freq=2.0 fire_count=0
+  virtual detected=57/66 actual FCR=0.864
+  pi flashes=66 final freq error=0.2949 Hz
+  final 5s error mean_abs=0.4969 Hz abs_of_means=0.2109 Hz
+  pi feedback counters: posts_received=66 events_consumed=66

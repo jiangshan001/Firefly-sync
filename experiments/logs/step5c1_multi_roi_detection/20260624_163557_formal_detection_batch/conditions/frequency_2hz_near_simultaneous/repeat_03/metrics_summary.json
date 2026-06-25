@@ -1,0 +1,80 @@
+{
+  "mode": "multi_roi_detection_test",
+  "topology": "all_to_all",
+  "detection_preset": "none",
+  "detected_counts": {
+    "V0": 59,
+    "V1": 59
+  },
+  "actual_virtual_flash_counts": {
+    "V0": 60,
+    "V1": 60
+  },
+  "roi_signal_summary": {
+    "V0": {
+      "roi_id": 0,
+      "roi": [
+        77,
+        276,
+        222,
+        204
+      ],
+      "detected_rising_edge_count": 59,
+      "actual_virtual_flash_count": 60,
+      "detection_fcr": 0.983333,
+      "raw_signal": {
+        "count": 887,
+        "min": 8.0,
+        "max": 57.0,
+        "mean": 37.211263,
+        "std": 18.437274
+      },
+      "normalized_signal": {
+        "count": 887,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.490564,
+        "std": 0.472257
+      },
+      "raw_signal_range": 49.0,
+      "estimated_detected_frequency_hz": 2.001011,
+      "last_detector_frequency_hz": 2.001,
+      "warnings": []
+    },
+    "V1": {
+      "roi_id": 1,
+      "roi": [
+        438,
+        254,
+        202,
+        226
+      ],
+      "detected_rising_edge_count": 59,
+      "actual_virtual_flash_count": 60,
+      "detection_fcr": 0.983333,
+      "raw_signal": {
+        "count": 887,
+        "min": 7.0,
+        "max": 50.0,
+        "mean": 29.662897,
+        "std": 19.686054
+      },
+      "normalized_signal": {
+        "count": 887,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.527851,
+        "std": 0.484946
+      },
+      "raw_signal_range": 43.0,
+      "estimated_detected_frequency_hz": 2.001017,
+      "last_detector_frequency_hz": 2.001,
+      "warnings": []
+    }
+  },
+  "roi_debug_frames": [
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_near_simultaneous/repeat_03/roi_debug_frame_start.jpg",
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_near_simultaneous/repeat_03/roi_debug_frame_mid.jpg"
+  ],
+  "closed_loop_adaptation_enabled": false
+}

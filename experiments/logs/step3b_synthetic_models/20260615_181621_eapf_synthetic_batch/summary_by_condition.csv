@@ -1,0 +1,4 @@
+follower_initial_freq_hz,n_trials,success_rate,mean_time_to_sync_s,std_time_to_sync_s,mean_steady_state_mae_s,std_steady_state_mae_s
+1.5,5,0.0,,,0.140455,0.0
+1.8,5,1.0,6.53,0.0,0.005172,0.0
+2.3,5,1.0,7.51,0.0,0.005172,0.0

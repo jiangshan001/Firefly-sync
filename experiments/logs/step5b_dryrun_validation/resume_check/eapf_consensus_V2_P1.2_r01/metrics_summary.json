@@ -1,0 +1,11 @@
+{
+  "trial_id": "eapf_consensus_V2_P1.2_r01",
+  "model": "eapf_consensus",
+  "virtual_initial_freq": 2.0,
+  "pi_initial_freq": 1.2,
+  "timeout_or_failure": false,
+  "actual_detection_fcr": 0.9,
+  "final_frequency_error_hz": 0.1,
+  "frequency_error_final_5s_mean_abs": 0.1,
+  "frequency_error_final_5s_abs_of_means": 0.1
+}

@@ -1,0 +1,8 @@
+{
+  "model": "kuramoto",
+  "virtual_freq": 2.0,
+  "pi_freq": 1.5,
+  "feedback": false,
+  "dry_run": true,
+  "timestamp": "2026-06-20T17:52:19.968909"
+}

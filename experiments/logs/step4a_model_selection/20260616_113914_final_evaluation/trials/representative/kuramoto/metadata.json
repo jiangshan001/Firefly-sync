@@ -1,0 +1,12 @@
+{
+  "model": "kuramoto",
+  "topology": "all_to_all",
+  "freq_set": "strong_heterogeneity",
+  "seed": 4000,
+  "duration_s": 60.0,
+  "frequencies": [
+    1.5,
+    2.0,
+    2.3
+  ]
+}

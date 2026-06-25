@@ -1,0 +1,15 @@
+# Example configuration for PicameraFlashDetector
+# Used by: firefly_sync/hardware/picamera_flash_detector.py
+
+hardware: pi
+
+camera:
+  resolution: [640, 480]
+  target_fps: 30
+  roi: null  # [x, y, w, h] or null for full frame
+  camera_id: 0
+
+detection:
+  threshold_on: 128
+  threshold_off: 64
+  min_interval_s: 0.1

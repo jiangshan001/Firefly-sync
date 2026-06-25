@@ -1,0 +1,36 @@
+{
+  "agents": [
+    {
+      "id": 0,
+      "model": "kuramoto",
+      "x": 800,
+      "y": 400,
+      "size": 450,
+      "initial_frequency_hz": 2.0,
+      "frequency_hz": 1.769002343741576,
+      "initial_phase_rad": 2.9513953193920917,
+      "kuramoto_gain": 3.0,
+      "phase_rad": 3.6899712848402015,
+      "flash_on": false,
+      "raw_flash_on": false,
+      "fire_count": 52,
+      "enabled": true,
+      "received_pi_flashes": 35,
+      "pi_flash_posts_received": 35,
+      "pi_flash_events_consumed": 35,
+      "last_flash_time": 29.72961669997312,
+      "flash_age_s": 0.33408140001120046,
+      "snapshot_time": 30.06369809998432,
+      "server_time": 30.06369809998432,
+      "feedback_flash_hold_s": 0.25,
+      "flash_times_count": 52,
+      "kuramoto_last_warning": "",
+      "calibration_elapsed": 30.064,
+      "running": true,
+      "feedback_enabled": true
+    }
+  ],
+  "mode": "mutual_hil",
+  "loop_alive": true,
+  "loop_rate_hz": 29.94
+}

@@ -1,0 +1,23 @@
+{
+  "model_name": "eapf",
+  "leader_freqs_hz": [
+    2.0
+  ],
+  "follower_initial_freqs_hz": [
+    1.5,
+    1.8,
+    2.3
+  ],
+  "duration_s": 30.0,
+  "dt": 0.01,
+  "repeats_per_condition": 5,
+  "sync_threshold_s": 0.1,
+  "sync_cycles": 5,
+  "random_seed": 42,
+  "timestamp": "2026-06-15T18:16:21.346225",
+  "param_phase_gain": 0.2,
+  "param_frequency_gain": 0.1,
+  "param_frequency_min_hz": 0.5,
+  "param_frequency_max_hz": 4.0,
+  "param_leader_period_window": 6
+}

@@ -1,0 +1,305 @@
+{
+  "data_dir": "experiments\\logs\\step5b_formal_chunked\\formal_step5b_chunked_20260621",
+  "k_sweep_dir": "experiments\\logs\\step5b_kuramoto_k_sensitivity\\k_sweep_20260621_v4",
+  "n_trials_main": 18,
+  "n_trials_k_sweep": 30,
+  "models": [
+    "eapf_consensus",
+    "kuramoto"
+  ],
+  "conditions": [
+    1.2,
+    1.5,
+    2.5
+  ],
+  "k_values": [
+    2.5,
+    3.0,
+    3.5,
+    4.0,
+    4.5
+  ],
+  "best_k": 2.5,
+  "validation_counts": [
+    {
+      "model": "eapf_consensus",
+      "pi_initial_freq": 1.2,
+      "n_trials": 3
+    },
+    {
+      "model": "eapf_consensus",
+      "pi_initial_freq": 1.5,
+      "n_trials": 3
+    },
+    {
+      "model": "eapf_consensus",
+      "pi_initial_freq": 2.5,
+      "n_trials": 3
+    },
+    {
+      "model": "kuramoto",
+      "pi_initial_freq": 1.2,
+      "n_trials": 3
+    },
+    {
+      "model": "kuramoto",
+      "pi_initial_freq": 1.5,
+      "n_trials": 3
+    },
+    {
+      "model": "kuramoto",
+      "pi_initial_freq": 2.5,
+      "n_trials": 3
+    }
+  ],
+  "overall": [
+    {
+      "model": "eapf_consensus",
+      "n_trials": 9,
+      "actual_fcr_mean": 0.9461888888888887,
+      "actual_fcr_std": 0.027512153879896636,
+      "final5_mae_mean": 0.04607644444444445,
+      "final5_mae_std": 0.03814434303114654,
+      "final5_abs_means_mean": 0.04259422222222223,
+      "virtual_freq_std_mean": 0.0006169999999999999,
+      "pi_freq_std_mean": 0.011070444444444445,
+      "pi_flash_count_mean": 57.0,
+      "actual_virtual_flashes_mean": 59.44444444444444,
+      "detected_virtual_flashes_mean": 56.22222222222222
+    },
+    {
+      "model": "kuramoto",
+      "n_trials": 9,
+      "actual_fcr_mean": 0.9026555555555554,
+      "actual_fcr_std": 0.07141257086660426,
+      "final5_mae_mean": 0.4131244444444444,
+      "final5_mae_std": 0.09474908852742477,
+      "final5_abs_means_mean": 0.19908655555555557,
+      "virtual_freq_std_mean": 0.2473878888888889,
+      "pi_freq_std_mean": 0.3925895555555556,
+      "pi_flash_count_mean": 53.333333333333336,
+      "actual_virtual_flashes_mean": 58.0,
+      "detected_virtual_flashes_mean": 52.111111111111114
+    }
+  ],
+  "k_ranking": [
+    {
+      "appendix_ranking_score": 0.847431,
+      "best_overall": true,
+      "failed_or_invalid_trials": 0,
+      "failure_timeout_count": 0,
+      "kuramoto_K": 2.5,
+      "mean_actual_detection_fcr": 0.844283,
+      "mean_api_drop_count": 0.0,
+      "mean_capture_drop_count": 0.0,
+      "mean_frequency_error_final_5s_abs_of_means": 0.392303,
+      "mean_frequency_error_final_5s_mean_abs": 0.431546,
+      "mean_frontend_warning_count": 1.833333,
+      "mean_kuramoto_debug_warning_count": 1.833333,
+      "mean_pi_freq_final_5s_std": 0.25678,
+      "mean_short_interval_warning_count": 0.0,
+      "mean_virtual_freq_final_5s_std": 0.212791,
+      "n_trials": 6,
+      "rank": 1,
+      "score_formula": "score = mean(final_5s_mean_abs_error) + 0.5*mean(virtual_final_5s_std + pi_final_5s_std) + 2*mean(max(0, 0.90-FCR)) + 5*mean(max(0, FCR-1.02)) + 0.02*mean(api_drops + capture_drops + short_interval_warnings + frontend_warnings) + 10*(failed_or_invalid_trials/n_trials)",
+      "std_actual_detection_fcr": 0.106116,
+      "std_api_drop_count": 0.0,
+      "std_capture_drop_count": 0.0,
+      "std_frequency_error_final_5s_abs_of_means": 0.257725,
+      "std_frequency_error_final_5s_mean_abs": 0.217277,
+      "std_frontend_warning_count": 2.136976,
+      "std_kuramoto_debug_warning_count": 2.136976,
+      "std_pi_freq_final_5s_std": 0.014901,
+      "std_short_interval_warning_count": 0.0,
+      "std_virtual_freq_final_5s_std": 0.07795
+    },
+    {
+      "appendix_ranking_score": 1.729534,
+      "best_overall": false,
+      "failed_or_invalid_trials": 0,
+      "failure_timeout_count": 0,
+      "kuramoto_K": 3.0,
+      "mean_actual_detection_fcr": 0.864033,
+      "mean_api_drop_count": 0.0,
+      "mean_capture_drop_count": 0.0,
+      "mean_frequency_error_final_5s_abs_of_means": 0.260955,
+      "mean_frequency_error_final_5s_mean_abs": 0.319782,
+      "mean_frontend_warning_count": 52.666667,
+      "mean_kuramoto_debug_warning_count": 52.666667,
+      "mean_pi_freq_final_5s_std": 0.276517,
+      "mean_short_interval_warning_count": 0.166667,
+      "mean_virtual_freq_final_5s_std": 0.198388,
+      "n_trials": 6,
+      "rank": 2,
+      "score_formula": "score = mean(final_5s_mean_abs_error) + 0.5*mean(virtual_final_5s_std + pi_final_5s_std) + 2*mean(max(0, 0.90-FCR)) + 5*mean(max(0, FCR-1.02)) + 0.02*mean(api_drops + capture_drops + short_interval_warnings + frontend_warnings) + 10*(failed_or_invalid_trials/n_trials)",
+      "std_actual_detection_fcr": 0.100439,
+      "std_api_drop_count": 0.0,
+      "std_capture_drop_count": 0.0,
+      "std_frequency_error_final_5s_abs_of_means": 0.227502,
+      "std_frequency_error_final_5s_mean_abs": 0.187696,
+      "std_frontend_warning_count": 16.354408,
+      "std_kuramoto_debug_warning_count": 16.354408,
+      "std_pi_freq_final_5s_std": 0.043291,
+      "std_short_interval_warning_count": 0.408248,
+      "std_virtual_freq_final_5s_std": 0.134257
+    },
+    {
+      "appendix_ranking_score": 2.46054,
+      "best_overall": false,
+      "failed_or_invalid_trials": 0,
+      "failure_timeout_count": 0,
+      "kuramoto_K": 4.5,
+      "mean_actual_detection_fcr": 0.86825,
+      "mean_api_drop_count": 0.0,
+      "mean_capture_drop_count": 0.0,
+      "mean_frequency_error_final_5s_abs_of_means": 0.123296,
+      "mean_frequency_error_final_5s_mean_abs": 0.33242,
+      "mean_frontend_warning_count": 87.833333,
+      "mean_kuramoto_debug_warning_count": 87.833333,
+      "mean_pi_freq_final_5s_std": 0.344394,
+      "mean_short_interval_warning_count": 0.0,
+      "mean_virtual_freq_final_5s_std": 0.179379,
+      "n_trials": 6,
+      "rank": 3,
+      "score_formula": "score = mean(final_5s_mean_abs_error) + 0.5*mean(virtual_final_5s_std + pi_final_5s_std) + 2*mean(max(0, 0.90-FCR)) + 5*mean(max(0, FCR-1.02)) + 0.02*mean(api_drops + capture_drops + short_interval_warnings + frontend_warnings) + 10*(failed_or_invalid_trials/n_trials)",
+      "std_actual_detection_fcr": 0.106417,
+      "std_api_drop_count": 0.0,
+      "std_capture_drop_count": 0.0,
+      "std_frequency_error_final_5s_abs_of_means": 0.132253,
+      "std_frequency_error_final_5s_mean_abs": 0.072162,
+      "std_frontend_warning_count": 29.239813,
+      "std_kuramoto_debug_warning_count": 29.239813,
+      "std_pi_freq_final_5s_std": 0.076379,
+      "std_short_interval_warning_count": 0.0,
+      "std_virtual_freq_final_5s_std": 0.122262
+    },
+    {
+      "appendix_ranking_score": 2.498052,
+      "best_overall": false,
+      "failed_or_invalid_trials": 0,
+      "failure_timeout_count": 0,
+      "kuramoto_K": 3.5,
+      "mean_actual_detection_fcr": 0.872533,
+      "mean_api_drop_count": 0.0,
+      "mean_capture_drop_count": 0.0,
+      "mean_frequency_error_final_5s_abs_of_means": 0.249459,
+      "mean_frequency_error_final_5s_mean_abs": 0.362376,
+      "mean_frontend_warning_count": 88.5,
+      "mean_kuramoto_debug_warning_count": 88.5,
+      "mean_pi_freq_final_5s_std": 0.285856,
+      "mean_short_interval_warning_count": 0.166667,
+      "mean_virtual_freq_final_5s_std": 0.261898,
+      "n_trials": 6,
+      "rank": 4,
+      "score_formula": "score = mean(final_5s_mean_abs_error) + 0.5*mean(virtual_final_5s_std + pi_final_5s_std) + 2*mean(max(0, 0.90-FCR)) + 5*mean(max(0, FCR-1.02)) + 0.02*mean(api_drops + capture_drops + short_interval_warnings + frontend_warnings) + 10*(failed_or_invalid_trials/n_trials)",
+      "std_actual_detection_fcr": 0.084705,
+      "std_api_drop_count": 0.0,
+      "std_capture_drop_count": 0.0,
+      "std_frequency_error_final_5s_abs_of_means": 0.247237,
+      "std_frequency_error_final_5s_mean_abs": 0.216616,
+      "std_frontend_warning_count": 47.957273,
+      "std_kuramoto_debug_warning_count": 47.957273,
+      "std_pi_freq_final_5s_std": 0.108988,
+      "std_short_interval_warning_count": 0.408248,
+      "std_virtual_freq_final_5s_std": 0.17232
+    },
+    {
+      "appendix_ranking_score": 2.702925,
+      "best_overall": false,
+      "failed_or_invalid_trials": 0,
+      "failure_timeout_count": 0,
+      "kuramoto_K": 4.0,
+      "mean_actual_detection_fcr": 0.8447,
+      "mean_api_drop_count": 0.0,
+      "mean_capture_drop_count": 0.0,
+      "mean_frequency_error_final_5s_abs_of_means": 0.21295,
+      "mean_frequency_error_final_5s_mean_abs": 0.399434,
+      "mean_frontend_warning_count": 92.5,
+      "mean_kuramoto_debug_warning_count": 92.5,
+      "mean_pi_freq_final_5s_std": 0.367899,
+      "mean_short_interval_warning_count": 0.0,
+      "mean_virtual_freq_final_5s_std": 0.273082,
+      "n_trials": 6,
+      "rank": 5,
+      "score_formula": "score = mean(final_5s_mean_abs_error) + 0.5*mean(virtual_final_5s_std + pi_final_5s_std) + 2*mean(max(0, 0.90-FCR)) + 5*mean(max(0, FCR-1.02)) + 0.02*mean(api_drops + capture_drops + short_interval_warnings + frontend_warnings) + 10*(failed_or_invalid_trials/n_trials)",
+      "std_actual_detection_fcr": 0.093917,
+      "std_api_drop_count": 0.0,
+      "std_capture_drop_count": 0.0,
+      "std_frequency_error_final_5s_abs_of_means": 0.186359,
+      "std_frequency_error_final_5s_mean_abs": 0.092753,
+      "std_frontend_warning_count": 33.04391,
+      "std_kuramoto_debug_warning_count": 33.04391,
+      "std_pi_freq_final_5s_std": 0.020967,
+      "std_short_interval_warning_count": 0.0,
+      "std_virtual_freq_final_5s_std": 0.120303
+    }
+  ],
+  "metadata": {
+    "duration": 30.0,
+    "seed": 20260620,
+    "random_phase_enabled": true,
+    "canonical_freq_pairs": [
+      {
+        "virtual": 2.0,
+        "pi": 1.2
+      },
+      {
+        "virtual": 2.0,
+        "pi": 1.5
+      },
+      {
+        "virtual": 2.0,
+        "pi": 2.5
+      }
+    ],
+    "locked_model_parameters": {
+      "eapf_consensus": {
+        "g_p": 0.02,
+        "g_f": 0.02,
+        "alpha_p": 0.2,
+        "alpha_f": 0.2,
+        "delta_theta_max_rad": 0.2,
+        "delta_f_max_hz": 0.05
+      },
+      "kuramoto": {
+        "K": 5.0
+      }
+    },
+    "chunks": [
+      {
+        "chunk_label": "pi_1p2",
+        "completed": 6,
+        "failed": 0,
+        "freq_pairs": [
+          {
+            "virtual": 2.0,
+            "pi": 1.2
+          }
+        ]
+      },
+      {
+        "chunk_label": "pi_1p5",
+        "completed": 6,
+        "failed": 0,
+        "freq_pairs": [
+          {
+            "virtual": 2.0,
+            "pi": 1.5
+          }
+        ]
+      },
+      {
+        "chunk_label": "pi_2p5",
+        "completed": 6,
+        "failed": 0,
+        "freq_pairs": [
+          {
+            "virtual": 2.0,
+            "pi": 2.5
+          }
+        ]
+      }
+    ]
+  },
+  "diagnostic_note": "duplicate_suppressed_count was not recorded by the batch runner."
+}

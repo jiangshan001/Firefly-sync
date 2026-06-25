@@ -1,0 +1,20 @@
+{
+  "model": "eapf_consensus",
+  "feedback_enabled": true,
+  "virtual_initial_freq": 2.0,
+  "synthetic_pi_freq": 1.5,
+  "duration_s": 20.0,
+  "synthetic_pi_flash_count": 30,
+  "virtual_frequency_start": 2.0,
+  "virtual_frequency_end": 1.7910371424661247,
+  "virtual_frequency_change": -0.20896285753387533,
+  "mean_frequency_final_5s": 1.8147990904215956,
+  "virtual_fire_count_start": 0,
+  "virtual_fire_count_end": 37,
+  "virtual_fire_count_delta": 37,
+  "received_pi_flashes_start": 0,
+  "received_pi_flashes_end": 60,
+  "received_pi_flashes_delta": 60,
+  "frequency_moved_toward_synthetic_pi_freq": true,
+  "poll_samples": 100
+}

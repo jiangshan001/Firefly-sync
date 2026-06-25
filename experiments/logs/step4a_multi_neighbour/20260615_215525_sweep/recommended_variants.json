@@ -1,0 +1,12 @@
+{
+  "best_zero_lag": "kuramoto",
+  "best_offset_lock": "kuramoto",
+  "best_overall": "kuramoto",
+  "scores": {
+    "eapf_consensus": 0.35,
+    "eapf_tracker": 0.5,
+    "kuramoto": 0.725,
+    "pco_adaptive_prc": 0.1,
+    "pco_simple": 0.2
+  }
+}

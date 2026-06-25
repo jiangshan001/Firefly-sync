@@ -1,0 +1,80 @@
+{
+  "mode": "multi_roi_detection_test",
+  "topology": "all_to_all",
+  "detection_preset": "none",
+  "detected_counts": {
+    "V0": 29,
+    "V1": 59
+  },
+  "actual_virtual_flash_counts": {
+    "V0": 30,
+    "V1": 60
+  },
+  "roi_signal_summary": {
+    "V0": {
+      "roi_id": 0,
+      "roi": [
+        132,
+        330,
+        109,
+        112
+      ],
+      "detected_rising_edge_count": 29,
+      "actual_virtual_flash_count": 30,
+      "detection_fcr": 0.966667,
+      "raw_signal": {
+        "count": 886,
+        "min": 8.0,
+        "max": 75.0,
+        "mean": 41.022743,
+        "std": 31.556539
+      },
+      "normalized_signal": {
+        "count": 886,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.493407,
+        "std": 0.486553
+      },
+      "raw_signal_range": 67.0,
+      "estimated_detected_frequency_hz": 1.000504,
+      "last_detector_frequency_hz": 1.0,
+      "warnings": []
+    },
+    "V1": {
+      "roi_id": 1,
+      "roi": [
+        506,
+        314,
+        120,
+        120
+      ],
+      "detected_rising_edge_count": 59,
+      "actual_virtual_flash_count": 60,
+      "detection_fcr": 0.983333,
+      "raw_signal": {
+        "count": 886,
+        "min": 3.0,
+        "max": 102.0,
+        "mean": 52.403544,
+        "std": 46.277849
+      },
+      "normalized_signal": {
+        "count": 886,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.496464,
+        "std": 0.478766
+      },
+      "raw_signal_range": 99.0,
+      "estimated_detected_frequency_hz": 2.001007,
+      "last_detector_frequency_hz": 2.001,
+      "warnings": []
+    }
+  },
+  "roi_debug_frames": [
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/tiny_small_small_stress/repeat_03/roi_debug_frame_start.jpg",
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/tiny_small_small_stress/repeat_03/roi_debug_frame_mid.jpg"
+  ],
+  "closed_loop_adaptation_enabled": false
+}

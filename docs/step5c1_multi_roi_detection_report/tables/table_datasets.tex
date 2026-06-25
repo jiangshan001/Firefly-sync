@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{p{0.20\textwidth}p{0.22\textwidth}p{0.12\textwidth}p{0.13\textwidth}p{0.23\textwidth}}
+\toprule
+Dataset & Purpose & Repeats & Duration & Notes \\
+\midrule
+\scriptsize\path{20260624_163557_formal_detection_batch} & Main formal detection batch & 3 & 30.0 & Used for baseline, position, size, frequency, and original stress conditions. Original contrast rows excluded from final contrast evidence. \\
+\scriptsize\path{20260625_152611_contrast_rerun_corrected} & Corrected contrast repeat batch & 3 & 30.0 & Used for final medium- and low-contrast recall and frequency-error metrics. \\
+\scriptsize\path{20260624_173430_contrast_visual_debug} & Previous contrast/display debug run & 0 detection repeats & approx. 6 s auto-ROI capture & Optional historical display evidence only; not used for final contrast recall or frequency metrics. \\
+\scriptsize\path{20260624_175949_small_low_contrast_stress} & Small + low contrast stress batch & 3 & 30.0 & Optional stress condition; not part of readiness gate. \\
+\bottomrule
+\end{tabular}
+\caption{Datasets used in this report.}
+\label{tab:datasets}
+\end{table}

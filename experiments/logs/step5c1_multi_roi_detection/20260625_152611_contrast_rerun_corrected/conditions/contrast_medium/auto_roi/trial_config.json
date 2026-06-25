@@ -1,0 +1,92 @@
+{
+  "mode": "auto_roi_calibration",
+  "step": "step5c1_multi_roi_detection",
+  "leader_api": "http://192.168.1.140:8000",
+  "duration_s": 30.0,
+  "condition": {
+    "v0_x": 520,
+    "v0_y": 420,
+    "v1_x": 1180,
+    "v1_y": 420,
+    "v0_size": 280,
+    "v1_size": 280,
+    "background_brightness": 40,
+    "flash_brightness": 180,
+    "off_brightness": 40,
+    "v0_freq": 1.0,
+    "v1_freq": 2.0,
+    "v0_phase_rad": 0.0,
+    "v1_phase_rad": 1.5707963267948966,
+    "name": "contrast_medium",
+    "group": "contrast",
+    "category": "contrast",
+    "description": "Medium contrast flashes.",
+    "required_for_ready": true,
+    "intended_difficulty": "realistic",
+    "failure_interpretation": "Failure suggests moderate contrast is not robust enough under current lighting."
+  },
+  "display_config": {
+    "condition": "contrast_medium",
+    "category": "contrast",
+    "description": "Medium contrast flashes.",
+    "required_for_ready": true,
+    "intended_difficulty": "realistic",
+    "failure_interpretation": "Failure suggests moderate contrast is not robust enough under current lighting.",
+    "display_model": "browser_canvas_grayscale_radial_targets",
+    "background": {
+      "brightness": 40,
+      "rgb": [
+        40,
+        40,
+        40
+      ],
+      "css_rgb": "rgb(40,40,40)"
+    },
+    "flash_on": {
+      "brightness": 180,
+      "rgb": [
+        180,
+        180,
+        180
+      ],
+      "css_rgb": "rgb(180,180,180)"
+    },
+    "flash_off": {
+      "brightness": 40,
+      "rgb": [
+        40,
+        40,
+        40
+      ],
+      "css_rgb": "rgb(40,40,40)"
+    },
+    "contrast": {
+      "flash_minus_background": 140,
+      "flash_minus_off": 140,
+      "off_minus_background": 0
+    },
+    "agents": {
+      "V0": {
+        "position_xy": [
+          520,
+          420
+        ],
+        "dot_size_px": 280,
+        "frequency_hz": 1.0,
+        "phase_rad": 0.0
+      },
+      "V1": {
+        "position_xy": [
+          1180,
+          420
+        ],
+        "dot_size_px": 280,
+        "frequency_hz": 2.0,
+        "phase_rad": 1.5707963267948966
+      }
+    }
+  },
+  "roi_config": null,
+  "closed_loop_adaptation_enabled": false,
+  "created_at": "2026-06-25T15:28:00.159050"
+}

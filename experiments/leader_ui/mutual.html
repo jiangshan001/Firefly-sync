@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firefly Mutual HIL — Virtual Agents</title>
+    <link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body>
+
+    <!-- Exit Display Only — only visible in display-only mode (top-right corner) -->
+    <button id="btn-exit-display-only" onclick="document.body.classList.remove('display-only')">Exit Display Only (Esc)</button>
+
+    <div id="canvas-container">
+        <canvas id="hil-canvas"></canvas>
+        <div id="hil-overlay" style="position:absolute; bottom:10px; left:10px; pointer-events:none; z-index:10;">
+            <span id="hil-overlay-state" class="overlay-chip overlay-off">OFF</span>
+            <span id="hil-overlay-mode" class="overlay-chip">mutual_hil</span>
+            <span id="hil-overlay-freq" class="overlay-chip">-- Hz</span>
+            <span id="hil-overlay-count" class="overlay-chip">fire: 0</span>
+            <span id="hil-overlay-heartbeat" class="overlay-chip">poll: --</span>
+            <span id="hil-overlay-errors" class="overlay-chip">err: 0</span>
+        </div>
+    </div>
+
+    <div id="mutual-hil-panel">
+        <h2>Mutual HIL — Virtual Agents</h2>
+
+        <div class="control-group">
+            <label>Mode <span id="hil-mode-display" class="hint" style="color:#0f0;">mutual_hil</span></label>
+            <label>Agent Mode</label>
+            <select id="hil-agent-mode-select">
+                <option value="single_1v1p" selected>1 virtual + 1 Pi</option>
+                <option value="multi_2v1p">2 virtual + 1 Pi</option>
+            </select>
+            <label>Topology</label>
+            <select id="hil-topology-select">
+                <option value="all_to_all" selected>all_to_all</option>
+                <option value="chain_pi_middle">chain_pi_middle</option>
+                <option value="chain_pi_downstream">chain_pi_downstream</option>
+            </select>
+            <label>Selected Agent</label>
+            <select id="hil-agent-select">
+                <option value="0" selected>V0</option>
+            </select>
+            <label>Model</label>
+            <select id="hil-model-select">
+                <option value="eapf_consensus" selected>EAPF Consensus</option>
+                <option value="kuramoto">Kuramoto</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="hil-agent-x">X (px, bottom-left) <span id="hil-agent-x-val">0</span></label>
+            <input type="range" id="hil-agent-x" min="0" max="2000" step="1" value="0">
+
+            <label for="hil-agent-y">Y (px, bottom-left) <span id="hil-agent-y-val">0</span></label>
+            <input type="range" id="hil-agent-y" min="0" max="2000" step="1" value="0">
+
+            <label for="hil-agent-size">Size (px) <span id="hil-agent-size-val">200</span></label>
+            <input type="range" id="hil-agent-size" min="20" max="600" step="1" value="200">
+
+            <label for="hil-agent-freq">Init Freq (Hz) <span id="hil-agent-freq-val">2.00</span></label>
+            <input type="range" id="hil-agent-freq" min="0.5" max="4.0" step="0.01" value="2.0">
+
+            <label>Current Freq <span id="hil-agent-cur-freq" class="hint">-- Hz</span></label>
+            <label>Phase <span id="hil-agent-phase" class="hint">--</span></label>
+            <label>Fire Count <span id="hil-agent-fire-count" class="hint">0</span></label>
+            <label>Pi Flashes Received <span id="hil-agent-pi-flashes" class="hint">0</span></label>
+        </div>
+
+        <div class="control-group">
+            <button id="btn-hil-start" class="btn btn-start">▶ Start</button>
+            <button id="btn-hil-pause" class="btn btn-stop">⏹ Pause</button>
+            <button id="btn-hil-reset" class="btn btn-reset">↺ Reset</button>
+        </div>
+
+        <div class="control-group">
+            <label>Feedback <span id="hil-feedback-label" class="hint" style="color:#f80;">OFF</span></label>
+            <button id="btn-feedback-toggle" class="btn btn-auto-roi">Feedback: OFF (Calibration)</button>
+            <span class="hint">When OFF, virtual agent flashes at stable 2 Hz (no Pi influence)</span>
+        </div>
+
+        <div class="control-group">
+            <button id="btn-display-only" class="btn btn-display-only">◼ Display Only (D)</button>
+            <span class="hint">D toggles · Esc exits · Hides all panels for camera</span>
+        </div>
+
+        <p class="hint" id="hil-status">Ready — press Start</p>
+        <p class="hint" style="color:#0f0; margin-top:4px;" id="hil-debug-label">[v3 — CALIBRATION LOCAL CLOCK — controls visible]</p>
+    </div>
+
+    <script src="mutual.js?v=4"></script>
+</body>
+</html>

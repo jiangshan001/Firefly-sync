@@ -1,0 +1,5 @@
+folder,purpose,conditions,repeats,duration_s,notes
+20260624_163557_formal_detection_batch,Main formal detection batch,"baseline, position_shifted, position_too_close_stress, size_large_small, size_small_small, tiny_small_small_stress, contrast_medium, contrast_low, frequency_1p5_2p5, frequency_2hz_phase_offset, frequency_2hz_near_simultaneous",3,30.0,"Used for baseline, position, size, frequency, and original stress conditions. Original contrast rows excluded from final contrast evidence."
+20260625_152611_contrast_rerun_corrected,Corrected contrast repeat batch,"baseline, contrast_medium, contrast_low",3,30.0,Used for final medium- and low-contrast recall and frequency-error metrics.
+20260624_173430_contrast_visual_debug,Previous contrast/display debug run,"baseline, contrast_low, contrast_medium",0 detection repeats,approx. 6 s auto-ROI capture,Optional historical display evidence only; not used for final contrast recall or frequency metrics.
+20260624_175949_small_low_contrast_stress,Small + low contrast stress batch,small_low_contrast_stress,3,30.0,Optional stress condition; not part of readiness gate.

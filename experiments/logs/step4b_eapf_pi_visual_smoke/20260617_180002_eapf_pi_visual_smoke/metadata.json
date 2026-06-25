@@ -1,0 +1,21 @@
+{
+  "model": "eapf_consensus",
+  "mode": "pi_visual_smoke",
+  "leader_freq_hz": 2.0,
+  "follower_initial_freq_hz": 1.8,
+  "duration_s": 30.0,
+  "sync_threshold_s": 0.1,
+  "sync_cycles": 5,
+  "locked_params": {
+    "phase_gain": 0.02,
+    "frequency_gain": 0.02,
+    "phase_error_filter_alpha": 0.2,
+    "frequency_error_filter_alpha": 0.2,
+    "max_phase_step_rad": 0.2,
+    "max_frequency_step_hz": 0.05,
+    "frequency_min_hz": 0.5,
+    "frequency_max_hz": 4.0
+  },
+  "dry_run": false,
+  "timestamp": "2026-06-17T18:00:04.341240"
+}

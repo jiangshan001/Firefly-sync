@@ -1,0 +1,13 @@
+model,topology,n_trials,success_rate,mean_freq_spread,mean_pairwise_error,mean_order_param
+eapf,all_to_all,20,0.0,0.819033,0.107236,0.5874
+eapf,chain,20,0.0,0.525,0.082519,0.6872
+eapf,directed_chain,20,0.0,0.525,0.085386,0.6871
+eapf,ring,20,0.0,0.850554,0.108406,0.573
+kuramoto,all_to_all,20,1.0,0.000303,0.066882,0.8745
+kuramoto,chain,20,0.0,0.000718,0.102241,0.7549
+kuramoto,directed_chain,20,0.0,0.57481,0.146688,0.5158
+kuramoto,ring,20,1.0,0.000303,0.066983,0.8745
+pco_if,all_to_all,20,0.0,1.494074,0.055714,0.9758
+pco_if,chain,20,0.0,1.491002,0.075536,0.9721
+pco_if,directed_chain,20,0.0,1.491002,0.075536,0.9721
+pco_if,ring,20,0.0,1.494074,0.055714,0.9758

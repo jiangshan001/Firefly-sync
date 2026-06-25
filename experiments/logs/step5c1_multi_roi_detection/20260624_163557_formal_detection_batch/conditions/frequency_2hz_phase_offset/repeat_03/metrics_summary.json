@@ -1,0 +1,80 @@
+{
+  "mode": "multi_roi_detection_test",
+  "topology": "all_to_all",
+  "detection_preset": "none",
+  "detected_counts": {
+    "V0": 59,
+    "V1": 59
+  },
+  "actual_virtual_flash_counts": {
+    "V0": 60,
+    "V1": 60
+  },
+  "roi_signal_summary": {
+    "V0": {
+      "roi_id": 0,
+      "roi": [
+        77,
+        275,
+        222,
+        205
+      ],
+      "detected_rising_edge_count": 59,
+      "actual_virtual_flash_count": 60,
+      "detection_fcr": 0.983333,
+      "raw_signal": {
+        "count": 887,
+        "min": 9.0,
+        "max": 57.0,
+        "mean": 37.163371,
+        "std": 18.373808
+      },
+      "normalized_signal": {
+        "count": 887,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.485464,
+        "std": 0.477535
+      },
+      "raw_signal_range": 48.0,
+      "estimated_detected_frequency_hz": 2.001009,
+      "last_detector_frequency_hz": 2.001,
+      "warnings": []
+    },
+    "V1": {
+      "roi_id": 1,
+      "roi": [
+        436,
+        252,
+        204,
+        228
+      ],
+      "detected_rising_edge_count": 59,
+      "actual_virtual_flash_count": 60,
+      "detection_fcr": 0.983333,
+      "raw_signal": {
+        "count": 887,
+        "min": 8.0,
+        "max": 53.0,
+        "mean": 31.740451,
+        "std": 21.14895
+      },
+      "normalized_signal": {
+        "count": 887,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.524763,
+        "std": 0.488409
+      },
+      "raw_signal_range": 45.0,
+      "estimated_detected_frequency_hz": 2.001025,
+      "last_detector_frequency_hz": 2.001,
+      "warnings": []
+    }
+  },
+  "roi_debug_frames": [
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_phase_offset/repeat_03/roi_debug_frame_start.jpg",
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_2hz_phase_offset/repeat_03/roi_debug_frame_mid.jpg"
+  ],
+  "closed_loop_adaptation_enabled": false
+}

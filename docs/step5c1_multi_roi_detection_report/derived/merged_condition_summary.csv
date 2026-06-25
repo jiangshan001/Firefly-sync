@@ -1,0 +1,13 @@
+condition,category,required_for_ready,evidence_source,evidence_type,repeats_completed,duration_s,auto_roi_success,overlap_ratio,V0_count_recall_mean,V1_count_recall_mean,V0_frequency_error_mean_hz,V1_frequency_error_mean_hz,V0_signal_range_mean,V1_signal_range_mean,pass_condition,notes
+baseline,baseline,True,main formal batch,auto ROI + 3 detection repeats,3,30,True,0.0,0.988889,0.988889,0.000508,0.001015,49.333333333333336,47.666666666666664,True,
+position_shifted,position,True,main formal batch,auto ROI + 3 detection repeats,3,30,True,0.0,0.988889,0.983333,0.000507,0.001026,40.333333333333336,68.66666666666667,True,
+size_large_small,size,True,main formal batch,auto ROI + 3 detection repeats,3,30,True,0.0,0.977778,0.983333,0.000512,0.001018,49.0,99.33333333333333,True,
+size_small_small,size,True,main formal batch,auto ROI + 3 detection repeats,3,30,True,0.0,0.988889,0.988889,0.000503,0.001019,67.33333333333333,98.66666666666667,True,
+frequency_1p5_2p5,frequency,True,main formal batch,auto ROI + 3 detection repeats,3,30,True,0.0,0.977778,0.986667,0.000764,0.001274,48.333333333333336,48.333333333333336,True,
+frequency_2hz_phase_offset,frequency,True,main formal batch,auto ROI + 3 detection repeats,3,30,True,0.0,0.988889,0.983333,0.001008,0.001022,44.666666666666664,48.0,True,
+frequency_2hz_near_simultaneous,frequency,True,main formal batch,auto ROI + 3 detection repeats,3,30,True,0.0,0.988889,0.988889,0.001016,0.001017,49.333333333333336,43.666666666666664,True,
+contrast_medium,contrast,True,corrected contrast repeat batch,auto ROI + 3 detection repeats,3,30,True,0.0,0.933334,0.983333,0.000511,0.001027,23.333333333333332,52.0,True,Corrected contrast repeat condition passed.
+contrast_low,contrast,True,corrected contrast repeat batch,auto ROI + 3 detection repeats,3,30,True,0.0,0.0,0.983333,,0.001293,7.333333333333333,17.0,False,Corrected contrast repeat condition failed; inspect per-agent warnings and counts.
+position_too_close_stress,position,False,main formal batch,optional stress,0,0,False,0.0,,,,,,,False,Intentionally difficult; failure indicates a boundary case when large halos nearly touch or padded ROIs overlap. Not representative of the intended 2V+1P layout.
+tiny_small_small_stress,size,False,main formal batch,optional stress,3,30,True,0.0,0.988889,0.983333,0.000515,0.001005,67.0,98.33333333333333,True,Passed; this optional very-small-target condition shows additional size robustness.
+small_low_contrast_stress,stress,False,small+low stress batch,optional stress,3,30,True,0.0,0.0,0.983333,,0.001013,10.0,23.0,False,"Optional combined small-target low-contrast stress. Failure does not block readiness, but marks a difficult visual boundary case."

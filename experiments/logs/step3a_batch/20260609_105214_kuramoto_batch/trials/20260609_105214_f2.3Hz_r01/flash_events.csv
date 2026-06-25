@@ -1,0 +1,15 @@
+t,event_type,source,leader_flash_time,follower_flash_time,timing_error_s
+0.0,leader_flash,synthetic,0.0,,
+0.43,follower_flash,follower_oscillator,0.0,0.43,-0.43
+0.5,leader_flash,synthetic,0.5,,
+0.94,follower_flash,follower_oscillator,0.5,0.94,-0.44
+1.0,leader_flash,synthetic,1.0,,
+1.45,follower_flash,follower_oscillator,1.0,1.45,-0.45
+1.5,leader_flash,synthetic,1.5,,
+1.95,follower_flash,follower_oscillator,1.5,1.95,-0.45
+2.0,leader_flash,synthetic,2.0,,
+2.45,follower_flash,follower_oscillator,2.0,2.45,-0.45
+2.5,leader_flash,synthetic,2.5,,
+2.95,follower_flash,follower_oscillator,2.5,2.95,-0.45
+2.95,sync_achieved,metrics,,,
+3.0,leader_flash,synthetic,3.0,,

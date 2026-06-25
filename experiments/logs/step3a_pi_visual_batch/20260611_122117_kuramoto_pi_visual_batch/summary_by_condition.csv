@@ -1,0 +1,4 @@
+follower_initial_freq_hz,n_trials,success_rate,mean_time_to_sync_s,std_time_to_sync_s,mean_steady_state_mae_s,std_steady_state_mae_s,mean_jitter_s,mean_final_frequency_error_hz,mean_convergence_quality
+1.5,5,1,3.6607,0.6687,0.060299,0.010201,,,
+1.8,5,1,2.9547,0.3471,0.003317,0.002492,,,
+2.3,5,1,4.1051,0.9441,0.057774,0.003922,,,

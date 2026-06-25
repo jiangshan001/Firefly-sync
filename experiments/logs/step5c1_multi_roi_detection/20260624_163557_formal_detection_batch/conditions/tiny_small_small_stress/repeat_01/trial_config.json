@@ -1,0 +1,31 @@
+{
+  "mode": "multi_roi_detection_test",
+  "step": "step5c1_multi_roi_detection",
+  "leader_api": "http://192.168.1.111:8000",
+  "duration_s": 30.0,
+  "condition": {
+    "v0_x": 520,
+    "v0_y": 420,
+    "v1_x": 1180,
+    "v1_y": 420,
+    "v0_size": 70,
+    "v1_size": 70,
+    "background_brightness": 0,
+    "flash_brightness": 255,
+    "off_brightness": 15,
+    "v0_freq": 1.0,
+    "v1_freq": 2.0,
+    "v0_phase_rad": 0.0,
+    "v1_phase_rad": 1.5707963267948966,
+    "name": "tiny_small_small_stress",
+    "group": "size",
+    "category": "size",
+    "description": "Stress limit: both targets are tiny.",
+    "required_for_ready": false,
+    "intended_difficulty": "stress_limit",
+    "failure_interpretation": "Failure indicates the lower size limit, not formal readiness."
+  },
+  "roi_config": "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/tiny_small_small_stress/auto_roi/auto_rois.json",
+  "closed_loop_adaptation_enabled": false,
+  "created_at": "2026-06-24T16:43:30.884167"
+}

@@ -1,0 +1,13 @@
+# Example configuration for PiGPIOLED hardware test
+# Used by: experiments/test_pi_led.py
+
+hardware: pi
+
+led:
+  pin: 17
+  flash_duration_s: 0.1
+
+test:
+  cycles: 10
+  on_time_s: 0.2
+  off_time_s: 0.8

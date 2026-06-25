@@ -1,0 +1,80 @@
+{
+  "mode": "multi_roi_detection_test",
+  "topology": "all_to_all",
+  "detection_preset": "none",
+  "detected_counts": {
+    "V0": 44,
+    "V1": 74
+  },
+  "actual_virtual_flash_counts": {
+    "V0": 45,
+    "V1": 75
+  },
+  "roi_signal_summary": {
+    "V0": {
+      "roi_id": 0,
+      "roi": [
+        77,
+        276,
+        222,
+        204
+      ],
+      "detected_rising_edge_count": 44,
+      "actual_virtual_flash_count": 45,
+      "detection_fcr": 0.977778,
+      "raw_signal": {
+        "count": 887,
+        "min": 9.0,
+        "max": 58.0,
+        "mean": 37.880372,
+        "std": 18.297131
+      },
+      "normalized_signal": {
+        "count": 887,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.489813,
+        "std": 0.47893
+      },
+      "raw_signal_range": 49.0,
+      "estimated_detected_frequency_hz": 1.500762,
+      "last_detector_frequency_hz": 1.501,
+      "warnings": []
+    },
+    "V1": {
+      "roi_id": 1,
+      "roi": [
+        436,
+        254,
+        204,
+        226
+      ],
+      "detected_rising_edge_count": 74,
+      "actual_virtual_flash_count": 75,
+      "detection_fcr": 0.986667,
+      "raw_signal": {
+        "count": 887,
+        "min": 3.0,
+        "max": 51.0,
+        "mean": 30.086776,
+        "std": 20.435067
+      },
+      "normalized_signal": {
+        "count": 887,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.514001,
+        "std": 0.479984
+      },
+      "raw_signal_range": 48.0,
+      "estimated_detected_frequency_hz": 2.501263,
+      "last_detector_frequency_hz": 2.501,
+      "warnings": []
+    }
+  },
+  "roi_debug_frames": [
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_1p5_2p5/repeat_02/roi_debug_frame_start.jpg",
+    "experiments/logs/step5c1_multi_roi_detection/20260624_163557_formal_detection_batch/conditions/frequency_1p5_2p5/repeat_02/roi_debug_frame_mid.jpg"
+  ],
+  "closed_loop_adaptation_enabled": false
+}

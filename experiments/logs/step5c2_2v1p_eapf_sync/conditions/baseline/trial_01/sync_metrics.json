@@ -1,0 +1,29 @@
+{
+  "sync_success": false,
+  "time_to_sync_s": null,
+  "time_to_sync_criterion": {
+    "phase_or_order_parameter": true,
+    "required_continuous_window_s": 5.0,
+    "mean_pairwise_phase_error_cycles_lt": 0.25,
+    "mean_pairwise_phase_error_rad_lt": 1.5707963267948966,
+    "frequency_disagreement_hz_lt": 0.1,
+    "order_parameter_R_gt": 0.9
+  },
+  "final_window_s": 10.0,
+  "final_mean_pairwise_phase_error_rad": 0.187133,
+  "final_max_pairwise_phase_error_rad": 0.828121,
+  "final_mean_pairwise_phase_error_cycles": 0.029783,
+  "final_max_pairwise_phase_error_cycles": 0.1318,
+  "final_frequency_disagreement_hz": 0.009203,
+  "final_max_frequency_disagreement_hz": 0.042555,
+  "final_mean_order_parameter_R": 0.985332,
+  "final_min_order_parameter_R": 0.925266,
+  "final_frequency_mean_hz": {
+    "V0": 1.415198,
+    "V1": 1.4152,
+    "P0": 1.41667
+  },
+  "recovery_time_s": null,
+  "recovery_time_absolute_s": null,
+  "sample_count": 257
+}

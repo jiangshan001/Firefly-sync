@@ -1,0 +1,636 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{placeins}
+\usepackage{array}
+\hypersetup{hidelinks}
+\emergencystretch=1em
+
+\title{Mutual Visual HIL Model Comparison for\\Firefly-Inspired Synchronisation}
+\author{MSc Student -- BIOE70025}
+\date{\today}
+
+\newcommand{\figdir}{figures}
+\newcommand{\tabledir}{tables}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report analyses a formal mutual hardware-in-the-loop (HIL)
+comparison between EAPF Consensus and Kuramoto for firefly-inspired visual
+synchronisation. The experiment uses one browser-rendered virtual agent and
+one Raspberry Pi visual agent in a bidirectional loop: the Pi camera observes
+the virtual flash, the Pi oscillator flashes its GPIO LED, and Pi flash events
+are posted back to the frontend. The formal data comprise 18 completed trials:
+two models, three Pi initial frequencies, and three repeats with controlled
+random initial phases. Under this camera-mediated event-based mutual HIL
+condition, EAPF Consensus achieves lower final-window frequency error and much
+lower frequency variability than Kuramoto with locked $K=5.0$.
+An appendix Kuramoto gain sensitivity sweep over $K \in
+\{2.5, 3.0, 3.5, 4.0, 4.5\}$ finds that $K=2.5$ improves behaviour but does
+not fully resolve the oscillatory response. EAPF remains the model selected
+for the next 2-virtual + 1-Pi mutual HIL stage.
+\end{abstract}
+
+\FloatBarrier
+
+% ======================================================================
+\section{Introduction}
+% ======================================================================
+
+The broader project investigates decentralised visual flashing as a mechanism
+for coordinating multi-drone behaviour. Earlier stages established simulation
+models, camera flash detection, GPIO LED output, a browser-based visual leader,
+a fixed-leader visual HIL comparison, and a simulation-based multi-neighbour
+model selection. The fixed-leader setting is an important but simpler one-way
+tracking problem: the virtual display acts as a stable external reference and
+the Pi follows it without the leader reacting to the follower.
+
+This report extends the evaluation to mutual visual HIL. In this mode, the
+virtual agent is no longer a fixed leader. Instead, the Pi observes the virtual
+flash through the camera, while its own flashes are sent back to the frontend
+over the HTTP API. This creates a closed-loop bidirectional coupling problem.
+The purpose of this report is to evaluate which of the two model candidates,
+EAPF Consensus and Kuramoto, is more robust in this mutual event-based visual
+loop.
+
+This report does not introduce new fixed-leader experiments and does not claim
+universal model superiority. It asks a narrower question: based on the formal
+mutual visual HIL data currently available, which model is the better
+engineering candidate for the next 2-virtual + 1-Pi mixed-reality multi-agent
+stage?
+
+% ======================================================================
+\section{Experimental Objective}
+% ======================================================================
+
+The objective was to compare EAPF Consensus and Kuramoto under matched
+1-virtual + 1-Pi mutual HIL conditions. The virtual reference frequency was
+2.0 Hz. The Pi oscillator was initialised at 1.2 Hz, 1.5 Hz, or 2.5 Hz to
+test convergence across below-reference, moderate-mismatch, and above-reference
+conditions. Each model-condition pair was repeated three times with controlled
+random initial phases.
+
+The primary outcome is mutual frequency agreement in the final 5 s of a
+30 s trial. Secondary outcomes include virtual flash detection reliability,
+flash counts, runtime diagnostics, and variability across repeats.
+
+% ======================================================================
+\section{Method}
+% ======================================================================
+
+\subsection{Mutual HIL setup}
+
+The 1-virtual + 1-Pi mutual HIL loop contains one browser-rendered virtual
+agent and one real Pi agent. The frontend displays the virtual flash as a
+high-contrast target. The Pi camera detects the virtual flash, updates its
+local oscillator, and drives the GPIO LED. When the Pi oscillator fires, the
+runner posts a timestamped event to the frontend API. The frontend server then
+updates the virtual agent from those Pi flash events.
+
+This bidirectional loop is substantially different from fixed-leader visual
+HIL. In fixed-leader mode the visual target is an exogenous, stable reference:
+the leader flashes at a fixed frequency and does not react to the follower.
+The follower's coupling corrections affect only its own phase and frequency.
+In mutual HIL, both agents influence each other, so unstable feedback or
+event-timing sensitivity can appear even if a model worked well in the one-way
+tracking case.
+
+\subsection{Continuous phase coupling versus binary flash events}
+
+An important architectural distinction affects the model comparison. Kuramoto
+is naturally a continuous phase-coupled model: in its standard form the
+coupling term $\sin(\theta_j - \theta_i)$ uses continuously available
+neighbour phase. In pure simulation, that is a natural assumption.
+
+In the implemented mutual visual HIL system, however, the camera stream is
+continuous in time but the binary flash detection signal mainly provides sparse
+event timestamps. Continuous neighbour phase is reconstructed from those flash
+timestamps---estimated as $\hat\theta = 2\pi (t - t_{\mathrm{last}}) /
+T_{\mathrm{est}}$, where $T_{\mathrm{est}}$ is the median of recent inter-flash
+intervals. The resulting interaction is therefore an event-derived
+approximation to continuous phase coupling.
+
+EAPF Consensus was designed from the start for event-based phase and frequency
+tracking. Its corrections are filtered (low-pass with $\alpha=0.2$) and
+rate-limited (maximum phase step 0.2 rad, maximum frequency step 0.05 Hz).
+Those safeguards are well matched to camera-derived flash timestamps, which
+carry inherent jitter from detection latency variability, frame-rate
+quantisation, and API communication delay.
+
+This structural mismatch---continuous-phase coupling law operating on
+reconstructed phase from sparse events---is central to understanding the
+observed behavioural differences between the two models.
+
+\subsection{Formal dataset}
+
+The formal data used here are from the completed mutual visual HIL comparison
+run of 2026-06-21. The dataset path is recorded in the reproducibility
+appendix (Appendix~\ref{sec:reproducibility}). The dataset includes:
+
+\begin{itemize}
+  \item \texttt{aggregate\_metrics.csv}
+  \item \texttt{summary\_by\_model\_condition.csv}
+  \item \texttt{batch\_metadata.json}
+  \item \texttt{run\_metadata.json}
+  \item \texttt{chunk\_metadata.json}
+  \item per-trial \texttt{metrics\_summary.json}, oscillator logs, detection
+        logs, API logs, and flash-event logs
+\end{itemize}
+
+\subsection{Models and locked parameters}
+
+The locked model parameters were read from the formal metadata and are shown
+in Table~\ref{tab:parameters}. EAPF Consensus uses the event-based
+phase/frequency consensus gains and limits selected in the earlier
+simulation-based model selection. Kuramoto uses the locked mutual-comparison
+gain $K=5.0$.
+
+\input{\tabledir/table_parameters.tex}
+
+\subsection{Trial schedule and seed control}
+
+The formal run was executed as three chunks, one per Pi initial frequency. The
+chunk metadata records all three completed chunks (Table~\ref{tab:chunks}).
+Each chunk completed six trials: two models by three repeats. Across all
+chunks this gives 18 completed trials and zero failed trials.
+
+Random initial phases were enabled. The base seed was 20260620. Trial seeds
+were assigned using a canonical schedule over Pi frequencies 1.2, 1.5, and
+2.5 Hz, so chunking did not change the phase schedule.
+
+\input{\tabledir/table_chunk_validation.tex}
+
+\subsection{Metrics}
+
+The core performance metrics are:
+
+\begin{itemize}
+  \item actual virtual flash count ratio (FCR), using actual virtual flashes
+        as the denominator;
+  \item final 5 s mean absolute frequency error between Pi and virtual agents;
+  \item absolute difference between the final 5 s mean Pi and virtual
+        frequencies;
+  \item final 5 s mean virtual and Pi frequencies;
+  \item final-window frequency variability across each trial;
+  \item Pi flash count, detected virtual flash count, and actual virtual flash
+        count.
+\end{itemize}
+
+Runtime diagnostics were derived from per-trial logs. Capture FPS is estimated
+from detection-log sample count divided by trial duration. Processing FPS is
+the reciprocal of the mean camera processing time. API POST latency is measured
+from \texttt{api\_events.csv}.
+
+% ======================================================================
+\section{Results}
+% ======================================================================
+
+\subsection{Dataset validation}
+
+All expected formal trials were present: two models, three Pi initial
+frequencies, and three repeats. Each trial had a per-trial
+\texttt{metrics\_summary.json}; no formal trial was excluded for corruption or
+incompleteness. The full validation table is included in
+Appendix~\ref{sec:appendix_validation}.
+
+\input{\tabledir/table_overall_summary.tex}
+
+Table~\ref{tab:overall} shows the main cross-condition result. EAPF Consensus
+has a mean final 5 s frequency error of 0.046 Hz, compared with 0.413 Hz for
+Kuramoto (locked $K=5.0$). The final-window frequency variability is also much
+lower for EAPF: mean virtual frequency standard deviation is 0.001 Hz for EAPF
+and 0.247 Hz for Kuramoto. The Pi-side final-window standard deviation shows
+the same pattern (0.011 Hz vs.\ 0.393 Hz).
+
+\input{\tabledir/table_condition_summary.tex}
+
+\subsection{Robustness and detection}
+
+Figure~\ref{fig:overview} summarises two key axes: virtual flash detection
+reliability and final 5 s frequency agreement. Bars show the mean across three
+repeats per model-condition pair; black points show individual trial values.
+Both models generally retain usable virtual flash detection (most trials above
+the indicative FCR threshold of 0.85), but EAPF is more consistent. The
+difference is larger for frequency agreement, where Kuramoto has much higher
+error across all Pi initial frequency conditions.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{\figdir/fig1_robustness_overview.pdf}
+\caption{Mutual HIL robustness overview (1 virtual + 1 Pi, 30 s trials).
+Bars show mean across three repeats per model-condition pair; black points
+show individual trial values. The dashed line in the left panel marks an
+indicative actual-FCR threshold of 0.85.}
+\label{fig:overview}
+\end{figure}
+
+\subsection{Frequency agreement}
+
+Figure~\ref{fig:final_freqs} shows the final 5 s mean frequencies by model and
+condition. EAPF keeps both virtual and Pi final frequencies close to the
+2.0 Hz reference. Kuramoto final frequencies are more dispersed and
+condition-dependent. Figure~\ref{fig:agreement} confirms this in scatter form:
+EAPF points cluster closer to the $y=x$ agreement line.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{\figdir/fig2_virtual_final_frequency.pdf}
+  \caption{Virtual final frequency.}
+  \label{fig:virtual_final}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{\figdir/fig3_pi_final_frequency.pdf}
+  \caption{Pi final frequency.}
+  \label{fig:pi_final}
+\end{subfigure}
+\caption{Final 5 s mean frequencies by model and condition. Bars show
+model-condition means; black points are individual trials.}
+\label{fig:final_freqs}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.62\textwidth]{\figdir/fig4_frequency_agreement_scatter.pdf}
+\caption{Final frequency agreement. Each point is one trial. The dashed line
+is the $y=x$ reference. EAPF points cluster closer to the agreement line.}
+\label{fig:agreement}
+\end{figure}
+
+\subsection{Representative trajectories}
+
+Figure~\ref{fig:timeseries} compares representative high-mismatch trials
+under the Pi 2.5 Hz initial condition (repeat 3). EAPF shows comparatively
+smooth virtual frequency adaptation. Kuramoto exhibits visibly larger
+oscillation in both the virtual and Pi frequency traces. This matches the
+observed frontend behaviour: the frontend in feedback-ON mode displays
+server \texttt{flash\_on}, which is generated from server-side oscillator
+phase crossings.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{\figdir/fig6_representative_frequency_timeseries.pdf}
+\caption{Representative per-trial frequency trajectories for the Pi 2.5 Hz
+initial condition, repeat 3 (30 s trials). The virtual frequency trace comes
+from \texttt{/api/agents}; the Pi trace comes from the local oscillator log.}
+\label{fig:timeseries}
+\end{figure}
+
+\subsection{Flash counts and runtime diagnostics}
+
+Figure~\ref{fig:counts} shows the flash-count diagnostics. Counts are broadly
+consistent with the 30 s trial duration and observed final frequencies. EAPF
+has slightly higher detected virtual flash counts overall, while Kuramoto
+shows lower actual FCR in the Pi 2.5 Hz condition.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{\figdir/fig8_flash_counts.pdf}
+\caption{Pi flash count, detected virtual flash count, and actual virtual
+flash count by model and condition. Bars show means; points show individual
+trials.}
+\label{fig:counts}
+\end{figure}
+
+\input{\tabledir/table_runtime_diagnostics.tex}
+
+Runtime diagnostics in Table~\ref{tab:runtime} do not show a model-specific
+runtime failure. API success ratio was 1.000 for both models. Capture and
+processing rates were similar. This supports the interpretation that the main
+model difference is not an API or camera throughput artifact.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{\figdir/fig7_runtime_diagnostics.pdf}
+\caption{Runtime diagnostics derived from detection and API logs. Boxes show
+per-trial distributions across the 9 trials per model.}
+\label{fig:runtime}
+\end{figure}
+
+\subsection{Initial phase sensitivity}
+
+The formal batch used random initial phases with controlled seeds. Figure
+\ref{fig:phase} plots initial phase difference against final 5 s frequency
+error. With only three repeats per condition, this is an exploratory
+diagnostic rather than a formal phase-sensitivity study. It does show that
+Kuramoto's larger errors are not confined to a single initial phase offset.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.78\textwidth]{\figdir/fig5_initial_phase_sensitivity.pdf}
+\caption{Initial phase difference versus final 5 s mean absolute frequency
+error. Each point is one trial.}
+\label{fig:phase}
+\end{figure}
+
+\FloatBarrier
+
+% ======================================================================
+\section{Discussion}
+% ======================================================================
+
+\subsection{EAPF versus Kuramoto in mutual HIL}
+
+The formal mutual visual HIL data indicate that EAPF Consensus is more stable
+in the current setup. With locked $K=5.0$, its final-window frequency errors
+are lower, its final-window frequency variability is much lower, and its
+behaviour is consistent across the three Pi initial frequencies. Kuramoto
+remains a useful comparison baseline, but in this mutual loop it shows larger
+fluctuations and poorer final-window agreement.
+
+This conclusion is specific to the implemented event-based visual HIL system.
+It should not be read as a universal statement that EAPF is always superior to
+Kuramoto. Rather, EAPF appears better matched to this project's sensing and
+feedback pathway: timestamped flash events, camera-mediated detections, and
+explicit event-based phase/frequency correction with rate-limiting and
+filtering.
+
+\subsection{Why Kuramoto behaviour differs from fixed-leader results}
+
+The mutual HIL result does not contradict earlier fixed-leader visual results.
+Fixed-leader HIL is a one-way tracking task: the virtual leader flashes at a
+stable, externally controlled frequency and does not react to the Pi. Feedback
+perturbations affect only the follower, and cannot be amplified through the
+visual loop. In mutual HIL, both agents influence the timing that the other
+observes, forming a bidirectional closed loop.
+
+Kuramoto can track a stable fixed visual reference well because the reference
+phase is not perturbed by the follower's own output. In mutual HIL, however,
+the virtual agent's phase is updated from Pi flash events, so the virtual
+visual stimulus itself carries the oscillations introduced by the Kuramoto
+phase-velocity correction. This feedback path does not exist in fixed-leader
+mode, which explains why a model can perform well in one-way tracking yet
+become less stable in mutual HIL.
+
+The frontend instability observed during Kuramoto trials is consistent with
+this interpretation. The virtual Kuramoto update uses a direct instantaneous
+phase-velocity correction $\dot\theta = \omega + K \sin(\hat\theta_j -
+\theta)$. At the locked value $K=5.0$, that correction can produce substantial
+short-timescale frequency swings. The frontend then displays the server's
+\texttt{flash\_on} state, so visible flashing inherits those phase-crossing
+fluctuations.
+
+EAPF avoids much of this behaviour because its corrections are filtered
+(low-pass $\alpha = 0.2$) and rate-limited ($\Delta\theta_{\max} = 0.2$ rad,
+$\Delta f_{\max} = 0.05$ Hz). This design is naturally better suited to the
+event-derived, latency-affected phase information available from camera flash
+detection.
+
+\subsection{Limitations}
+
+The formal sample size is modest: three repeats per model-condition pair
+(18 trials total). The interaction is camera-mediated and uses a
+screen-rendered target, which is not identical to drone-mounted
+LED-to-camera interaction. The Pi and frontend communicate through an HTTP
+API, and the browser display uses a fixed flash hold after server-side phase
+crossings. Kuramoto's gain was inherited from the earlier simulation
+comparison setting ($K=5.0$) and may not be optimal for mutual visual HIL.
+A gain sensitivity analysis is presented in
+Appendix~\ref{sec:k_sensitivity}.
+
+% ======================================================================
+\section{Conclusion}
+% ======================================================================
+
+The formal mutual visual HIL comparison (1 virtual + 1 Pi, 30 s trials,
+locked $K=5.0$ for Kuramoto) supports carrying EAPF Consensus forward to the
+next 2-virtual + 1-Pi mutual HIL stage. EAPF achieved lower final-window
+frequency error and substantially lower final-window frequency variability
+than Kuramoto across all tested Pi initial frequencies.
+
+Kuramoto is retained as a meaningful baseline. An appendix Kuramoto gain
+sensitivity sweep (Appendix~\ref{sec:k_sensitivity}) tested $K \in \{2.5,
+3.0, 3.5, 4.0, 4.5\}$ and found that $K=2.5$ yields the best behaviour
+according to the appendix ranking score. However, even at $K=2.5$, Kuramoto
+does not achieve the final-window stability of EAPF (see
+Appendix~\ref{sec:best_k_vs_eapf}). This supports the interpretation that the
+limitation is not merely an overly large coupling gain, but also the
+adaptation of a continuous-phase coupling law to sparse, event-derived phase
+estimates from camera flash detection.
+
+The next experimental direction is therefore an EAPF-based 2-virtual + 1-Pi
+mutual HIL test, which will extend the mutual loop to three agents in a
+mixed-reality configuration.
+
+% ======================================================================
+\appendix
+\section{Trial Validation}
+\label{sec:appendix_validation}
+
+\begingroup
+\scriptsize
+\input{\tabledir/table_trial_validation.tex}
+\endgroup
+
+% ======================================================================
+\section{Kuramoto Gain Sensitivity}
+\label{sec:k_sensitivity}
+
+\subsection{Motivation}
+
+In the main mutual visual HIL comparison (Section~4), Kuramoto with locked
+$K=5.0$ showed visible frequency fluctuation and higher final-window
+variability than EAPF. This appendix tests whether lower Kuramoto coupling
+gains reduce the oscillation.
+
+\subsection{Theory framing}
+
+For a frequency mismatch $\Delta f$, the angular mismatch is $\Delta\omega =
+2\pi\,\Delta f$. A one-way driven intuition gives a critical coupling
+$K_c \approx \Delta\omega$ for frequency locking. A symmetric two-oscillator
+mutual Kuramoto intuition gives $K_c \approx \Delta\omega / 2$, because each
+oscillator carries half the coupling load.
+
+This HIL system is not an ideal continuous Kuramoto system, because neighbour
+phase is reconstructed from binary flash events rather than observed
+continuously. The tested $K$ values are therefore theory-informed diagnostics,
+not exact theoretical thresholds.
+
+\subsection{Experimental design}
+
+\begin{itemize}
+  \item virtual initial frequency = 2.0 Hz
+  \item Pi initial frequencies = 1.2, 1.5, 2.5 Hz (matched to main comparison)
+  \item $K$ values = 2.5, 3.0, 3.5, 4.0, 4.5
+  \item repeats = 2 per condition
+  \item duration = 30 s
+  \item random phases enabled; phase schedule paired across $K$ values
+  \item chunked execution; three chunks of 10 trials each; zero failed trials
+\end{itemize}
+
+The main locked-parameter Kuramoto comparison uses $K=5.0$ and is not replaced
+by this appendix. This sweep is a secondary sensitivity analysis.
+
+\subsection{Results}
+
+\input{\tabledir/table_k_sweep_overall.tex}
+
+Table~\ref{tab:k_sweep_overall} summarises results across all Pi initial
+frequencies. $K=2.5$ achieves the best (lowest) appendix ranking score of
+0.847. The ranking score penalises final-window mean absolute error, frequency
+variability, detection-FCR shortfalls, and diagnostic warning counts. Lower
+$K$ values generally produce fewer Kuramoto debug warnings (mean 1.8 at
+$K=2.5$ vs.\ 87.8 at $K=4.5$), consistent with reduced aggressive
+phase-velocity correction.
+
+\input{\tabledir/table_k_sweep_condition.tex}
+
+\input{\tabledir/table_k_ranking.tex}
+
+Table~\ref{tab:k_sweep_condition} breaks results down by Pi initial frequency.
+$K=2.5$ is the best-performing gain in every condition. Table~\ref{tab:k_ranking}
+shows the overall ranking.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{\figdir/figA1_k_sweep_final5_mae.pdf}
+\caption{Final 5 s mean absolute frequency error vs.\ Kuramoto $K$, by Pi
+initial frequency. Filled diamonds show the mean across 2 repeats; open
+circles show individual trial values.}
+\label{fig:k_sweep_mae}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{\figdir/figA2_k_sweep_frequency_std.pdf}
+\caption{Final 5 s frequency standard deviation vs.\ $K$. Top row: virtual
+frequency std; bottom row: Pi frequency std.}
+\label{fig:k_sweep_std}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{\figdir/figA3_k_sweep_actual_fcr.pdf}
+\caption{Actual virtual flash count ratio vs.\ $K$. The dashed line marks
+FCR = 0.85.}
+\label{fig:k_sweep_fcr}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.55\textwidth]{\figdir/figA4_k_sweep_ranking_score.pdf}
+\caption{Appendix ranking score vs.\ $K$ (lower is better). $K=2.5$ is best.
+Score formula: $\mathrm{score} = \mathrm{MAE} + 0.5(\sigma_{\mathrm{virt}} +
+\sigma_{\mathrm{Pi}}) + 2\cdot\max(0,0.90-\mathrm{FCR}) +
+5\cdot\max(0,\mathrm{FCR}-1.02) + 0.02\cdot(\mathrm{warnings})$,
+with zero failed trials.}
+\label{fig:k_sweep_ranking}
+\end{figure}
+
+\subsection{Interpretation}
+
+Lower $K$ reduces the aggressive instantaneous phase-velocity correction
+compared with $K=5.0$. $K=2.5$ is the best tested value according to the
+appendix ranking. However, the sweep shows that Kuramoto does not fully
+converge to smooth, low-variability behaviour in the mutual visual HIL loop
+even at this best gain. The remaining oscillation suggests that the issue is
+not only gain magnitude, but also the mismatch between continuous-phase
+Kuramoto coupling and event-based visual flash timing.
+
+Reducing the Kuramoto gain improves the behaviour relative to the locked
+$K=5.0$ setting, but does not fully remove the oscillatory response. This
+supports the interpretation that the limitation is not merely an overly large
+coupling gain, but also the adaptation of a continuous-phase coupling law to
+sparse camera-derived flash events.
+
+% ======================================================================
+\section{Best tested Kuramoto gain versus EAPF}
+\label{sec:best_k_vs_eapf}
+
+This section compares the existing main EAPF data with the best tested
+Kuramoto gain $K=2.5$ from the appendix sweep. No new trials were run; all
+data are from the completed formal datasets.
+
+The comparison should be interpreted with care:
+\begin{itemize}
+  \item EAPF has 3 repeats per condition in the main dataset.
+  \item Kuramoto $K=2.5$ has 2 repeats per condition in the appendix sweep.
+  \item The phase schedules are controlled and paired, but sample sizes differ.
+  \item This is a secondary appendix comparison, not the main
+        locked-parameter result.
+\end{itemize}
+
+\input{\tabledir/table_best_k_vs_eapf.tex}
+
+Table~\ref{tab:best_k_vs_eapf} compares the two models across conditions.
+EAPF maintains lower final-window frequency variability (virtual std and Pi
+std) in all conditions. The 5 s MAE values are more comparable at the
+moderate-mismatch Pi 1.5 Hz condition, but EAPF is consistently lower at the
+higher-mismatch Pi 1.2 Hz and Pi 2.5 Hz conditions.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{\figdir/figB1_eapf_vs_k25_overview.pdf}
+\caption{EAPF Consensus (main, 3 repeats) vs.\ Kuramoto $K=2.5$ (appendix,
+2 repeats). Left: actual virtual FCR; right: final 5 s MAE. Bars show means;
+points show individual trials.}
+\label{fig:best_k_overview}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{\figdir/figB2_eapf_vs_k25_frequency_std.pdf}
+\caption{Final-window frequency standard deviation: EAPF vs.\ Kuramoto
+$K=2.5$. Left: virtual frequency std; right: Pi frequency std.}
+\label{fig:best_k_std}
+\end{figure}
+
+\subsection{Interpretation}
+
+$K=2.5$ improves Kuramoto relative to $K=5.0$ on several metrics, especially
+in reducing the excessive warning/oscillation score. However, EAPF still has
+much lower final-window frequency variability and better stability across
+conditions.
+
+Therefore the model selection for the next 2-virtual + 1-Pi mutual HIL test
+remains EAPF Consensus. This conclusion does not claim that EAPF universally
+outperforms Kuramoto in all possible implementations. It states that EAPF is
+better suited to this project's current binary-flash, camera-mediated,
+event-based mutual HIL setup.
+
+\section{Reproducibility}
+\label{sec:reproducibility}
+
+The main formal dataset (1 virtual + 1 Pi mutual HIL comparison) is stored at:
+
+\begin{quote}
+\path{experiments/logs/step5b_formal_chunked/formal_step5b_chunked_20260621}
+\end{quote}
+
+The Kuramoto K-sensitivity appendix dataset is stored at:
+
+\begin{quote}
+\path{experiments/logs/step5b_kuramoto_k_sensitivity/k_sweep_20260621_v4}
+\end{quote}
+
+The figures and tables in this report were generated by:
+
+\begin{quote}
+\path{docs/mutual_visual_hil_report/generate_mutual_hil_analysis.py}
+\end{quote}
+
+The directory names \texttt{step5b\_formal\_chunked} and
+\texttt{step5b\_kuramoto\_k\_sensitivity}
+in the experiment log paths are internal folder labels only. The conceptual
+naming used throughout this report is ``mutual visual HIL'' and
+``Kuramoto gain sensitivity appendix.''
+
+Derived copies of the core CSV/JSON inputs and intermediate summary tables
+are stored under:
+
+\begin{quote}
+\path{docs/mutual_visual_hil_report/derived/}
+\end{quote}
+
+\end{document}

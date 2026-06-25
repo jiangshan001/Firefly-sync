@@ -1,0 +1,6 @@
+model_family,variant,n3_sync_score,n3_convergence_score,n3_robustness_score,n5_scalability_score,hardware_readiness_score,interpretability_score,total_weighted_score,rank,selection_comment
+eapf_consensus,consensus,1.0,0.9836,1.0,0.9333,0.8,0.8,0.9375,1,Primary HIL candidate
+kuramoto,baseline,0.9021,0.8913,0.7667,0.4267,0.85,0.9,0.8008,2,Secondary comparison model
+eapf_tracker,tracker,0.7625,0.7518,0.335,0.5967,0.7,0.7,0.6563,3,Retained with identified limitations
+pco_adaptive_prc,adaptive_prc,0.35,0.4665,0.1,0.0,0.65,0.75,0.3625,4,Retained with identified limitations
+pco_simple,simple,0.2833,0.3696,0.1,0.0,0.75,0.9,0.3579,5,Retained with identified limitations

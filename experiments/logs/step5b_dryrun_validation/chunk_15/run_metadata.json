@@ -1,0 +1,126 @@
+{
+  "created_at": "2026-06-21T19:31:01.927645",
+  "duration": 30.0,
+  "models": [
+    "eapf_consensus",
+    "kuramoto"
+  ],
+  "locked_model_parameters": {
+    "eapf_consensus": {
+      "g_p": 0.02,
+      "g_f": 0.02,
+      "alpha_p": 0.2,
+      "alpha_f": 0.2,
+      "delta_theta_max_rad": 0.2,
+      "delta_f_max_hz": 0.05
+    },
+    "kuramoto": {
+      "K": 5.0
+    }
+  },
+  "freq_pairs": [
+    {
+      "virtual": 2.0,
+      "pi": 1.5
+    }
+  ],
+  "repeats": 3,
+  "alternate_models": false,
+  "seed": 20260620,
+  "canonical_freq_pairs": [
+    {
+      "virtual": 2.0,
+      "pi": 1.2
+    },
+    {
+      "virtual": 2.0,
+      "pi": 1.5
+    },
+    {
+      "virtual": 2.0,
+      "pi": 2.5
+    }
+  ],
+  "random_phase_enabled": true,
+  "virtual_phase_rad": null,
+  "pi_phase_rad": null,
+  "dry_run": true,
+  "run_dir": "experiments/logs/step5b_dryrun_validation/chunk_15",
+  "resume": false,
+  "overwrite": false,
+  "chunk_label": "pi_1.5",
+  "schedule": [
+    {
+      "model": "eapf_consensus",
+      "virtual_freq": 2.0,
+      "pi_freq": 1.5,
+      "repeat": 1,
+      "trial_id": "eapf_consensus_V2_P1.5_r01",
+      "trial_seed": 20260623,
+      "random_phase_enabled": true,
+      "virtual_initial_phase_rad": 3.7840676071288257,
+      "pi_initial_phase_rad": 1.7777263380808024,
+      "initial_phase_difference_rad": -2.0063412690480233
+    },
+    {
+      "model": "kuramoto",
+      "virtual_freq": 2.0,
+      "pi_freq": 1.5,
+      "repeat": 1,
+      "trial_id": "kuramoto_V2_P1.5_r01",
+      "trial_seed": 20260624,
+      "random_phase_enabled": true,
+      "virtual_initial_phase_rad": 5.031915598555405,
+      "pi_initial_phase_rad": 5.78077705898266,
+      "initial_phase_difference_rad": 0.7488614604272552
+    },
+    {
+      "model": "eapf_consensus",
+      "virtual_freq": 2.0,
+      "pi_freq": 1.5,
+      "repeat": 2,
+      "trial_id": "eapf_consensus_V2_P1.5_r02",
+      "trial_seed": 20260629,
+      "random_phase_enabled": true,
+      "virtual_initial_phase_rad": 1.1689001293378076,
+      "pi_initial_phase_rad": 0.933366387938039,
+      "initial_phase_difference_rad": -0.23553374139976846
+    },
+    {
+      "model": "kuramoto",
+      "virtual_freq": 2.0,
+      "pi_freq": 1.5,
+      "repeat": 2,
+      "trial_id": "kuramoto_V2_P1.5_r02",
+      "trial_seed": 20260630,
+      "random_phase_enabled": true,
+      "virtual_initial_phase_rad": 2.5238826796695606,
+      "pi_initial_phase_rad": 3.3006908294560326,
+      "initial_phase_difference_rad": 0.7768081497864721
+    },
+    {
+      "model": "eapf_consensus",
+      "virtual_freq": 2.0,
+      "pi_freq": 1.5,
+      "repeat": 3,
+      "trial_id": "eapf_consensus_V2_P1.5_r03",
+      "trial_seed": 20260635,
+      "random_phase_enabled": true,
+      "virtual_initial_phase_rad": 0.6897130191986022,
+      "pi_initial_phase_rad": 4.479228640080573,
+      "initial_phase_difference_rad": -2.493669686297615
+    },
+    {
+      "model": "kuramoto",
+      "virtual_freq": 2.0,
+      "pi_freq": 1.5,
+      "repeat": 3,
+      "trial_id": "kuramoto_V2_P1.5_r03",
+      "trial_seed": 20260636,
+      "random_phase_enabled": true,
+      "virtual_initial_phase_rad": 0.598135173932279,
+      "pi_initial_phase_rad": 1.9215553567696286,
+      "initial_phase_difference_rad": 1.3234201828373493
+    }
+  ]
+}
